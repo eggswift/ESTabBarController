@@ -76,42 +76,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         switch indexPath.row {
         case 0:
             systemStytle()
-            break
         case 1:
             pushTabBarStyle()
-            break
         case 2:
             naviContainTabBarStytle()
-            break
         case 3:
             tabBarContainNaviStytle()
-            break
         case 4:
             backgroundChangeableTabBarStyle(false, highlightable: false, implies: false)
-            break
         case 5:
             animatableTabBarStyle(true)
-            break
         case 6:
             animatableTabBarStyle(false)
-            break
         case 7:
             irregularityTabBarStyle(true, hijack: false)
-            break
         case 8:
             irregularityTabBarStyle(false, hijack: false)
-            break
         case 9:
             backgroundChangeableTabBarStyle(false, highlightable: true, implies: false)
-            break
         case 10:
             irregularityTabBarStyle(false, hijack: true)
-            break
         case 11:
             backgroundChangeableTabBarStyle(false, highlightable: false, implies: true)
-            break
-        default:
-            
+			
+		default:
+			
             break
         }
     }
