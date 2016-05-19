@@ -1,0 +1,651 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F6C772F31CEADD10000E7777 /* ExampleBaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C772F21CEADD10000E7777 /* ExampleBaseAnimator.swift */; };
+		F6C772F51CEADE92000E7777 /* ExampleBackgroundAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C772F41CEADE92000E7777 /* ExampleBackgroundAnimator.swift */; };
+		F6C772FC1CEAEE62000E7777 /* ExampleImpliesTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C772FB1CEAEE62000E7777 /* ExampleImpliesTabBarItemContent.swift */; };
+		F6F1349D1CE5B9170034D15D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F1349C1CE5B9170034D15D /* AppDelegate.swift */; };
+		F6F1349F1CE5B9170034D15D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F1349E1CE5B9170034D15D /* ViewController.swift */; };
+		F6F134A21CE5B9170034D15D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F134A01CE5B9170034D15D /* Main.storyboard */; };
+		F6F134A41CE5B9170034D15D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6F134A31CE5B9170034D15D /* Assets.xcassets */; };
+		F6F134A71CE5B9170034D15D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F134A51CE5B9170034D15D /* LaunchScreen.storyboard */; };
+		F6F134B21CE5B9170034D15D /* ESTabBarControllerExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F134B11CE5B9170034D15D /* ESTabBarControllerExampleTests.swift */; };
+		F6F134BD1CE5B9170034D15D /* ESTabBarControllerExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F134BC1CE5B9170034D15D /* ESTabBarControllerExampleUITests.swift */; };
+		F6F135021CE5E2B10034D15D /* ESTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F134FD1CE5E2B10034D15D /* ESTabBarController.swift */; };
+		F6F135031CE5E2B10034D15D /* ESTabBarItemAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F134FE1CE5E2B10034D15D /* ESTabBarItemAnimator.swift */; };
+		F6F135051CE5E2B10034D15D /* ESTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F135001CE5E2B10034D15D /* ESTabBarItem.swift */; };
+		F6F135061CE5E2B10034D15D /* ESTabBarBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F135011CE5E2B10034D15D /* ESTabBarBadge.swift */; };
+		F6F1350A1CE6E2020034D15D /* ESTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F135091CE6E2020034D15D /* ESTabBarItemContent.swift */; };
+		F6F1350C1CE6F22D0034D15D /* ESTabBarItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F1350B1CE6F22D0034D15D /* ESTabBarItemProtocol.swift */; };
+		F6F135131CE70CA20034D15D /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F6F1350E1CE70C480034D15D /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F6F135151CE70CA30034D15D /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F6F1350F1CE70C480034D15D /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F6F135281CE9E09B0034D15D /* ExampleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F135241CE9E09B0034D15D /* ExampleNavigationController.swift */; };
+		F6F135291CE9E09B0034D15D /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F135251CE9E09B0034D15D /* ExampleViewController.swift */; };
+		F6F1352A1CE9E09B0034D15D /* ExampleSpreadAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F135271CE9E09B0034D15D /* ExampleSpreadAnimator.swift */; };
+		F6F1352E1CE9E0B70034D15D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F1352C1CE9E0B70034D15D /* WebViewController.swift */; };
+		F6F1352F1CE9E0B70034D15D /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6F1352D1CE9E0B70034D15D /* WebViewController.xib */; };
+		F6F135311CE9E11D0034D15D /* ExampleBounceAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F135301CE9E11D0034D15D /* ExampleBounceAnimator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F6F134AE1CE5B9170034D15D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F6F134911CE5B9170034D15D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6F134981CE5B9170034D15D;
+			remoteInfo = ESTabBarControllerExample;
+		};
+		F6F134B91CE5B9170034D15D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F6F134911CE5B9170034D15D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6F134981CE5B9170034D15D;
+			remoteInfo = ESTabBarControllerExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F6F135161CE70CA30034D15D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F6F135131CE70CA20034D15D /* pop.framework in Embed Frameworks */,
+				F6F135151CE70CA30034D15D /* SnapKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F6C772F21CEADD10000E7777 /* ExampleBaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBaseAnimator.swift; sourceTree = "<group>"; };
+		F6C772F41CEADE92000E7777 /* ExampleBackgroundAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBackgroundAnimator.swift; sourceTree = "<group>"; };
+		F6C772FB1CEAEE62000E7777 /* ExampleImpliesTabBarItemContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleImpliesTabBarItemContent.swift; sourceTree = "<group>"; };
+		F6F134991CE5B9170034D15D /* ESTabBarControllerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESTabBarControllerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6F1349C1CE5B9170034D15D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F6F1349E1CE5B9170034D15D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F6F134A11CE5B9170034D15D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F6F134A31CE5B9170034D15D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F6F134A61CE5B9170034D15D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F6F134A81CE5B9170034D15D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6F134AD1CE5B9170034D15D /* ESTabBarControllerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ESTabBarControllerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6F134B11CE5B9170034D15D /* ESTabBarControllerExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESTabBarControllerExampleTests.swift; sourceTree = "<group>"; };
+		F6F134B31CE5B9170034D15D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6F134B81CE5B9170034D15D /* ESTabBarControllerExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ESTabBarControllerExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6F134BC1CE5B9170034D15D /* ESTabBarControllerExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESTabBarControllerExampleUITests.swift; sourceTree = "<group>"; };
+		F6F134BE1CE5B9170034D15D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6F134FD1CE5E2B10034D15D /* ESTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarController.swift; sourceTree = "<group>"; };
+		F6F134FE1CE5E2B10034D15D /* ESTabBarItemAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemAnimator.swift; sourceTree = "<group>"; };
+		F6F135001CE5E2B10034D15D /* ESTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItem.swift; sourceTree = "<group>"; };
+		F6F135011CE5E2B10034D15D /* ESTabBarBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarBadge.swift; sourceTree = "<group>"; };
+		F6F135091CE6E2020034D15D /* ESTabBarItemContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemContent.swift; sourceTree = "<group>"; };
+		F6F1350B1CE6F22D0034D15D /* ESTabBarItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemProtocol.swift; sourceTree = "<group>"; };
+		F6F1350E1CE70C480034D15D /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pop.framework; sourceTree = "<group>"; };
+		F6F1350F1CE70C480034D15D /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SnapKit.framework; sourceTree = "<group>"; };
+		F6F135241CE9E09B0034D15D /* ExampleNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleNavigationController.swift; sourceTree = "<group>"; };
+		F6F135251CE9E09B0034D15D /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		F6F135271CE9E09B0034D15D /* ExampleSpreadAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleSpreadAnimator.swift; sourceTree = "<group>"; };
+		F6F1352C1CE9E0B70034D15D /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		F6F1352D1CE9E0B70034D15D /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		F6F135301CE9E11D0034D15D /* ExampleBounceAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBounceAnimator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F6F134961CE5B9170034D15D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6F134AA1CE5B9170034D15D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6F134B51CE5B9170034D15D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F6C772FA1CEAEE62000E7777 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				F6C772FB1CEAEE62000E7777 /* ExampleImpliesTabBarItemContent.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		F6F134901CE5B9170034D15D = {
+			isa = PBXGroup;
+			children = (
+				F6F134CA1CE5B9CD0034D15D /* ESTabBarController */,
+				F6F1349B1CE5B9170034D15D /* ESTabBarControllerExample */,
+				F6F134B01CE5B9170034D15D /* ESTabBarControllerExampleTests */,
+				F6F134BB1CE5B9170034D15D /* ESTabBarControllerExampleUITests */,
+				F6F1349A1CE5B9170034D15D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F6F1349A1CE5B9170034D15D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F6F134991CE5B9170034D15D /* ESTabBarControllerExample.app */,
+				F6F134AD1CE5B9170034D15D /* ESTabBarControllerExampleTests.xctest */,
+				F6F134B81CE5B9170034D15D /* ESTabBarControllerExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F6F1349B1CE5B9170034D15D /* ESTabBarControllerExample */ = {
+			isa = PBXGroup;
+			children = (
+				F6F135231CE9E09B0034D15D /* Example */,
+				F6C772FA1CEAEE62000E7777 /* Content */,
+				F6F135261CE9E09B0034D15D /* Animator */,
+				F6F1352B1CE9E0B70034D15D /* Me */,
+				F6F1349C1CE5B9170034D15D /* AppDelegate.swift */,
+				F6F1349E1CE5B9170034D15D /* ViewController.swift */,
+				F6F134A01CE5B9170034D15D /* Main.storyboard */,
+				F6F134A31CE5B9170034D15D /* Assets.xcassets */,
+				F6F134A51CE5B9170034D15D /* LaunchScreen.storyboard */,
+				F6F134A81CE5B9170034D15D /* Info.plist */,
+				F6F1350D1CE70BF10034D15D /* Framework */,
+			);
+			path = ESTabBarControllerExample;
+			sourceTree = "<group>";
+		};
+		F6F134B01CE5B9170034D15D /* ESTabBarControllerExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				F6F134B11CE5B9170034D15D /* ESTabBarControllerExampleTests.swift */,
+				F6F134B31CE5B9170034D15D /* Info.plist */,
+			);
+			path = ESTabBarControllerExampleTests;
+			sourceTree = "<group>";
+		};
+		F6F134BB1CE5B9170034D15D /* ESTabBarControllerExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F6F134BC1CE5B9170034D15D /* ESTabBarControllerExampleUITests.swift */,
+				F6F134BE1CE5B9170034D15D /* Info.plist */,
+			);
+			path = ESTabBarControllerExampleUITests;
+			sourceTree = "<group>";
+		};
+		F6F134CA1CE5B9CD0034D15D /* ESTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				F6F134FD1CE5E2B10034D15D /* ESTabBarController.swift */,
+				F6F134FE1CE5E2B10034D15D /* ESTabBarItemAnimator.swift */,
+				F6F135001CE5E2B10034D15D /* ESTabBarItem.swift */,
+				F6F135091CE6E2020034D15D /* ESTabBarItemContent.swift */,
+				F6F1350B1CE6F22D0034D15D /* ESTabBarItemProtocol.swift */,
+				F6F135011CE5E2B10034D15D /* ESTabBarBadge.swift */,
+			);
+			name = ESTabBarController;
+			path = ../ESTabBarController;
+			sourceTree = "<group>";
+		};
+		F6F1350D1CE70BF10034D15D /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				F6F1350E1CE70C480034D15D /* pop.framework */,
+				F6F1350F1CE70C480034D15D /* SnapKit.framework */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		F6F135231CE9E09B0034D15D /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				F6F135241CE9E09B0034D15D /* ExampleNavigationController.swift */,
+				F6F135251CE9E09B0034D15D /* ExampleViewController.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		F6F135261CE9E09B0034D15D /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				F6C772F21CEADD10000E7777 /* ExampleBaseAnimator.swift */,
+				F6C772F41CEADE92000E7777 /* ExampleBackgroundAnimator.swift */,
+				F6F135271CE9E09B0034D15D /* ExampleSpreadAnimator.swift */,
+				F6F135301CE9E11D0034D15D /* ExampleBounceAnimator.swift */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
+		F6F1352B1CE9E0B70034D15D /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				F6F1352C1CE9E0B70034D15D /* WebViewController.swift */,
+				F6F1352D1CE9E0B70034D15D /* WebViewController.xib */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F6F134981CE5B9170034D15D /* ESTabBarControllerExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6F134C11CE5B9170034D15D /* Build configuration list for PBXNativeTarget "ESTabBarControllerExample" */;
+			buildPhases = (
+				F6F134951CE5B9170034D15D /* Sources */,
+				F6F134961CE5B9170034D15D /* Frameworks */,
+				F6F134971CE5B9170034D15D /* Resources */,
+				F6F135161CE70CA30034D15D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ESTabBarControllerExample;
+			productName = ESTabBarControllerExample;
+			productReference = F6F134991CE5B9170034D15D /* ESTabBarControllerExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F6F134AC1CE5B9170034D15D /* ESTabBarControllerExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6F134C41CE5B9170034D15D /* Build configuration list for PBXNativeTarget "ESTabBarControllerExampleTests" */;
+			buildPhases = (
+				F6F134A91CE5B9170034D15D /* Sources */,
+				F6F134AA1CE5B9170034D15D /* Frameworks */,
+				F6F134AB1CE5B9170034D15D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6F134AF1CE5B9170034D15D /* PBXTargetDependency */,
+			);
+			name = ESTabBarControllerExampleTests;
+			productName = ESTabBarControllerExampleTests;
+			productReference = F6F134AD1CE5B9170034D15D /* ESTabBarControllerExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F6F134B71CE5B9170034D15D /* ESTabBarControllerExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6F134C71CE5B9170034D15D /* Build configuration list for PBXNativeTarget "ESTabBarControllerExampleUITests" */;
+			buildPhases = (
+				F6F134B41CE5B9170034D15D /* Sources */,
+				F6F134B51CE5B9170034D15D /* Frameworks */,
+				F6F134B61CE5B9170034D15D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6F134BA1CE5B9170034D15D /* PBXTargetDependency */,
+			);
+			name = ESTabBarControllerExampleUITests;
+			productName = ESTabBarControllerExampleUITests;
+			productReference = F6F134B81CE5B9170034D15D /* ESTabBarControllerExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F6F134911CE5B9170034D15D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Egg Swift";
+				TargetAttributes = {
+					F6F134981CE5B9170034D15D = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					F6F134AC1CE5B9170034D15D = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = F6F134981CE5B9170034D15D;
+					};
+					F6F134B71CE5B9170034D15D = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = F6F134981CE5B9170034D15D;
+					};
+				};
+			};
+			buildConfigurationList = F6F134941CE5B9170034D15D /* Build configuration list for PBXProject "ESTabBarControllerExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F6F134901CE5B9170034D15D;
+			productRefGroup = F6F1349A1CE5B9170034D15D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F6F134981CE5B9170034D15D /* ESTabBarControllerExample */,
+				F6F134AC1CE5B9170034D15D /* ESTabBarControllerExampleTests */,
+				F6F134B71CE5B9170034D15D /* ESTabBarControllerExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F6F134971CE5B9170034D15D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6F134A71CE5B9170034D15D /* LaunchScreen.storyboard in Resources */,
+				F6F134A41CE5B9170034D15D /* Assets.xcassets in Resources */,
+				F6F134A21CE5B9170034D15D /* Main.storyboard in Resources */,
+				F6F1352F1CE9E0B70034D15D /* WebViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6F134AB1CE5B9170034D15D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6F134B61CE5B9170034D15D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F6F134951CE5B9170034D15D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6F135291CE9E09B0034D15D /* ExampleViewController.swift in Sources */,
+				F6F135021CE5E2B10034D15D /* ESTabBarController.swift in Sources */,
+				F6C772FC1CEAEE62000E7777 /* ExampleImpliesTabBarItemContent.swift in Sources */,
+				F6F1350C1CE6F22D0034D15D /* ESTabBarItemProtocol.swift in Sources */,
+				F6F135031CE5E2B10034D15D /* ESTabBarItemAnimator.swift in Sources */,
+				F6F1352A1CE9E09B0034D15D /* ExampleSpreadAnimator.swift in Sources */,
+				F6C772F51CEADE92000E7777 /* ExampleBackgroundAnimator.swift in Sources */,
+				F6F1350A1CE6E2020034D15D /* ESTabBarItemContent.swift in Sources */,
+				F6F135311CE9E11D0034D15D /* ExampleBounceAnimator.swift in Sources */,
+				F6F135061CE5E2B10034D15D /* ESTabBarBadge.swift in Sources */,
+				F6F1352E1CE9E0B70034D15D /* WebViewController.swift in Sources */,
+				F6F1349F1CE5B9170034D15D /* ViewController.swift in Sources */,
+				F6F1349D1CE5B9170034D15D /* AppDelegate.swift in Sources */,
+				F6F135281CE9E09B0034D15D /* ExampleNavigationController.swift in Sources */,
+				F6F135051CE5E2B10034D15D /* ESTabBarItem.swift in Sources */,
+				F6C772F31CEADD10000E7777 /* ExampleBaseAnimator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6F134A91CE5B9170034D15D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6F134B21CE5B9170034D15D /* ESTabBarControllerExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6F134B41CE5B9170034D15D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6F134BD1CE5B9170034D15D /* ESTabBarControllerExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F6F134AF1CE5B9170034D15D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F6F134981CE5B9170034D15D /* ESTabBarControllerExample */;
+			targetProxy = F6F134AE1CE5B9170034D15D /* PBXContainerItemProxy */;
+		};
+		F6F134BA1CE5B9170034D15D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F6F134981CE5B9170034D15D /* ESTabBarControllerExample */;
+			targetProxy = F6F134B91CE5B9170034D15D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F6F134A01CE5B9170034D15D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6F134A11CE5B9170034D15D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F6F134A51CE5B9170034D15D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6F134A61CE5B9170034D15D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F6F134BF1CE5B9170034D15D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F6F134C01CE5B9170034D15D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F6F134C21CE5B9170034D15D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ESTabBarControllerExample/Framework",
+				);
+				INFOPLIST_FILE = ESTabBarControllerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eggswift.ESTabBarControllerExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F6F134C31CE5B9170034D15D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ESTabBarControllerExample/Framework",
+				);
+				INFOPLIST_FILE = ESTabBarControllerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eggswift.ESTabBarControllerExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F6F134C51CE5B9170034D15D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ESTabBarControllerExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eggswift.ESTabBarControllerExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ESTabBarControllerExample.app/ESTabBarControllerExample";
+			};
+			name = Debug;
+		};
+		F6F134C61CE5B9170034D15D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ESTabBarControllerExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eggswift.ESTabBarControllerExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ESTabBarControllerExample.app/ESTabBarControllerExample";
+			};
+			name = Release;
+		};
+		F6F134C81CE5B9170034D15D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ESTabBarControllerExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eggswift.ESTabBarControllerExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ESTabBarControllerExample;
+			};
+			name = Debug;
+		};
+		F6F134C91CE5B9170034D15D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ESTabBarControllerExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eggswift.ESTabBarControllerExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ESTabBarControllerExample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F6F134941CE5B9170034D15D /* Build configuration list for PBXProject "ESTabBarControllerExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6F134BF1CE5B9170034D15D /* Debug */,
+				F6F134C01CE5B9170034D15D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6F134C11CE5B9170034D15D /* Build configuration list for PBXNativeTarget "ESTabBarControllerExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6F134C21CE5B9170034D15D /* Debug */,
+				F6F134C31CE5B9170034D15D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6F134C41CE5B9170034D15D /* Build configuration list for PBXNativeTarget "ESTabBarControllerExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6F134C51CE5B9170034D15D /* Debug */,
+				F6F134C61CE5B9170034D15D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6F134C71CE5B9170034D15D /* Build configuration list for PBXNativeTarget "ESTabBarControllerExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6F134C81CE5B9170034D15D /* Debug */,
+				F6F134C91CE5B9170034D15D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F6F134911CE5B9170034D15D /* Project object */;
+}
