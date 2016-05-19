@@ -70,49 +70,48 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         view.backgroundColor = UIColor.lightGrayColor()
         return view
     }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        switch indexPath.row {
-        case 0:
-            systemStytle()
-        case 1:
-            pushTabBarStyle()
-        case 2:
-            naviContainTabBarStytle()
-        case 3:
-            tabBarContainNaviStytle()
-        case 4:
-            backgroundChangeableTabBarStyle(false, highlightable: false, implies: false)
-        case 5:
-            animatableTabBarStyle(true)
-        case 6:
-            animatableTabBarStyle(false)
-        case 7:
-            irregularityTabBarStyle(true, hijack: false)
-        case 8:
-            irregularityTabBarStyle(false, hijack: false)
-        case 9:
-            backgroundChangeableTabBarStyle(false, highlightable: true, implies: false)
-        case 10:
-            irregularityTabBarStyle(false, hijack: true)
-        case 11:
-            backgroundChangeableTabBarStyle(false, highlightable: false, implies: true)
+	
+	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		tableView.deselectRowAtIndexPath(indexPath, animated: true)
+		switch indexPath.row {
+		case 0:
+			systemStytle()
+		case 1:
+			pushTabBarStyle()
+		case 2:
+			naviContainTabBarStytle()
+		case 3:
+			tabBarContainNaviStytle()
+		case 4:
+			backgroundChangeableTabBarStyle(false, highlightable: false, implies: false)
+		case 5:
+			animatableTabBarStyle(true)
+		case 6:
+			animatableTabBarStyle(false)
+		case 7:
+			irregularityTabBarStyle(true, hijack: false)
+		case 8:
+			irregularityTabBarStyle(false, hijack: false)
+		case 9:
+			backgroundChangeableTabBarStyle(false, highlightable: true, implies: false)
+		case 10:
+			irregularityTabBarStyle(false, hijack: true)
+		case 11:
+			backgroundChangeableTabBarStyle(false, highlightable: false, implies: true)
 			
 		default:
-			
-            break
-        }
-    }
-    
+			break
+		}
+	}
+	
 }
 
 extension ViewController /**/ {
-    
+	
     func systemStytle() {
         let vc = ESTabBarController.init()
         vc.title = "Example"
-        
+		
         let v1          = ExampleViewController()
         let v2          = ExampleViewController()
         let v3          = ExampleViewController()
