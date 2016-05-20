@@ -1,16 +1,12 @@
-
 Pod::Spec.new do |s|
-s.name              = "ESTabBarController-swift"
-s.version           = "1.0.0"
-s.summary           = "An easy way to customize tabBarController and tabBarItem."
-s.description       = "Highly customizable tabBarController and tabBarItem, you can easily customize ui style or add animation etc . Using swift!"
-s.homepage          = "https://github.com/eggswift/ESTabBarController"
-
+s.name              = 'ESTabBarController-swift'
+s.module_name       = 'ESTabBarController'
+s.version = '1.0.1'
 s.license           = { :type => "MIT", :file => "LICENSE" }
+s.summary           = 'An easy way to customize tabBarController and tabBarItem.'
+s.homepage          = 'https://github.com/eggswift/ESTabBarController'
 s.authors           = { "lihao" => "lihao_ios@hotmail.com"}
-s.social_media_url  = "https://github.com/eggswift/"
-s.platform          = :ios, "8.0"
-s.source            = {:git => "https://github.com/eggswift/ESTabBarController.git", :tag => "1.0.0"}
-s.source_files      = 'ESTabBarController-swift/*.{swift}'
-s.requires_arc      = true
+s.source            = {:git => "https://github.com/eggswift/ESTabBarController.git", :tag => "v#{s.version}" }
+s.ios.deployment_target = '8.0'
+s.source_files = 'ESTabBarController/*.swift'
 end

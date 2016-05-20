@@ -2,7 +2,7 @@
 # ESTabBarController
 ---
 [![Travis](https://img.shields.io/travis/eggwift/ESTabBarController.svg)](https://travis-ci.org/eggswift/ESTabBarController)
-[![CocoaPods](https://img.shields.io/cocoapods/v/ESTabBarController.svg)](http://cocoapods.org/pods/ESTabBarController)
+[![CocoaPods](https://img.shields.io/cocoapods/v/ESTabBarController.svg)](http://cocoapods.org/pods/ESTabBarController-swift)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Swift 2.2](https://img.shields.io/badge/Swift-2.1-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![Twitter](https://img.shields.io/badge/Twitter-@lihao_iOS-blue.svg?style=flat)](https://twitter.com/lihao_iOS)
@@ -35,7 +35,7 @@ There are greate possibilities for us to customize UITabBar. For instance, chang
 ### CocoaPods
 
 ```ruby
-pod "ESTabBarController"
+pod "ESTabBarController-swift"
 ```
 
 ### Carthage
