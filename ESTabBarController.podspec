@@ -1,6 +1,6 @@
 
 Pod::Spec.new do |s|
-s.name              = "ESTabBarController"
+s.name              = "ESTabBarController-swift"
 s.version           = "1.0.0"
 s.summary           = "An easy way to customize tabBarController and tabBarItem."
 s.description       = "Highly customizable tabBarController and tabBarItem, you can easily customize ui style or add animation etc . Using swift!"
