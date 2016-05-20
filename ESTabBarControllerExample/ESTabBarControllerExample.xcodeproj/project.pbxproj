@@ -88,6 +88,7 @@
 		F6BA9EDC1CEED95E00F07504 /* ESTabBarItemAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemAnimator.swift; sourceTree = "<group>"; };
 		F6BA9EDD1CEED95E00F07504 /* ESTabBarItemContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemContent.swift; sourceTree = "<group>"; };
 		F6BA9EDE1CEED95E00F07504 /* ESTabBarItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemProtocol.swift; sourceTree = "<group>"; };
+		F6BA9EF61CEEDC6500F07504 /* ESTabBarController-swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ESTabBarController-swift.h"; sourceTree = "<group>"; };
 		F6C772F21CEADD10000E7777 /* ExampleBaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBaseAnimator.swift; sourceTree = "<group>"; };
 		F6C772F41CEADE92000E7777 /* ExampleBackgroundAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBackgroundAnimator.swift; sourceTree = "<group>"; };
 		F6C772FB1CEAEE62000E7777 /* ExampleImpliesTabBarItemContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleImpliesTabBarItemContent.swift; sourceTree = "<group>"; };
@@ -152,6 +153,7 @@
 				F6BA9EDC1CEED95E00F07504 /* ESTabBarItemAnimator.swift */,
 				F6BA9EDD1CEED95E00F07504 /* ESTabBarItemContent.swift */,
 				F6BA9EDE1CEED95E00F07504 /* ESTabBarItemProtocol.swift */,
+				F6BA9EF61CEEDC6500F07504 /* ESTabBarController-swift.h */,
 			);
 			path = ESTabBarController;
 			sourceTree = "<group>";
