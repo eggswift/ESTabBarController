@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 s.name              = 'ESTabBarController-swift'
 s.module_name       = 'ESTabBarController'
-s.version = '1.0.1'
+s.version           = '1.0.2'
 s.license           = { :type => "MIT", :file => "LICENSE" }
 s.summary           = 'An easy way to customize tabBarController and tabBarItem.'
 s.homepage          = 'https://github.com/eggswift/ESTabBarController'
