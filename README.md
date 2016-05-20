@@ -240,7 +240,7 @@ ExampleBounceAnimator inhierted from ESTabBarItemAnimator, realize `<ESTabBarIte
     public override func selectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
         super.selectAnimation(content: content, animated: animated, completion: completion)
         if let content = content as? ESTabBarItemContent {
-            /// 将动画效果添加到此处即可
+            /// Add animation here
             self.bounceAnimation(content.imageView)
         }
     }
@@ -248,7 +248,7 @@ ExampleBounceAnimator inhierted from ESTabBarItemAnimator, realize `<ESTabBarIte
     public override func reselectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
         super.reselectAnimation(content: content, animated: animated, completion: completion)
         if let content = content as? ESTabBarItemContent {
-            /// 将动画效果添加到此处即可
+            /// Add animation here
             self.bounceAnimation(content.imageView)
         }
     }
