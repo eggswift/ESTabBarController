@@ -13,12 +13,24 @@
 		F6BA9E881CEEA99600F07504 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BA9E841CEEA99500F07504 /* SnapKit.framework */; };
 		F6BA9E891CEEA99600F07504 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BA9E841CEEA99500F07504 /* SnapKit.framework */; };
 		F6BA9E8A1CEEA99600F07504 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BA9E841CEEA99500F07504 /* SnapKit.framework */; };
-		F6BA9E921CEED03400F07504 /* ESTabBarBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9E8C1CEED03400F07504 /* ESTabBarBadge.swift */; };
-		F6BA9E931CEED03400F07504 /* ESTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9E8D1CEED03400F07504 /* ESTabBarController.swift */; };
-		F6BA9E941CEED03400F07504 /* ESTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9E8E1CEED03400F07504 /* ESTabBarItem.swift */; };
-		F6BA9E951CEED03400F07504 /* ESTabBarItemAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9E8F1CEED03400F07504 /* ESTabBarItemAnimator.swift */; };
-		F6BA9E961CEED03400F07504 /* ESTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9E901CEED03400F07504 /* ESTabBarItemContent.swift */; };
-		F6BA9E971CEED03400F07504 /* ESTabBarItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9E911CEED03400F07504 /* ESTabBarItemProtocol.swift */; };
+		F6BA9EAC1CEED2D900F07504 /* ESTabBarBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EA61CEED2D900F07504 /* ESTabBarBadge.swift */; };
+		F6BA9EAD1CEED2D900F07504 /* ESTabBarBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EA61CEED2D900F07504 /* ESTabBarBadge.swift */; };
+		F6BA9EAE1CEED2D900F07504 /* ESTabBarBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EA61CEED2D900F07504 /* ESTabBarBadge.swift */; };
+		F6BA9EAF1CEED2D900F07504 /* ESTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EA71CEED2D900F07504 /* ESTabBarController.swift */; };
+		F6BA9EB01CEED2D900F07504 /* ESTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EA71CEED2D900F07504 /* ESTabBarController.swift */; };
+		F6BA9EB11CEED2D900F07504 /* ESTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EA71CEED2D900F07504 /* ESTabBarController.swift */; };
+		F6BA9EB21CEED2D900F07504 /* ESTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EA81CEED2D900F07504 /* ESTabBarItem.swift */; };
+		F6BA9EB31CEED2D900F07504 /* ESTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EA81CEED2D900F07504 /* ESTabBarItem.swift */; };
+		F6BA9EB41CEED2D900F07504 /* ESTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EA81CEED2D900F07504 /* ESTabBarItem.swift */; };
+		F6BA9EB51CEED2D900F07504 /* ESTabBarItemAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EA91CEED2D900F07504 /* ESTabBarItemAnimator.swift */; };
+		F6BA9EB61CEED2D900F07504 /* ESTabBarItemAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EA91CEED2D900F07504 /* ESTabBarItemAnimator.swift */; };
+		F6BA9EB71CEED2D900F07504 /* ESTabBarItemAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EA91CEED2D900F07504 /* ESTabBarItemAnimator.swift */; };
+		F6BA9EB81CEED2D900F07504 /* ESTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EAA1CEED2D900F07504 /* ESTabBarItemContent.swift */; };
+		F6BA9EB91CEED2D900F07504 /* ESTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EAA1CEED2D900F07504 /* ESTabBarItemContent.swift */; };
+		F6BA9EBA1CEED2D900F07504 /* ESTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EAA1CEED2D900F07504 /* ESTabBarItemContent.swift */; };
+		F6BA9EBB1CEED2D900F07504 /* ESTabBarItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EAB1CEED2D900F07504 /* ESTabBarItemProtocol.swift */; };
+		F6BA9EBC1CEED2D900F07504 /* ESTabBarItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EAB1CEED2D900F07504 /* ESTabBarItemProtocol.swift */; };
+		F6BA9EBD1CEED2D900F07504 /* ESTabBarItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EAB1CEED2D900F07504 /* ESTabBarItemProtocol.swift */; };
 		F6C772F31CEADD10000E7777 /* ExampleBaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C772F21CEADD10000E7777 /* ExampleBaseAnimator.swift */; };
 		F6C772F51CEADE92000E7777 /* ExampleBackgroundAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C772F41CEADE92000E7777 /* ExampleBackgroundAnimator.swift */; };
 		F6C772FC1CEAEE62000E7777 /* ExampleImpliesTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C772FB1CEAEE62000E7777 /* ExampleImpliesTabBarItemContent.swift */; };
@@ -70,12 +82,12 @@
 /* Begin PBXFileReference section */
 		F6BA9E831CEEA99500F07504 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pop.framework; sourceTree = "<group>"; };
 		F6BA9E841CEEA99500F07504 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SnapKit.framework; sourceTree = "<group>"; };
-		F6BA9E8C1CEED03400F07504 /* ESTabBarBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarBadge.swift; sourceTree = "<group>"; };
-		F6BA9E8D1CEED03400F07504 /* ESTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarController.swift; sourceTree = "<group>"; };
-		F6BA9E8E1CEED03400F07504 /* ESTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItem.swift; sourceTree = "<group>"; };
-		F6BA9E8F1CEED03400F07504 /* ESTabBarItemAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemAnimator.swift; sourceTree = "<group>"; };
-		F6BA9E901CEED03400F07504 /* ESTabBarItemContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemContent.swift; sourceTree = "<group>"; };
-		F6BA9E911CEED03400F07504 /* ESTabBarItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemProtocol.swift; sourceTree = "<group>"; };
+		F6BA9EA61CEED2D900F07504 /* ESTabBarBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarBadge.swift; sourceTree = "<group>"; };
+		F6BA9EA71CEED2D900F07504 /* ESTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarController.swift; sourceTree = "<group>"; };
+		F6BA9EA81CEED2D900F07504 /* ESTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItem.swift; sourceTree = "<group>"; };
+		F6BA9EA91CEED2D900F07504 /* ESTabBarItemAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemAnimator.swift; sourceTree = "<group>"; };
+		F6BA9EAA1CEED2D900F07504 /* ESTabBarItemContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemContent.swift; sourceTree = "<group>"; };
+		F6BA9EAB1CEED2D900F07504 /* ESTabBarItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemProtocol.swift; sourceTree = "<group>"; };
 		F6C772F21CEADD10000E7777 /* ExampleBaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBaseAnimator.swift; sourceTree = "<group>"; };
 		F6C772F41CEADE92000E7777 /* ExampleBackgroundAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBackgroundAnimator.swift; sourceTree = "<group>"; };
 		F6C772FB1CEAEE62000E7777 /* ExampleImpliesTabBarItemContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleImpliesTabBarItemContent.swift; sourceTree = "<group>"; };
@@ -131,17 +143,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F6BA9E8B1CEED03400F07504 /* ESTabBarController-swift */ = {
+		F6BA9EA51CEED2D900F07504 /* ESTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				F6BA9E8C1CEED03400F07504 /* ESTabBarBadge.swift */,
-				F6BA9E8D1CEED03400F07504 /* ESTabBarController.swift */,
-				F6BA9E8E1CEED03400F07504 /* ESTabBarItem.swift */,
-				F6BA9E8F1CEED03400F07504 /* ESTabBarItemAnimator.swift */,
-				F6BA9E901CEED03400F07504 /* ESTabBarItemContent.swift */,
-				F6BA9E911CEED03400F07504 /* ESTabBarItemProtocol.swift */,
+				F6BA9EA61CEED2D900F07504 /* ESTabBarBadge.swift */,
+				F6BA9EA71CEED2D900F07504 /* ESTabBarController.swift */,
+				F6BA9EA81CEED2D900F07504 /* ESTabBarItem.swift */,
+				F6BA9EA91CEED2D900F07504 /* ESTabBarItemAnimator.swift */,
+				F6BA9EAA1CEED2D900F07504 /* ESTabBarItemContent.swift */,
+				F6BA9EAB1CEED2D900F07504 /* ESTabBarItemProtocol.swift */,
 			);
-			path = "ESTabBarController-swift";
+			path = ESTabBarController;
 			sourceTree = "<group>";
 		};
 		F6C772FA1CEAEE62000E7777 /* Content */ = {
@@ -155,7 +167,7 @@
 		F6F134901CE5B9170034D15D = {
 			isa = PBXGroup;
 			children = (
-				F6BA9E8B1CEED03400F07504 /* ESTabBarController-swift */,
+				F6BA9EA51CEED2D900F07504 /* ESTabBarController */,
 				F6F1349B1CE5B9170034D15D /* ESTabBarControllerExample */,
 				F6F134B01CE5B9170034D15D /* ESTabBarControllerExampleTests */,
 				F6F134BB1CE5B9170034D15D /* ESTabBarControllerExampleUITests */,
@@ -381,19 +393,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6F135291CE9E09B0034D15D /* ExampleViewController.swift in Sources */,
-				F6BA9E941CEED03400F07504 /* ESTabBarItem.swift in Sources */,
+				F6BA9EB21CEED2D900F07504 /* ESTabBarItem.swift in Sources */,
 				F6C772FC1CEAEE62000E7777 /* ExampleImpliesTabBarItemContent.swift in Sources */,
 				F6F1352A1CE9E09B0034D15D /* ExampleSpreadAnimator.swift in Sources */,
 				F6C772F51CEADE92000E7777 /* ExampleBackgroundAnimator.swift in Sources */,
-				F6BA9E921CEED03400F07504 /* ESTabBarBadge.swift in Sources */,
+				F6BA9EAC1CEED2D900F07504 /* ESTabBarBadge.swift in Sources */,
 				F6F135311CE9E11D0034D15D /* ExampleBounceAnimator.swift in Sources */,
 				F6F1352E1CE9E0B70034D15D /* WebViewController.swift in Sources */,
-				F6BA9E931CEED03400F07504 /* ESTabBarController.swift in Sources */,
+				F6BA9EAF1CEED2D900F07504 /* ESTabBarController.swift in Sources */,
 				F6F1349F1CE5B9170034D15D /* ViewController.swift in Sources */,
-				F6BA9E971CEED03400F07504 /* ESTabBarItemProtocol.swift in Sources */,
+				F6BA9EBB1CEED2D900F07504 /* ESTabBarItemProtocol.swift in Sources */,
 				F6F1349D1CE5B9170034D15D /* AppDelegate.swift in Sources */,
-				F6BA9E961CEED03400F07504 /* ESTabBarItemContent.swift in Sources */,
-				F6BA9E951CEED03400F07504 /* ESTabBarItemAnimator.swift in Sources */,
+				F6BA9EB81CEED2D900F07504 /* ESTabBarItemContent.swift in Sources */,
+				F6BA9EB51CEED2D900F07504 /* ESTabBarItemAnimator.swift in Sources */,
 				F6F135281CE9E09B0034D15D /* ExampleNavigationController.swift in Sources */,
 				F6C772F31CEADD10000E7777 /* ExampleBaseAnimator.swift in Sources */,
 			);
@@ -403,7 +415,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6BA9EB31CEED2D900F07504 /* ESTabBarItem.swift in Sources */,
+				F6BA9EBC1CEED2D900F07504 /* ESTabBarItemProtocol.swift in Sources */,
+				F6BA9EB61CEED2D900F07504 /* ESTabBarItemAnimator.swift in Sources */,
+				F6BA9EB91CEED2D900F07504 /* ESTabBarItemContent.swift in Sources */,
 				F6F134B21CE5B9170034D15D /* ESTabBarControllerExampleTests.swift in Sources */,
+				F6BA9EB01CEED2D900F07504 /* ESTabBarController.swift in Sources */,
+				F6BA9EAD1CEED2D900F07504 /* ESTabBarBadge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,7 +429,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6BA9EB41CEED2D900F07504 /* ESTabBarItem.swift in Sources */,
+				F6BA9EBD1CEED2D900F07504 /* ESTabBarItemProtocol.swift in Sources */,
+				F6BA9EB71CEED2D900F07504 /* ESTabBarItemAnimator.swift in Sources */,
+				F6BA9EBA1CEED2D900F07504 /* ESTabBarItemContent.swift in Sources */,
 				F6F134BD1CE5B9170034D15D /* ESTabBarControllerExampleUITests.swift in Sources */,
+				F6BA9EB11CEED2D900F07504 /* ESTabBarController.swift in Sources */,
+				F6BA9EAE1CEED2D900F07504 /* ESTabBarBadge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
