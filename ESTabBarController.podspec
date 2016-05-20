@@ -11,6 +11,6 @@ s.authors           = { "lihao" => "lihao_ios@hotmail.com"}
 s.social_media_url  = "https://github.com/eggswift/"
 s.platform          = :ios, "8.0"
 s.source            = {:git => "https://github.com/eggswift/ESTabBarController.git", :tag => "1.0.0"}
-s.source_files      = 'ESTabBarController/*.{swift}'
+s.source_files      = 'ESTabBarController-swift/*.{swift}'
 s.requires_arc      = true
 end
