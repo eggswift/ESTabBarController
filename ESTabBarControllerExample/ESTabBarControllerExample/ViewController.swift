@@ -14,25 +14,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     let dataArray = [
         /// Common show
-        "Push system style TabBarController",
-        "Push custom TabBarController",
-        ///
+        "System style",
+        "Present style",
+        
+        /// UI level
         "Navigation contain tabBar style",
-        "TabBar contain Navigation style",
-        /// Background
-        "Background changeable style TabBarController",
-        /// Animatable
-        "Push animatable TabBarController",
-        "Present animatable TabBarController",
-        /// Irregularity
-        "Push irregularity style TabBarController",
-        "Present irregularity style TabBarController",
-        /// Highlight
-        "Highlight style",
-        /// Hijack
-        "Hijack style",
-        /// Implies
-        "Implies style"
+        "TabBar contain navigation style",
+        
+        /// Customize
+        "Bounce",
+        "Background highlight",
+        "Irregularity",
+        "Notification"
     ]
     
     override func viewDidLoad() {
@@ -76,44 +69,37 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         switch indexPath.row {
         case 0:
             systemStytle()
-            break
         case 1:
             pushTabBarStyle()
-            break
         case 2:
             naviContainTabBarStytle()
-            break
         case 3:
             tabBarContainNaviStytle()
-            break
         case 4:
-            backgroundChangeableTabBarStyle(false, highlightable: false, implies: false)
-            break
+            let vc = BouncesStyleTabBarController.init()
+            self.present(vc)
         case 5:
-            animatableTabBarStyle(true)
-            break
+            let vc = BackgroundStyleTabBarController.init()
+            self.present(vc)
         case 6:
-            animatableTabBarStyle(false)
-            break
+            let vc = IrregularityStyleTabBarController.init()
+            self.present(vc)
         case 7:
-            irregularityTabBarStyle(true, hijack: false)
-            break
-        case 8:
-            irregularityTabBarStyle(false, hijack: false)
-            break
-        case 9:
-            backgroundChangeableTabBarStyle(false, highlightable: true, implies: false)
-            break
-        case 10:
-            irregularityTabBarStyle(false, hijack: true)
-            break
-        case 11:
-            backgroundChangeableTabBarStyle(false, highlightable: false, implies: true)
-            break
+            let vc = NotificationStyleTabBarController.init()
+            self.present(vc)
         default:
             
             break
         }
+    }
+
+    func present(vc: UIViewController) {
+        let nc = ExampleNavigationController.init(rootViewController: vc)
+        nc.navigationBar.barTintColor = UIColor.init(red: 17/255.0, green: 86/255.0, blue: 136/255.0, alpha: 1.0)
+        nc.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName: UIFont.init(name: "ChalkboardSE-Bold", size: 17.0)!]
+        nc.navigationBar.tintColor = UIColor.whiteColor()
+        nc.navigationBar.shadowImage = UIImage.init()
+        self.presentViewController(nc, animated: true, completion: nil)
     }
     
 }
@@ -307,209 +293,6 @@ extension ViewController /**/ {
         vc.viewControllers = controllers
         
         self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func backgroundChangeableTabBarStyle(push: Bool, highlightable: Bool, implies: Bool) {
-        let vc = ESTabBarController.init()
-        vc.title = "Example"
-        vc.shouldHijackHandler = {
-            tabbarController, viewController, index in
-            if index == 2 {
-                return true
-            }
-            return false
-        }
-        
-        
-        vc.hijackHandler = {
-            [weak vc] tabbarController, viewController, index in
-            if index == 2 {
-                let minseconds = 0.2 * Double(NSEC_PER_SEC)
-                let dtime = dispatch_time(DISPATCH_TIME_NOW, Int64(minseconds))
-                dispatch_after(dtime, dispatch_get_main_queue() , {
-                    let v1 = ExampleViewController()
-                    let n1 = ExampleNavigationController.init(rootViewController: v1)
-                    v1.title = "Example"
-                    vc?.presentViewController(n1, animated: true, completion: nil)
-                })
-            }
-        }
-        
-        let v1          = ExampleViewController()
-        let v2          = ExampleViewController()
-        let v3          = ExampleViewController()
-        let v4          = ExampleViewController()
-        let v5          = ExampleViewController()
-        
-        let c1 = ESTabBarItemContent.init(animator: ExampleBackgroundAnimator.init())
-        let c2 = ESTabBarItemContent.init(animator: ExampleBackgroundAnimator.init())
-        let c3 = ESTabBarItemContent.init(animator: ExampleBackgroundAnimator.init(special: true))
-        let c4 = ESTabBarItemContent.init(animator: ExampleBackgroundAnimator.init())
-        let c5 = ESTabBarItemContent.init(animator: ExampleBackgroundAnimator.init())
-        
-        c1.highlightEnabled = highlightable
-        c2.highlightEnabled = highlightable
-        c3.highlightEnabled = highlightable
-        c4.highlightEnabled = highlightable
-        c5.highlightEnabled = highlightable
-        
-        v1.tabBarItem   = ESTabBarItem.init(content: c1)
-        v2.tabBarItem   = ESTabBarItem.init(content: c2)
-        if implies == false {
-            v3.tabBarItem = ESTabBarItem.init(content: c3)
-        } else {
-            v3.tabBarItem = ESTabBarItem.init(content: ExampleImpliesTabBarItemContent.init(animator: ExampleBackgroundAnimator.init(special: true)))
-        }
-        v4.tabBarItem   = ESTabBarItem.init(content: c4)
-        v5.tabBarItem   = ESTabBarItem.init(content: c5)
-        
-        v1.tabBarItem.image = UIImage.init(named: "home")
-        v2.tabBarItem.image = UIImage.init(named: "find")
-        v3.tabBarItem.image = UIImage.init(named: "photo_big")
-        v4.tabBarItem.image = UIImage.init(named: "favor")
-        v5.tabBarItem.image = UIImage.init(named: "me")
-        v1.tabBarItem.selectedImage = UIImage.init(named: "home_1")
-        v2.tabBarItem.selectedImage = UIImage.init(named: "find_1")
-        v3.tabBarItem.selectedImage = UIImage.init(named: "photo_big_1")
-        v4.tabBarItem.selectedImage = UIImage.init(named: "favor_1")
-        v5.tabBarItem.selectedImage = UIImage.init(named: "me_1")
-        
-        let controllers = [v1, v2, v3, v4, v5]
-        vc.viewControllers = controllers
-        
-        if push {
-            self.navigationController?.pushViewController(vc, animated: true)
-        } else {
-            let nc = ExampleNavigationController.init(rootViewController: vc)
-            nc.navigationBar.barTintColor = UIColor.init(red: 17/255.0, green: 86/255.0, blue: 136/255.0, alpha: 1.0)
-            nc.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName: UIFont.init(name: "ChalkboardSE-Bold", size: 17.0)!]
-            nc.navigationBar.tintColor = UIColor.whiteColor()
-            nc.navigationBar.shadowImage = UIImage.init()
-            self.presentViewController(nc, animated: true) {
-                
-            }
-        }
-    }
-    
-    func animatableTabBarStyle(push: Bool) {
-        let vc = ESTabBarController.init()
-        vc.title = "Example"
-        
-        let v1          = ExampleViewController()
-        let v2          = ExampleViewController()
-        let v3          = ExampleViewController()
-        let v4          = ExampleViewController()
-        let v5          = ExampleViewController()
-        
-        v1.tabBarItem   = ESTabBarItem.init(content: ESTabBarItemContent.init(animator: ExampleBounceAnimator.init()))
-        v2.tabBarItem   = ESTabBarItem.init(content: ESTabBarItemContent.init(animator: ExampleBounceAnimator.init()))
-        v3.tabBarItem   = ESTabBarItem.init(content: ESTabBarItemContent.init(animator: ExampleBounceAnimator.init()))
-        v4.tabBarItem   = ESTabBarItem.init(content: ESTabBarItemContent.init(animator: ExampleBounceAnimator.init()))
-        v5.tabBarItem   = ESTabBarItem.init(content: ESTabBarItemContent.init(animator: ExampleBounceAnimator.init()))
-        
-        v1.tabBarItem.image = UIImage.init(named: "home")
-        v2.tabBarItem.image = UIImage.init(named: "find")
-        v3.tabBarItem.image = UIImage.init(named: "photo")
-        v4.tabBarItem.image = UIImage.init(named: "favor")
-        v5.tabBarItem.image = UIImage.init(named: "me")
-        v1.tabBarItem.selectedImage = UIImage.init(named: "home_1")
-        v2.tabBarItem.selectedImage = UIImage.init(named: "find_1")
-        v3.tabBarItem.selectedImage = UIImage.init(named: "photo_1")
-        v4.tabBarItem.selectedImage = UIImage.init(named: "favor_1")
-        v5.tabBarItem.selectedImage = UIImage.init(named: "me_1")
-        
-        v1.title        = "Home"
-        v2.title        = "Find"
-        v3.title        = "Photo"
-        v4.title        = "List"
-        v5.title        = "Me"
-        
-        let controllers = [v1, v2, v3, v4, v5]
-        vc.viewControllers = controllers
-        
-        if push {
-            self.navigationController?.pushViewController(vc, animated: true)
-        } else {
-            let nc = ExampleNavigationController.init(rootViewController: vc)
-            self.presentViewController(nc, animated: true) {
-                
-            }
-        }
-    }
-    
-    func irregularityTabBarStyle(push: Bool, hijack: Bool) {
-        let vc = ESTabBarController.init()
-        vc.tabBar.translucent = false
-        vc.tabBar.barTintColor = UIColor.init(white: 220 / 255.0, alpha: 1.0)
-        vc.tabBar.shadowImage = UIImage(named: "transparent")
-        vc.tabBar.backgroundImage = UIImage(named: "background")
-        vc.title = "Example"
-        
-        vc.shouldHijackHandler = {
-            tabbarController, viewController, index in
-            if index == 2 {
-                return true
-            }
-            return false
-        }
-        
-        
-        vc.hijackHandler = {
-            [weak vc] tabbarController, viewController, index in
-            if index == 2 {
-                let minseconds = 0.25 * Double(NSEC_PER_SEC)
-                let dtime = dispatch_time(DISPATCH_TIME_NOW, Int64(minseconds))
-                dispatch_after(dtime, dispatch_get_main_queue() , {
-                    let v1 = ExampleViewController()
-                    let n1 = ExampleNavigationController.init(rootViewController: v1)
-                    v1.title = "Example"
-                    vc?.presentViewController(n1, animated: true, completion: nil)
-                })
-            }
-        }
-        
-        let v1          = ExampleViewController()
-        let v2          = ExampleViewController()
-        let v3          = ExampleViewController()
-        let v4          = ExampleViewController()
-        let v5          = ExampleViewController()
-        
-        v1.tabBarItem   = ESTabBarItem.init(content: ESTabBarItemContent.init(animator: ExampleBounceAnimator.init()))
-        v2.tabBarItem   = ESTabBarItem.init(content: ESTabBarItemContent.init(animator: ExampleBounceAnimator.init()))
-        
-        let content3 = ESTabBarItemContent.init(animator: ExampleSpreadAnimator.init())
-        content3.imageView.backgroundColor = UIColor.whiteColor()
-        content3.imageView.layer.borderWidth = 1.5
-        content3.imageView.layer.borderColor = UIColor.init(white: 235 / 255.0, alpha: 1.0).CGColor
-        content3.imageView.layer.cornerRadius = 35
-        content3.insets = UIEdgeInsetsMake(-32, 0, 0, 0)
-        v3.tabBarItem   = ESTabBarItem.init(content: content3)
-        
-        v4.tabBarItem   = ESTabBarItem.init(content: ESTabBarItemContent.init(animator: ExampleBounceAnimator.init()))
-        v5.tabBarItem   = ESTabBarItem.init(content: ESTabBarItemContent.init(animator: ExampleBounceAnimator.init()))
-        
-        v1.tabBarItem.image = UIImage.init(named: "home")
-        v2.tabBarItem.image = UIImage.init(named: "find")
-        v3.tabBarItem.image = UIImage.init(named: "photo_verybig")
-        v4.tabBarItem.image = UIImage.init(named: "favor")
-        v5.tabBarItem.image = UIImage.init(named: "me")
-        v1.tabBarItem.selectedImage = UIImage.init(named: "home_1")
-        v2.tabBarItem.selectedImage = UIImage.init(named: "find_1")
-        v3.tabBarItem.selectedImage = UIImage.init(named: "photo_verybig_1")
-        v4.tabBarItem.selectedImage = UIImage.init(named: "favor_1")
-        v5.tabBarItem.selectedImage = UIImage.init(named: "me_1")
-
-        let controllers = [v1, v2, v3, v4, v5]
-        vc.viewControllers = controllers
-        
-        if push {
-            self.navigationController?.pushViewController(vc, animated: true)
-        } else {
-            let nc = ExampleNavigationController.init(rootViewController: vc)
-            self.presentViewController(nc, animated: true) {
-                
-            }
-        }
     }
     
 }

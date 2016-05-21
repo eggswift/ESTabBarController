@@ -10,30 +10,59 @@
 		F6BA9E851CEEA99500F07504 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BA9E831CEEA99500F07504 /* pop.framework */; };
 		F6BA9E861CEEA99500F07504 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BA9E831CEEA99500F07504 /* pop.framework */; };
 		F6BA9E871CEEA99600F07504 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BA9E831CEEA99500F07504 /* pop.framework */; };
-		F6BA9E881CEEA99600F07504 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BA9E841CEEA99500F07504 /* SnapKit.framework */; };
-		F6BA9E891CEEA99600F07504 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BA9E841CEEA99500F07504 /* SnapKit.framework */; };
-		F6BA9E8A1CEEA99600F07504 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BA9E841CEEA99500F07504 /* SnapKit.framework */; };
-		F6BA9EFF1CEEE12000F07504 /* ESTabBarBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EF81CEEE12000F07504 /* ESTabBarBadge.swift */; };
-		F6BA9F001CEEE12000F07504 /* ESTabBarBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EF81CEEE12000F07504 /* ESTabBarBadge.swift */; };
-		F6BA9F011CEEE12000F07504 /* ESTabBarBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EF81CEEE12000F07504 /* ESTabBarBadge.swift */; };
-		F6BA9F021CEEE12000F07504 /* ESTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EFA1CEEE12000F07504 /* ESTabBarController.swift */; };
-		F6BA9F031CEEE12000F07504 /* ESTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EFA1CEEE12000F07504 /* ESTabBarController.swift */; };
-		F6BA9F041CEEE12000F07504 /* ESTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EFA1CEEE12000F07504 /* ESTabBarController.swift */; };
-		F6BA9F051CEEE12000F07504 /* ESTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EFB1CEEE12000F07504 /* ESTabBarItem.swift */; };
-		F6BA9F061CEEE12000F07504 /* ESTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EFB1CEEE12000F07504 /* ESTabBarItem.swift */; };
-		F6BA9F071CEEE12000F07504 /* ESTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EFB1CEEE12000F07504 /* ESTabBarItem.swift */; };
-		F6BA9F081CEEE12000F07504 /* ESTabBarItemAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EFC1CEEE12000F07504 /* ESTabBarItemAnimator.swift */; };
-		F6BA9F091CEEE12000F07504 /* ESTabBarItemAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EFC1CEEE12000F07504 /* ESTabBarItemAnimator.swift */; };
-		F6BA9F0A1CEEE12000F07504 /* ESTabBarItemAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EFC1CEEE12000F07504 /* ESTabBarItemAnimator.swift */; };
-		F6BA9F0B1CEEE12000F07504 /* ESTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EFD1CEEE12000F07504 /* ESTabBarItemContent.swift */; };
-		F6BA9F0C1CEEE12000F07504 /* ESTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EFD1CEEE12000F07504 /* ESTabBarItemContent.swift */; };
-		F6BA9F0D1CEEE12000F07504 /* ESTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EFD1CEEE12000F07504 /* ESTabBarItemContent.swift */; };
-		F6BA9F0E1CEEE12000F07504 /* ESTabBarItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EFE1CEEE12000F07504 /* ESTabBarItemProtocol.swift */; };
-		F6BA9F0F1CEEE12000F07504 /* ESTabBarItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EFE1CEEE12000F07504 /* ESTabBarItemProtocol.swift */; };
-		F6BA9F101CEEE12000F07504 /* ESTabBarItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BA9EFE1CEEE12000F07504 /* ESTabBarItemProtocol.swift */; };
+		F6C1734A1CF00374006C2501 /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F6BA9E831CEEA99500F07504 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F6C1734F1CF02096006C2501 /* BackgroundStyleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1734E1CF02096006C2501 /* BackgroundStyleTabBarController.swift */; };
+		F6C173501CF02096006C2501 /* BackgroundStyleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1734E1CF02096006C2501 /* BackgroundStyleTabBarController.swift */; };
+		F6C173511CF02096006C2501 /* BackgroundStyleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1734E1CF02096006C2501 /* BackgroundStyleTabBarController.swift */; };
+		F6C173541CF021F2006C2501 /* ExampleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173521CF021F2006C2501 /* ExampleNavigationController.swift */; };
+		F6C173551CF021F2006C2501 /* ExampleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173521CF021F2006C2501 /* ExampleNavigationController.swift */; };
+		F6C173561CF021F2006C2501 /* ExampleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173521CF021F2006C2501 /* ExampleNavigationController.swift */; };
+		F6C173571CF021F2006C2501 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173531CF021F2006C2501 /* ExampleViewController.swift */; };
+		F6C173581CF021F2006C2501 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173531CF021F2006C2501 /* ExampleViewController.swift */; };
+		F6C173591CF021F2006C2501 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173531CF021F2006C2501 /* ExampleViewController.swift */; };
+		F6C1735B1CF02219006C2501 /* BackgroundStyleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1735A1CF02219006C2501 /* BackgroundStyleAnimator.swift */; };
+		F6C1735C1CF02219006C2501 /* BackgroundStyleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1735A1CF02219006C2501 /* BackgroundStyleAnimator.swift */; };
+		F6C1735D1CF02219006C2501 /* BackgroundStyleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1735A1CF02219006C2501 /* BackgroundStyleAnimator.swift */; };
+		F6C173651CF022DF006C2501 /* ESTabBarBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1735F1CF022DF006C2501 /* ESTabBarBadge.swift */; };
+		F6C173661CF022DF006C2501 /* ESTabBarBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1735F1CF022DF006C2501 /* ESTabBarBadge.swift */; };
+		F6C173671CF022DF006C2501 /* ESTabBarBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1735F1CF022DF006C2501 /* ESTabBarBadge.swift */; };
+		F6C173681CF022DF006C2501 /* ESTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173601CF022DF006C2501 /* ESTabBarController.swift */; };
+		F6C173691CF022DF006C2501 /* ESTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173601CF022DF006C2501 /* ESTabBarController.swift */; };
+		F6C1736A1CF022DF006C2501 /* ESTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173601CF022DF006C2501 /* ESTabBarController.swift */; };
+		F6C1736B1CF022DF006C2501 /* ESTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173611CF022DF006C2501 /* ESTabBarItem.swift */; };
+		F6C1736C1CF022DF006C2501 /* ESTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173611CF022DF006C2501 /* ESTabBarItem.swift */; };
+		F6C1736D1CF022DF006C2501 /* ESTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173611CF022DF006C2501 /* ESTabBarItem.swift */; };
+		F6C1736E1CF022DF006C2501 /* ESTabBarItemAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173621CF022DF006C2501 /* ESTabBarItemAnimator.swift */; };
+		F6C1736F1CF022DF006C2501 /* ESTabBarItemAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173621CF022DF006C2501 /* ESTabBarItemAnimator.swift */; };
+		F6C173701CF022DF006C2501 /* ESTabBarItemAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173621CF022DF006C2501 /* ESTabBarItemAnimator.swift */; };
+		F6C173711CF022DF006C2501 /* ESTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173631CF022DF006C2501 /* ESTabBarItemContent.swift */; };
+		F6C173721CF022DF006C2501 /* ESTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173631CF022DF006C2501 /* ESTabBarItemContent.swift */; };
+		F6C173731CF022DF006C2501 /* ESTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173631CF022DF006C2501 /* ESTabBarItemContent.swift */; };
+		F6C173741CF022DF006C2501 /* ESTabBarItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173641CF022DF006C2501 /* ESTabBarItemProtocol.swift */; };
+		F6C173751CF022DF006C2501 /* ESTabBarItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173641CF022DF006C2501 /* ESTabBarItemProtocol.swift */; };
+		F6C173761CF022DF006C2501 /* ESTabBarItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173641CF022DF006C2501 /* ESTabBarItemProtocol.swift */; };
+		F6C173781CF02470006C2501 /* BackgroundStyleTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173771CF02470006C2501 /* BackgroundStyleTabBarItemContent.swift */; };
+		F6C173791CF02470006C2501 /* BackgroundStyleTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173771CF02470006C2501 /* BackgroundStyleTabBarItemContent.swift */; };
+		F6C1737A1CF02470006C2501 /* BackgroundStyleTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173771CF02470006C2501 /* BackgroundStyleTabBarItemContent.swift */; };
+		F6C1737D1CF02611006C2501 /* BouncesStyleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1737C1CF02611006C2501 /* BouncesStyleTabBarController.swift */; };
+		F6C1737E1CF02611006C2501 /* BouncesStyleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1737C1CF02611006C2501 /* BouncesStyleTabBarController.swift */; };
+		F6C1737F1CF02611006C2501 /* BouncesStyleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1737C1CF02611006C2501 /* BouncesStyleTabBarController.swift */; };
+		F6C173811CF02634006C2501 /* BouncesStyleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173801CF02634006C2501 /* BouncesStyleAnimator.swift */; };
+		F6C173821CF02634006C2501 /* BouncesStyleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173801CF02634006C2501 /* BouncesStyleAnimator.swift */; };
+		F6C173831CF02634006C2501 /* BouncesStyleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173801CF02634006C2501 /* BouncesStyleAnimator.swift */; };
+		F6C173871CF027AA006C2501 /* IrregularityStyleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173851CF027AA006C2501 /* IrregularityStyleAnimator.swift */; };
+		F6C173881CF027AA006C2501 /* IrregularityStyleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173851CF027AA006C2501 /* IrregularityStyleAnimator.swift */; };
+		F6C173891CF027AA006C2501 /* IrregularityStyleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173851CF027AA006C2501 /* IrregularityStyleAnimator.swift */; };
+		F6C1738A1CF027AA006C2501 /* IrregularityStyleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173861CF027AA006C2501 /* IrregularityStyleTabBarController.swift */; };
+		F6C1738B1CF027AA006C2501 /* IrregularityStyleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173861CF027AA006C2501 /* IrregularityStyleTabBarController.swift */; };
+		F6C1738C1CF027AA006C2501 /* IrregularityStyleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C173861CF027AA006C2501 /* IrregularityStyleTabBarController.swift */; };
+		F6C173941CF03B8B006C2501 /* NotificationStyleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1738F1CF03B8B006C2501 /* NotificationStyleTabBarController.swift */; };
+		F6C173951CF03B8B006C2501 /* NotificationStyleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1738F1CF03B8B006C2501 /* NotificationStyleTabBarController.swift */; };
+		F6C173961CF03B8B006C2501 /* NotificationStyleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1738F1CF03B8B006C2501 /* NotificationStyleTabBarController.swift */; };
+		F6C1739B1CF04B51006C2501 /* NotificationStyleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1739A1CF04B51006C2501 /* NotificationStyleAnimator.swift */; };
+		F6C1739C1CF04B51006C2501 /* NotificationStyleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1739A1CF04B51006C2501 /* NotificationStyleAnimator.swift */; };
+		F6C1739D1CF04B51006C2501 /* NotificationStyleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1739A1CF04B51006C2501 /* NotificationStyleAnimator.swift */; };
 		F6C772F31CEADD10000E7777 /* ExampleBaseAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C772F21CEADD10000E7777 /* ExampleBaseAnimator.swift */; };
-		F6C772F51CEADE92000E7777 /* ExampleBackgroundAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C772F41CEADE92000E7777 /* ExampleBackgroundAnimator.swift */; };
-		F6C772FC1CEAEE62000E7777 /* ExampleImpliesTabBarItemContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C772FB1CEAEE62000E7777 /* ExampleImpliesTabBarItemContent.swift */; };
 		F6F1349D1CE5B9170034D15D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F1349C1CE5B9170034D15D /* AppDelegate.swift */; };
 		F6F1349F1CE5B9170034D15D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F1349E1CE5B9170034D15D /* ViewController.swift */; };
 		F6F134A21CE5B9170034D15D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F134A01CE5B9170034D15D /* Main.storyboard */; };
@@ -41,12 +70,9 @@
 		F6F134A71CE5B9170034D15D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F134A51CE5B9170034D15D /* LaunchScreen.storyboard */; };
 		F6F134B21CE5B9170034D15D /* ESTabBarControllerExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F134B11CE5B9170034D15D /* ESTabBarControllerExampleTests.swift */; };
 		F6F134BD1CE5B9170034D15D /* ESTabBarControllerExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F134BC1CE5B9170034D15D /* ESTabBarControllerExampleUITests.swift */; };
-		F6F135281CE9E09B0034D15D /* ExampleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F135241CE9E09B0034D15D /* ExampleNavigationController.swift */; };
-		F6F135291CE9E09B0034D15D /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F135251CE9E09B0034D15D /* ExampleViewController.swift */; };
 		F6F1352A1CE9E09B0034D15D /* ExampleSpreadAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F135271CE9E09B0034D15D /* ExampleSpreadAnimator.swift */; };
 		F6F1352E1CE9E0B70034D15D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F1352C1CE9E0B70034D15D /* WebViewController.swift */; };
 		F6F1352F1CE9E0B70034D15D /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6F1352D1CE9E0B70034D15D /* WebViewController.xib */; };
-		F6F135311CE9E11D0034D15D /* ExampleBounceAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F135301CE9E11D0034D15D /* ExampleBounceAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +99,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F6C1734A1CF00374006C2501 /* pop.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,16 +108,24 @@
 
 /* Begin PBXFileReference section */
 		F6BA9E831CEEA99500F07504 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pop.framework; sourceTree = "<group>"; };
-		F6BA9E841CEEA99500F07504 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SnapKit.framework; sourceTree = "<group>"; };
-		F6BA9EF81CEEE12000F07504 /* ESTabBarBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarBadge.swift; sourceTree = "<group>"; };
-		F6BA9EFA1CEEE12000F07504 /* ESTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarController.swift; sourceTree = "<group>"; };
-		F6BA9EFB1CEEE12000F07504 /* ESTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItem.swift; sourceTree = "<group>"; };
-		F6BA9EFC1CEEE12000F07504 /* ESTabBarItemAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemAnimator.swift; sourceTree = "<group>"; };
-		F6BA9EFD1CEEE12000F07504 /* ESTabBarItemContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemContent.swift; sourceTree = "<group>"; };
-		F6BA9EFE1CEEE12000F07504 /* ESTabBarItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemProtocol.swift; sourceTree = "<group>"; };
+		F6C1734E1CF02096006C2501 /* BackgroundStyleTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundStyleTabBarController.swift; sourceTree = "<group>"; };
+		F6C173521CF021F2006C2501 /* ExampleNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleNavigationController.swift; sourceTree = "<group>"; };
+		F6C173531CF021F2006C2501 /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		F6C1735A1CF02219006C2501 /* BackgroundStyleAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundStyleAnimator.swift; sourceTree = "<group>"; };
+		F6C1735F1CF022DF006C2501 /* ESTabBarBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarBadge.swift; sourceTree = "<group>"; };
+		F6C173601CF022DF006C2501 /* ESTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarController.swift; sourceTree = "<group>"; };
+		F6C173611CF022DF006C2501 /* ESTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItem.swift; sourceTree = "<group>"; };
+		F6C173621CF022DF006C2501 /* ESTabBarItemAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemAnimator.swift; sourceTree = "<group>"; };
+		F6C173631CF022DF006C2501 /* ESTabBarItemContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemContent.swift; sourceTree = "<group>"; };
+		F6C173641CF022DF006C2501 /* ESTabBarItemProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemProtocol.swift; sourceTree = "<group>"; };
+		F6C173771CF02470006C2501 /* BackgroundStyleTabBarItemContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundStyleTabBarItemContent.swift; sourceTree = "<group>"; };
+		F6C1737C1CF02611006C2501 /* BouncesStyleTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncesStyleTabBarController.swift; sourceTree = "<group>"; };
+		F6C173801CF02634006C2501 /* BouncesStyleAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncesStyleAnimator.swift; sourceTree = "<group>"; };
+		F6C173851CF027AA006C2501 /* IrregularityStyleAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IrregularityStyleAnimator.swift; sourceTree = "<group>"; };
+		F6C173861CF027AA006C2501 /* IrregularityStyleTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IrregularityStyleTabBarController.swift; sourceTree = "<group>"; };
+		F6C1738F1CF03B8B006C2501 /* NotificationStyleTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationStyleTabBarController.swift; sourceTree = "<group>"; };
+		F6C1739A1CF04B51006C2501 /* NotificationStyleAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationStyleAnimator.swift; sourceTree = "<group>"; };
 		F6C772F21CEADD10000E7777 /* ExampleBaseAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBaseAnimator.swift; sourceTree = "<group>"; };
-		F6C772F41CEADE92000E7777 /* ExampleBackgroundAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBackgroundAnimator.swift; sourceTree = "<group>"; };
-		F6C772FB1CEAEE62000E7777 /* ExampleImpliesTabBarItemContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleImpliesTabBarItemContent.swift; sourceTree = "<group>"; };
 		F6F134991CE5B9170034D15D /* ESTabBarControllerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ESTabBarControllerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F1349C1CE5B9170034D15D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6F1349E1CE5B9170034D15D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,12 +139,9 @@
 		F6F134B81CE5B9170034D15D /* ESTabBarControllerExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ESTabBarControllerExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6F134BC1CE5B9170034D15D /* ESTabBarControllerExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESTabBarControllerExampleUITests.swift; sourceTree = "<group>"; };
 		F6F134BE1CE5B9170034D15D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F6F135241CE9E09B0034D15D /* ExampleNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleNavigationController.swift; sourceTree = "<group>"; };
-		F6F135251CE9E09B0034D15D /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		F6F135271CE9E09B0034D15D /* ExampleSpreadAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleSpreadAnimator.swift; sourceTree = "<group>"; };
 		F6F1352C1CE9E0B70034D15D /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F6F1352D1CE9E0B70034D15D /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
-		F6F135301CE9E11D0034D15D /* ExampleBounceAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBounceAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +150,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6BA9E851CEEA99500F07504 /* pop.framework in Frameworks */,
-				F6BA9E881CEEA99600F07504 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +158,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6BA9E861CEEA99500F07504 /* pop.framework in Frameworks */,
-				F6BA9E891CEEA99600F07504 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,39 +166,67 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6BA9E871CEEA99600F07504 /* pop.framework in Frameworks */,
-				F6BA9E8A1CEEA99600F07504 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F6BA9EF71CEEE12000F07504 /* ESTabBarController */ = {
+		F6C1734D1CF02080006C2501 /* Background */ = {
 			isa = PBXGroup;
 			children = (
-				F6BA9EF81CEEE12000F07504 /* ESTabBarBadge.swift */,
-				F6BA9EFA1CEEE12000F07504 /* ESTabBarController.swift */,
-				F6BA9EFB1CEEE12000F07504 /* ESTabBarItem.swift */,
-				F6BA9EFC1CEEE12000F07504 /* ESTabBarItemAnimator.swift */,
-				F6BA9EFD1CEEE12000F07504 /* ESTabBarItemContent.swift */,
-				F6BA9EFE1CEEE12000F07504 /* ESTabBarItemProtocol.swift */,
+				F6C1734E1CF02096006C2501 /* BackgroundStyleTabBarController.swift */,
+				F6C1735A1CF02219006C2501 /* BackgroundStyleAnimator.swift */,
+				F6C173771CF02470006C2501 /* BackgroundStyleTabBarItemContent.swift */,
+			);
+			path = Background;
+			sourceTree = "<group>";
+		};
+		F6C1735E1CF022DF006C2501 /* ESTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1735F1CF022DF006C2501 /* ESTabBarBadge.swift */,
+				F6C173601CF022DF006C2501 /* ESTabBarController.swift */,
+				F6C173611CF022DF006C2501 /* ESTabBarItem.swift */,
+				F6C173621CF022DF006C2501 /* ESTabBarItemAnimator.swift */,
+				F6C173631CF022DF006C2501 /* ESTabBarItemContent.swift */,
+				F6C173641CF022DF006C2501 /* ESTabBarItemProtocol.swift */,
 			);
 			name = ESTabBarController;
 			path = ../ESTabBarController;
 			sourceTree = "<group>";
 		};
-		F6C772FA1CEAEE62000E7777 /* Content */ = {
+		F6C1737B1CF02605006C2501 /* Bounces */ = {
 			isa = PBXGroup;
 			children = (
-				F6C772FB1CEAEE62000E7777 /* ExampleImpliesTabBarItemContent.swift */,
+				F6C1737C1CF02611006C2501 /* BouncesStyleTabBarController.swift */,
+				F6C173801CF02634006C2501 /* BouncesStyleAnimator.swift */,
 			);
-			path = Content;
+			path = Bounces;
+			sourceTree = "<group>";
+		};
+		F6C173841CF02789006C2501 /* Irregularity */ = {
+			isa = PBXGroup;
+			children = (
+				F6C173851CF027AA006C2501 /* IrregularityStyleAnimator.swift */,
+				F6C173861CF027AA006C2501 /* IrregularityStyleTabBarController.swift */,
+			);
+			path = Irregularity;
+			sourceTree = "<group>";
+		};
+		F6C1738D1CF03B67006C2501 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1738F1CF03B8B006C2501 /* NotificationStyleTabBarController.swift */,
+				F6C1739A1CF04B51006C2501 /* NotificationStyleAnimator.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		F6F134901CE5B9170034D15D = {
 			isa = PBXGroup;
 			children = (
-				F6BA9EF71CEEE12000F07504 /* ESTabBarController */,
+				F6C1735E1CF022DF006C2501 /* ESTabBarController */,
 				F6F1349B1CE5B9170034D15D /* ESTabBarControllerExample */,
 				F6F134B01CE5B9170034D15D /* ESTabBarControllerExampleTests */,
 				F6F134BB1CE5B9170034D15D /* ESTabBarControllerExampleUITests */,
@@ -190,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				F6F135231CE9E09B0034D15D /* Example */,
-				F6C772FA1CEAEE62000E7777 /* Content */,
 				F6F135261CE9E09B0034D15D /* Animator */,
 				F6F1352B1CE9E0B70034D15D /* Me */,
 				F6F1349C1CE5B9170034D15D /* AppDelegate.swift */,
@@ -226,7 +283,6 @@
 			isa = PBXGroup;
 			children = (
 				F6BA9E831CEEA99500F07504 /* pop.framework */,
-				F6BA9E841CEEA99500F07504 /* SnapKit.framework */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -234,8 +290,12 @@
 		F6F135231CE9E09B0034D15D /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				F6F135241CE9E09B0034D15D /* ExampleNavigationController.swift */,
-				F6F135251CE9E09B0034D15D /* ExampleViewController.swift */,
+				F6C173531CF021F2006C2501 /* ExampleViewController.swift */,
+				F6C173521CF021F2006C2501 /* ExampleNavigationController.swift */,
+				F6C1738D1CF03B67006C2501 /* Notification */,
+				F6C1734D1CF02080006C2501 /* Background */,
+				F6C1737B1CF02605006C2501 /* Bounces */,
+				F6C173841CF02789006C2501 /* Irregularity */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -244,9 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				F6C772F21CEADD10000E7777 /* ExampleBaseAnimator.swift */,
-				F6C772F41CEADE92000E7777 /* ExampleBackgroundAnimator.swift */,
 				F6F135271CE9E09B0034D15D /* ExampleSpreadAnimator.swift */,
-				F6F135301CE9E11D0034D15D /* ExampleBounceAnimator.swift */,
 			);
 			path = Animator;
 			sourceTree = "<group>";
@@ -393,21 +451,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6F135291CE9E09B0034D15D /* ExampleViewController.swift in Sources */,
-				F6BA9F051CEEE12000F07504 /* ESTabBarItem.swift in Sources */,
-				F6C772FC1CEAEE62000E7777 /* ExampleImpliesTabBarItemContent.swift in Sources */,
+				F6C1736B1CF022DF006C2501 /* ESTabBarItem.swift in Sources */,
+				F6C173941CF03B8B006C2501 /* NotificationStyleTabBarController.swift in Sources */,
+				F6C1737D1CF02611006C2501 /* BouncesStyleTabBarController.swift in Sources */,
+				F6C173781CF02470006C2501 /* BackgroundStyleTabBarItemContent.swift in Sources */,
+				F6C173711CF022DF006C2501 /* ESTabBarItemContent.swift in Sources */,
+				F6C1735B1CF02219006C2501 /* BackgroundStyleAnimator.swift in Sources */,
 				F6F1352A1CE9E09B0034D15D /* ExampleSpreadAnimator.swift in Sources */,
-				F6C772F51CEADE92000E7777 /* ExampleBackgroundAnimator.swift in Sources */,
-				F6BA9EFF1CEEE12000F07504 /* ESTabBarBadge.swift in Sources */,
-				F6F135311CE9E11D0034D15D /* ExampleBounceAnimator.swift in Sources */,
+				F6C173541CF021F2006C2501 /* ExampleNavigationController.swift in Sources */,
+				F6C173741CF022DF006C2501 /* ESTabBarItemProtocol.swift in Sources */,
+				F6C173871CF027AA006C2501 /* IrregularityStyleAnimator.swift in Sources */,
+				F6C1736E1CF022DF006C2501 /* ESTabBarItemAnimator.swift in Sources */,
+				F6C1739B1CF04B51006C2501 /* NotificationStyleAnimator.swift in Sources */,
+				F6C1738A1CF027AA006C2501 /* IrregularityStyleTabBarController.swift in Sources */,
+				F6C173681CF022DF006C2501 /* ESTabBarController.swift in Sources */,
 				F6F1352E1CE9E0B70034D15D /* WebViewController.swift in Sources */,
-				F6BA9F021CEEE12000F07504 /* ESTabBarController.swift in Sources */,
+				F6C1734F1CF02096006C2501 /* BackgroundStyleTabBarController.swift in Sources */,
 				F6F1349F1CE5B9170034D15D /* ViewController.swift in Sources */,
-				F6BA9F0E1CEEE12000F07504 /* ESTabBarItemProtocol.swift in Sources */,
+				F6C173811CF02634006C2501 /* BouncesStyleAnimator.swift in Sources */,
 				F6F1349D1CE5B9170034D15D /* AppDelegate.swift in Sources */,
-				F6BA9F0B1CEEE12000F07504 /* ESTabBarItemContent.swift in Sources */,
-				F6BA9F081CEEE12000F07504 /* ESTabBarItemAnimator.swift in Sources */,
-				F6F135281CE9E09B0034D15D /* ExampleNavigationController.swift in Sources */,
+				F6C173651CF022DF006C2501 /* ESTabBarBadge.swift in Sources */,
+				F6C173571CF021F2006C2501 /* ExampleViewController.swift in Sources */,
 				F6C772F31CEADD10000E7777 /* ExampleBaseAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,13 +480,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6BA9F061CEEE12000F07504 /* ESTabBarItem.swift in Sources */,
-				F6BA9F0F1CEEE12000F07504 /* ESTabBarItemProtocol.swift in Sources */,
-				F6BA9F091CEEE12000F07504 /* ESTabBarItemAnimator.swift in Sources */,
-				F6BA9F0C1CEEE12000F07504 /* ESTabBarItemContent.swift in Sources */,
+				F6C173951CF03B8B006C2501 /* NotificationStyleTabBarController.swift in Sources */,
+				F6C1736F1CF022DF006C2501 /* ESTabBarItemAnimator.swift in Sources */,
+				F6C1736C1CF022DF006C2501 /* ESTabBarItem.swift in Sources */,
+				F6C173751CF022DF006C2501 /* ESTabBarItemProtocol.swift in Sources */,
+				F6C173501CF02096006C2501 /* BackgroundStyleTabBarController.swift in Sources */,
+				F6C173691CF022DF006C2501 /* ESTabBarController.swift in Sources */,
+				F6C1735C1CF02219006C2501 /* BackgroundStyleAnimator.swift in Sources */,
+				F6C1738B1CF027AA006C2501 /* IrregularityStyleTabBarController.swift in Sources */,
 				F6F134B21CE5B9170034D15D /* ESTabBarControllerExampleTests.swift in Sources */,
-				F6BA9F031CEEE12000F07504 /* ESTabBarController.swift in Sources */,
-				F6BA9F001CEEE12000F07504 /* ESTabBarBadge.swift in Sources */,
+				F6C173721CF022DF006C2501 /* ESTabBarItemContent.swift in Sources */,
+				F6C173821CF02634006C2501 /* BouncesStyleAnimator.swift in Sources */,
+				F6C173791CF02470006C2501 /* BackgroundStyleTabBarItemContent.swift in Sources */,
+				F6C173661CF022DF006C2501 /* ESTabBarBadge.swift in Sources */,
+				F6C173881CF027AA006C2501 /* IrregularityStyleAnimator.swift in Sources */,
+				F6C173551CF021F2006C2501 /* ExampleNavigationController.swift in Sources */,
+				F6C1739C1CF04B51006C2501 /* NotificationStyleAnimator.swift in Sources */,
+				F6C173581CF021F2006C2501 /* ExampleViewController.swift in Sources */,
+				F6C1737E1CF02611006C2501 /* BouncesStyleTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,13 +505,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6BA9F071CEEE12000F07504 /* ESTabBarItem.swift in Sources */,
-				F6BA9F101CEEE12000F07504 /* ESTabBarItemProtocol.swift in Sources */,
-				F6BA9F0A1CEEE12000F07504 /* ESTabBarItemAnimator.swift in Sources */,
-				F6BA9F0D1CEEE12000F07504 /* ESTabBarItemContent.swift in Sources */,
+				F6C173961CF03B8B006C2501 /* NotificationStyleTabBarController.swift in Sources */,
+				F6C173701CF022DF006C2501 /* ESTabBarItemAnimator.swift in Sources */,
+				F6C1736D1CF022DF006C2501 /* ESTabBarItem.swift in Sources */,
+				F6C173761CF022DF006C2501 /* ESTabBarItemProtocol.swift in Sources */,
+				F6C173511CF02096006C2501 /* BackgroundStyleTabBarController.swift in Sources */,
+				F6C1736A1CF022DF006C2501 /* ESTabBarController.swift in Sources */,
+				F6C1735D1CF02219006C2501 /* BackgroundStyleAnimator.swift in Sources */,
+				F6C1738C1CF027AA006C2501 /* IrregularityStyleTabBarController.swift in Sources */,
 				F6F134BD1CE5B9170034D15D /* ESTabBarControllerExampleUITests.swift in Sources */,
-				F6BA9F041CEEE12000F07504 /* ESTabBarController.swift in Sources */,
-				F6BA9F011CEEE12000F07504 /* ESTabBarBadge.swift in Sources */,
+				F6C173731CF022DF006C2501 /* ESTabBarItemContent.swift in Sources */,
+				F6C173831CF02634006C2501 /* BouncesStyleAnimator.swift in Sources */,
+				F6C1737A1CF02470006C2501 /* BackgroundStyleTabBarItemContent.swift in Sources */,
+				F6C173671CF022DF006C2501 /* ESTabBarBadge.swift in Sources */,
+				F6C173891CF027AA006C2501 /* IrregularityStyleAnimator.swift in Sources */,
+				F6C173561CF021F2006C2501 /* ExampleNavigationController.swift in Sources */,
+				F6C1739D1CF04B51006C2501 /* NotificationStyleAnimator.swift in Sources */,
+				F6C173591CF021F2006C2501 /* ExampleViewController.swift in Sources */,
+				F6C1737F1CF02611006C2501 /* BouncesStyleTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

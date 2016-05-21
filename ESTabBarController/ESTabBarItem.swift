@@ -89,51 +89,18 @@ public class ESTabBarItem: UITabBarItem {
 
 extension ESTabBarItem /* BadgeExtension */ {
     
+    /// Support value: nil or "" or "xx", 
+    /// if value > 99, set "99+"
+    /// if value > "xx...", set "xx."
     override public var badgeValue: String? {
         get {
             return badge?.badgeValue ?? nil
         }
         set(newValue) {
-            showBadge(badgeValue: newValue)
+            self.content?.badgeValue = newValue
         }
     }
-    
-    /// 小红点
-    public func showBadge() {
-        guard let _ = badge else {
-            badge = ESTabBarBadge.init(frame: CGRect.zero, type: .Default)
-            if let content = content {
-                content.addSubview(badge!)
-            }
-            return
-        }
-        badgeValue = ""
-    }
-    
-    /// 带数字的红点
-    public func showBadge(badgeValue value: String?) {
-        guard let _ = value else {
-            hideBadge()
-            return
-        }
-        
-        guard let _ = badge else {
-            badge = ESTabBarBadge.init(frame: CGRect.zero, type: .Number)
-            badge?.badgeValue = value
-            if let content = content {
-                content.addSubview(badge!)
-            }
-            return
-        }
-        
-        badge?.badgeValue = value
-    }
-    
-    /// 隐藏
-    public func hideBadge() {
-        badge?.removeFromSuperview()
-        badge = nil
-    }
+
 }
 
 private var kSelectEnabledAssociateKey: String = ""

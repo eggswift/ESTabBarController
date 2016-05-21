@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-class ExampleViewController: UIViewController {
+public class ExampleViewController: UIViewController {
     let tip: UIButton = UIButton.init()
     let icon: UIButton = UIButton.init()
     let button: UIButton = UIButton.init()
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.init(white: 245.0 / 255.0, alpha: 1.0)
         
@@ -39,7 +39,7 @@ class ExampleViewController: UIViewController {
         view.addSubview(tip)
     }
     
-    override func viewDidLayoutSubviews() {
+    public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         icon.sizeToFit()
         icon.center = CGPoint.init(x: self.view.bounds.size.width / 2.0 + 12, y: self.view.bounds.size.height / 2.0 - 46.0)
@@ -48,7 +48,7 @@ class ExampleViewController: UIViewController {
         button.frame = CGRect.init(x: (self.view.bounds.size.width - size.width) / 2.0, y: icon.frame.origin.y + icon.frame.size.height + 6.0, width: size.width, height: 30.0)
     }
     
-    func homePageAction() {
+    public func homePageAction() {
         let vc = WebViewController.init()
         vc.hidesBottomBarWhenPushed = true
         if let navigationController = navigationController {
@@ -58,7 +58,7 @@ class ExampleViewController: UIViewController {
         presentViewController(vc, animated: true, completion: nil)
     }
     
-    func backAction() {
+    public func backAction() {
         if let navigationController = navigationController {
             if navigationController.viewControllers.count > 1 {
                 navigationController.popViewControllerAnimated(true)

@@ -38,6 +38,8 @@ public protocol ESTabBarItemAnimatorProtocol {
     
     mutating func dehighlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?)
     
+    mutating func badgeChangedAnimation(content content: UIView, completion: (() -> ())?)
+    
 }
 
 extension ESTabBarItemAnimatorProtocol {
@@ -54,12 +56,16 @@ extension ESTabBarItemAnimatorProtocol {
         // DO NOTHING...
     }
     
-    func highlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public func highlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
         // DO NOTHING...
     }
     
-    func dehighlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public func dehighlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
         // DO NOTHING...
     }
 
+    public func badgeChangedAnimation(content content: UIView, completion: (() -> ())?) {
+        // DO NOTHING...
+    }
+    
 }

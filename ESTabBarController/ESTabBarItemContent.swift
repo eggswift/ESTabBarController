@@ -33,6 +33,18 @@ public class ESTabBarItemContent: UIView {
     public var insets: UIEdgeInsets = UIEdgeInsetsZero
     public var highlighted: Bool = false
     public var highlightEnabled: Bool = true
+    
+    // Badge
+    public var badgeView: ESTabBarBadge!
+    public var badgeOffset: UIOffset = UIOffset.init(horizontal: 12.0, vertical: -21.0)
+    public var badgeValue: String? {
+        didSet {
+            badgeView.badgeValue = badgeValue
+            setNeedsLayout()
+            animator.badgeChangedAnimation(content: self, completion: nil)
+        }
+    }
+    
     public var selected: Bool = false {
         didSet {
             if selected == true && selectedImage != nil {
@@ -86,8 +98,14 @@ public class ESTabBarItemContent: UIView {
         super.init(frame: frame)
         userInteractionEnabled = false
         animator = ESTabBarItemAnimator.init()
+        if let anim = animator as? ESTabBarItemAnimator {
+            anim.content = self
+        }
+        badgeView = ESTabBarBadge()
+        badgeView?.hidden = true
         addSubview(imageView)
         addSubview(titleLabel)
+        addSubview(badgeView)
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -98,8 +116,14 @@ public class ESTabBarItemContent: UIView {
         self.init()
         userInteractionEnabled = false
         animator = anim
+        if let anim = anim as? ESTabBarItemAnimator {
+            anim.content = self
+        }
+        badgeView = ESTabBarBadge()
+        badgeView?.hidden = true
         addSubview(imageView)
         addSubview(titleLabel)
+        addSubview(badgeView)
     }
     
     public override func layoutSubviews() {
@@ -120,6 +144,12 @@ public class ESTabBarItemContent: UIView {
             titleLabel.sizeToFit()
             titleLabel.center = CGPoint.init(x: w / 2.0, y: h / 2.0)
         }
+        
+        if let badgeView = badgeView {
+            let size = badgeView.sizeThatFits(self.frame.size)
+            badgeView.frame = CGRect.init(origin: CGPoint.init(x: w / 2.0 + badgeOffset.horizontal, y: h / 2.0 + badgeOffset.vertical), size: size)
+        }
+        
     }
     
     public func select(animated animated: Bool, completion: (() -> ())?){

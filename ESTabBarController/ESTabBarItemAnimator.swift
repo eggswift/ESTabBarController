@@ -37,10 +37,6 @@ public class ESTabBarItemAnimator: NSObject, ESTabBarItemAnimatorProtocol {
     public var backgroundColor = UIColor.clearColor()
     public var highlightBackgroundColor = UIColor.clearColor()
     
-    override init() {
-        super.init()
-    }
-    
     public func selectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
         if let content = content as? ESTabBarItemContent {
             content.backgroundColor = highlightBackgroundColor
@@ -85,6 +81,10 @@ public class ESTabBarItemAnimator: NSObject, ESTabBarItemAnimatorProtocol {
     }
     
     public func dehighlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+        completion?()
+    }
+    
+    public func badgeChangedAnimation(content content: UIView, completion: (() -> ())?) {
         completion?()
     }
 }

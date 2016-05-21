@@ -22,14 +22,6 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 //
-//  README.md
-//  通过设置badgeValue参数，实现TabBarItem上的单一小红点或带数字的小红点
-//  badgeValue为可选类型
-//  当badgeValue为nil时，内部处理成小圆点类型
-//  当badgeValue为""时，内部处理成小圆点类型
-//  当badgeValue为任意非空字符串时，内部处理成带数字的小圆点类型
-//  通过maximumSize设置字符串最大大小，超过截取
-//  通过minimumSize设置字符串最小大小，即只有红点情况
 
 import Foundation
 import UIKit
@@ -39,83 +31,68 @@ public enum ESTabBarBadgeType {
 }
 
 public class ESTabBarBadge: UIView {
+    
     public var maximumSize: CGSize = CGSize(width: 28.0, height: 16.0)
     public var minimumSize: CGSize = CGSize(width: 6.0, height: 6.0)
+    public var badgeColor: UIColor = UIColor.redColor()
+    
     public var badgeValue: String? {
         didSet {
+            guard let badgeValue = badgeValue else {
+                self.hidden = true
+                return
+            }
+            self.hidden = false
             badgeLabel.text = badgeValue
-            updateSubviewsLayout()
         }
     }
-    private var badgeLabel: UILabel = {
-        let label = UILabel.init()
-        label.font = UIFont.systemFontOfSize(11.0)
-        label.textColor = UIColor.whiteColor()
-        label.textAlignment = .Center
-        return label
-    }()
+    
+    private var badgeLabel: UILabel!
 
     private override init(frame: CGRect) {
         super.init(frame: frame)
-        // 大红色
-        backgroundColor = UIColor.redColor()
-        // 添加Label
+        self.backgroundColor = badgeColor
+        badgeLabel = UILabel.init()
+        badgeLabel.font = UIFont.systemFontOfSize(11.0)
+        badgeLabel.textColor = UIColor.whiteColor()
+        badgeLabel.textAlignment = .Center
         addSubview(badgeLabel)
-    }
-    
-    convenience init(frame: CGRect, type: ESTabBarBadgeType) {
-        var size: CGSize!
-        switch type {
-        case .Default:
-            size = CGSize(width: 6.0, height: 6.0)
-            break
-        case .Number:
-            //最小也得是圆的
-            size = CGSize(width: 16.0, height: 16.0)
-            break
-        }
-        self.init(frame: CGRect.init(origin: frame.origin, size: size))
     }
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    
-    public override func didMoveToSuperview() {
-        super.didMoveToSuperview()
-        if superview != nil {
-            self.updateSubviewsLayout()
-        }
-    }
-    
     public override func layoutSubviews() {
         super.layoutSubviews()
+        self.badgeLabel.frame = self.bounds
         if layer.cornerRadius != self.bounds.size.height / 2.0 {
             layer.cornerRadius = self.bounds.size.height / 2.0
         }
     }
-
     
-    func updateSubviewsLayout() {
-        var size = frame.size
-        if badgeValue?.characters.count > 0 {
-            size = badgeLabel.sizeThatFits(CGSize.init(width: CGFloat.max, height: self.frame.size.height))
-            size.width = ceil(min(maximumSize.width, max(maximumSize.height, size.width + 6.0)))
-            size.height = ceil(maximumSize.height)
+    public override func sizeToFit() {
+        let size = self.sizeThatFits(CGSize.init(width: CGFloat.max, height: CGFloat.max))
+        let center = self.center
+        UIView.performWithoutAnimation { 
+            self.frame = CGRect.init(x: 0, y: 0, width: size.width, height: size.height)
+            self.center = center
+        }
+    }
+    
+    public override func sizeThatFits(size: CGSize) -> CGSize {
+        var s = CGSize.zero
+        guard let badgeValue = badgeValue else {
+            return s
+        }
+        if badgeValue.characters.count > 0 {
+            s = badgeLabel.sizeThatFits(CGSize.init(width: CGFloat.max, height: CGFloat.max))
+            s.width = ceil(min(maximumSize.width, max(maximumSize.height, s.width + 6.0)))
+            s.height = ceil(maximumSize.height)
         } else {
-            size = self.minimumSize
+            s = self.minimumSize
         }
-        /*
-        self.snp_remakeConstraints { (make) in
-            if let superview = superview {
-                make.top.equalTo(superview).offset(4.0)
-                make.centerX.equalTo(superview).offset(12)
-            }
-            make.size.equalTo(size)
-        }
-         */
-        setNeedsLayout()
+        return s
     }
     
 }

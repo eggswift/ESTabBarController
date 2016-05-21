@@ -1,16 +1,25 @@
 //
-//  ExampleBackgroundAnimator.swift
+//  BackgroundStyleAnimator.swift
 //  ESTabBarControllerExample
 //
-//  Created by lihao on 16/5/17.
+//  Created by lihao on 16/5/21.
 //  Copyright © 2016年 Egg Swift. All rights reserved.
 //
 
 import UIKit
 
-class ExampleBackgroundAnimator: ExampleBaseAnimator {
+public class BackgroundStyleAnimator: ESTabBarItemAnimator {
     
-    override init() {
+    public override var content: UIView? {
+        didSet {
+            if let content = content as? ESTabBarItemContent {
+                let transform = CGAffineTransformIdentity
+                content.imageView.transform = CGAffineTransformScale(transform, 1.15, 1.15)
+            }
+        }
+    }
+    
+    public override init() {
         super.init()
         textColor = UIColor.init(white: 165.0 / 255.0, alpha: 1.0)
         highlightTextColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
@@ -32,10 +41,10 @@ class ExampleBackgroundAnimator: ExampleBaseAnimator {
         }
     }
     
-    override func highlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public override func highlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
         if let content = content as? ESTabBarItemContent {
             UIView.beginAnimations("small", context: nil)
-            UIView.setAnimationDuration(duration / 2.0)
+            UIView.setAnimationDuration(0.2)
             let transform = CGAffineTransformScale(content.imageView.transform, 0.8, 0.8)
             content.imageView.transform = transform
             UIView.commitAnimations()
@@ -43,15 +52,15 @@ class ExampleBackgroundAnimator: ExampleBaseAnimator {
         completion?()
     }
     
-    override func dehighlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public override func dehighlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
         if let content = content as? ESTabBarItemContent {
             UIView.beginAnimations("big", context: nil)
-            UIView.setAnimationDuration(duration / 2.0)
+            UIView.setAnimationDuration(0.2)
             let transform = CGAffineTransformIdentity
-            content.imageView.transform = transform
+            content.imageView.transform = CGAffineTransformScale(transform, 1.15, 1.15)
             UIView.commitAnimations()
         }
         completion?()
     }
-    
+
 }
