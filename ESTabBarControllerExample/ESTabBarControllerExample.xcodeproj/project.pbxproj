@@ -83,7 +83,6 @@
 		F6BA9E831CEEA99500F07504 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pop.framework; sourceTree = "<group>"; };
 		F6BA9E841CEEA99500F07504 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SnapKit.framework; sourceTree = "<group>"; };
 		F6BA9EF81CEEE12000F07504 /* ESTabBarBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarBadge.swift; sourceTree = "<group>"; };
-		F6BA9EF91CEEE12000F07504 /* ESTabBarController-swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ESTabBarController-swift.h"; sourceTree = "<group>"; };
 		F6BA9EFA1CEEE12000F07504 /* ESTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarController.swift; sourceTree = "<group>"; };
 		F6BA9EFB1CEEE12000F07504 /* ESTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItem.swift; sourceTree = "<group>"; };
 		F6BA9EFC1CEEE12000F07504 /* ESTabBarItemAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemAnimator.swift; sourceTree = "<group>"; };
@@ -148,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				F6BA9EF81CEEE12000F07504 /* ESTabBarBadge.swift */,
-				F6BA9EF91CEEE12000F07504 /* ESTabBarController-swift.h */,
 				F6BA9EFA1CEEE12000F07504 /* ESTabBarController.swift */,
 				F6BA9EFB1CEEE12000F07504 /* ESTabBarItem.swift */,
 				F6BA9EFC1CEEE12000F07504 /* ESTabBarItemAnimator.swift */,
