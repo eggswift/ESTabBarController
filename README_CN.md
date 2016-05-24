@@ -1,6 +1,6 @@
 <center>![logo](logo.png)</center>
-# ESTabBarController
----
+</br>
+
 [![Travis](https://img.shields.io/travis/eggwift/ESTabBarController.svg)](https://travis-ci.org/eggswift/ESTabBarController)
 [![CocoaPods](https://img.shields.io/cocoapods/v/ESTabBarController-swift.svg)](http://cocoapods.org/pods/ESTabBarController-swift)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)

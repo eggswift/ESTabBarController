@@ -32,6 +32,9 @@ public class IrregularityStyleAnimator: BackgroundStyleAnimator {
                 content.imageView.layer.borderColor = UIColor.init(white: 235 / 255.0, alpha: 1.0).CGColor
                 content.imageView.layer.cornerRadius = 35
                 content.insets = UIEdgeInsetsMake(-32, 0, 0, 0)
+                let transform = CGAffineTransformIdentity
+                content.imageView.transform = transform
+                content.superview?.bringSubviewToFront(content)
             }
         }
     }
@@ -79,12 +82,34 @@ public class IrregularityStyleAnimator: BackgroundStyleAnimator {
         }
     }
     
+    public override func highlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+        if let content = content as? ESTabBarItemContent {
+            UIView.beginAnimations("small", context: nil)
+            UIView.setAnimationDuration(0.2)
+            let transform = CGAffineTransformScale(content.imageView.transform, 0.8, 0.8)
+            content.imageView.transform = transform
+            UIView.commitAnimations()
+        }
+        completion?()
+    }
+    
+    public override func dehighlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+        if let content = content as? ESTabBarItemContent {
+            UIView.beginAnimations("big", context: nil)
+            UIView.setAnimationDuration(0.2)
+            let transform = CGAffineTransformIdentity
+            content.imageView.transform = transform
+            UIView.commitAnimations()
+        }
+        completion?()
+    }
+    
     private func playMaskAnimation(animateView view: UIView, target: UIView, completion: (() -> ())?) {
         view.center = CGPoint.init(x: target.frame.origin.x + target.frame.size.width / 2.0, y: target.frame.origin.y + target.frame.size.height / 2.0)
         
         let scale = POPBasicAnimation.init(propertyNamed: kPOPLayerScaleXY)
         scale.fromValue = NSValue.init(CGSize: CGSize.init(width: 1.0, height: 1.0))
-        scale.toValue = NSValue.init(CGSize: CGSize.init(width: 40.0, height: 40.0))
+        scale.toValue = NSValue.init(CGSize: CGSize.init(width: 36.0, height: 36.0))
         scale.beginTime = CACurrentMediaTime()
         scale.duration = 0.3
         scale.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)

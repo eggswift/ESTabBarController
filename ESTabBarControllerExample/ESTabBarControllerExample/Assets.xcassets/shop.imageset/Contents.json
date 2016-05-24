@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "shop.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "tao_4@2x.png",
+      "filename" : "shop@2x.png",
       "scale" : "2x"
     },
     {

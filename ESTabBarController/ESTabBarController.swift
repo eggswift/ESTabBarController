@@ -32,8 +32,8 @@ public typealias ESTabBarHijackHandler = ((tabBarController: UITabBarController,
 public class ESTabBarController: UITabBarController {
     
     /// Array for containers of all the customize tabbars.
-    /// ESTabBarController will auto-create UIControl object as container.
-    /// The UIControl object can handle all touch events to impletement customize tabbar.
+    /// ESTabBarController will auto-create ESTabBarConainer object as container.
+    /// The ESTabBarConainer object can handle all touch events to impletement customize tabbar.
     private var containers = [String: AnyObject]()
     
     /// Whether to ignore animate. 
@@ -168,9 +168,9 @@ extension ESTabBarController /* Containers */ {
         /// Create containers, If the current viewControllers more than 5, only add four container. (PS: Because the 5th is UIMoreNavigationController)
         let count = (moreNavigationController.parentViewController != nil) ? items.count - 1 : items.count
         for index in 0..<count {
-            let container = UIControl()
+            let container = ESTabBarConainer()
             container.tag = index
-            /// UIControl's actions: TouchUpInside   TouchDown   TouchDragEnter  TouchDragExit
+            /// ESTabBarConainer's actions: TouchUpInside   TouchDown   TouchDragEnter  TouchDragExit
             /// We need handle both select and highlight actions.
             container.addTarget(self, action: #selector(ESTabBarController.selectAction(_:)), forControlEvents: .TouchUpInside)
             container.addTarget(self, action: #selector(ESTabBarController.highlightAction(_:)), forControlEvents: .TouchDown)
@@ -405,3 +405,8 @@ extension ESTabBarController /* Error Report */ {
         print("ESTabBarController container invalid")
     }
 }
+
+internal class ESTabBarConainer: UIControl {
+    
+}
+
