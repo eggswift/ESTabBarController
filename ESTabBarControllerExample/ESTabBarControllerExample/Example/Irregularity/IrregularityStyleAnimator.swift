@@ -29,12 +29,12 @@ public class IrregularityStyleAnimator: BackgroundStyleAnimator {
             if let content = content as? ESTabBarItemContent {
                 content.imageView.backgroundColor = UIColor.init(red: 23/255.0, green: 149/255.0, blue: 158/255.0, alpha: 1.0)
                 content.imageView.layer.borderWidth = 3.0
-                content.imageView.layer.borderColor = UIColor.init(white: 235 / 255.0, alpha: 1.0).CGColor
+                content.imageView.layer.borderColor = UIColor.init(white: 235 / 255.0, alpha: 1.0).cgColor
                 content.imageView.layer.cornerRadius = 35
                 content.insets = UIEdgeInsetsMake(-32, 0, 0, 0)
-                let transform = CGAffineTransformIdentity
+                let transform = CGAffineTransform.identity
                 content.imageView.transform = transform
-                content.superview?.bringSubviewToFront(content)
+                content.superview?.bringSubview(toFront: content)
             }
         }
     }
@@ -45,13 +45,13 @@ public class IrregularityStyleAnimator: BackgroundStyleAnimator {
         highlightTextColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
         iconColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
         highlightIconColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
-        backgroundColor = UIColor.clearColor()
-        highlightBackgroundColor = UIColor.clearColor()
+        backgroundColor = .clear
+        highlightBackgroundColor = .clear
     }
     
-    public override func selectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public override func selectAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         super.selectAnimation(content: content, animated: animated, completion: completion)
-        if let content = content as? ESTabBarItemContent where animated == true {
+        if let content = content as? ESTabBarItemContent, animated == true {
             let view = UIView.init(frame: CGRect.init(origin: CGPoint.zero, size: CGSize(width: 2.0, height: 2.0)))
             view.layer.cornerRadius = 1.0
             view.layer.opacity = 0.5
@@ -65,39 +65,39 @@ public class IrregularityStyleAnimator: BackgroundStyleAnimator {
         }
     }
     
-    public override func reselectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public override func reselectAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         super.reselectAnimation(content: content, animated: animated, completion: completion)
     }
     
-    public override func deselectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public override func deselectAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         super.deselectAnimation(content: content, animated: animated, completion: completion)
         if let content = content as? ESTabBarItemContent {
             content.backgroundColor = backgroundColor
             content.titleLabel.textColor = textColor
             if let image = content.imageView.image {
-                let renderImage = image.imageWithRenderingMode(.AlwaysTemplate)
+                let renderImage = image.withRenderingMode(.alwaysTemplate)
                 content.imageView.image = renderImage
                 content.imageView.tintColor = iconColor
             }
         }
     }
     
-    public override func highlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public override func highlightAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         if let content = content as? ESTabBarItemContent {
             UIView.beginAnimations("small", context: nil)
             UIView.setAnimationDuration(0.2)
-            let transform = CGAffineTransformScale(content.imageView.transform, 0.8, 0.8)
+            let transform = content.imageView.transform.scaledBy(x: 0.8, y: 0.8)
             content.imageView.transform = transform
             UIView.commitAnimations()
         }
         completion?()
     }
     
-    public override func dehighlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public override func dehighlightAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         if let content = content as? ESTabBarItemContent {
             UIView.beginAnimations("big", context: nil)
             UIView.setAnimationDuration(0.2)
-            let transform = CGAffineTransformIdentity
+            let transform = CGAffineTransform.identity
             content.imageView.transform = transform
             UIView.commitAnimations()
         }
@@ -108,25 +108,25 @@ public class IrregularityStyleAnimator: BackgroundStyleAnimator {
         view.center = CGPoint.init(x: target.frame.origin.x + target.frame.size.width / 2.0, y: target.frame.origin.y + target.frame.size.height / 2.0)
         
         let scale = POPBasicAnimation.init(propertyNamed: kPOPLayerScaleXY)
-        scale.fromValue = NSValue.init(CGSize: CGSize.init(width: 1.0, height: 1.0))
-        scale.toValue = NSValue.init(CGSize: CGSize.init(width: 36.0, height: 36.0))
-        scale.beginTime = CACurrentMediaTime()
-        scale.duration = 0.3
-        scale.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
-        scale.removedOnCompletion = true
+        scale?.fromValue = NSValue.init(cgSize: CGSize.init(width: 1.0, height: 1.0))
+        scale?.toValue = NSValue.init(cgSize: CGSize.init(width: 36.0, height: 36.0))
+        scale?.beginTime = CACurrentMediaTime()
+        scale?.duration = 0.3
+        scale?.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+        scale?.removedOnCompletion = true
         
         let alpha = POPBasicAnimation.init(propertyNamed: kPOPLayerOpacity)
-        alpha.fromValue = 0.6
-        alpha.toValue = 0.6
-        alpha.beginTime = CACurrentMediaTime()
-        alpha.duration = 0.25
-        alpha.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
-        alpha.removedOnCompletion = true
+        alpha?.fromValue = 0.6
+        alpha?.toValue = 0.6
+        alpha?.beginTime = CACurrentMediaTime()
+        alpha?.duration = 0.25
+        alpha?.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+        alpha?.removedOnCompletion = true
         
-        view.layer.pop_addAnimation(scale, forKey: "scale")
-        view.layer.pop_addAnimation(alpha, forKey: "alpha")
+        view.layer.pop_add(scale, forKey: "scale")
+        view.layer.pop_add(alpha, forKey: "alpha")
         
-        scale.completionBlock = ({ animation, finished in
+        scale?.completionBlock = ({ animation, finished in
             completion?()
         })
     }

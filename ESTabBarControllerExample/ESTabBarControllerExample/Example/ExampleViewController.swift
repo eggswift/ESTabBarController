@@ -18,21 +18,21 @@ public class ExampleViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.init(white: 245.0 / 255.0, alpha: 1.0)
         
-        tip.setTitle("Click me!", forState: .Normal)
-        tip.setTitleColor(UIColor.init(white: 154.0 / 255.0, alpha: 1.0), forState: .Normal)
-        tip.userInteractionEnabled = false
+        tip.setTitle("Click me!", for: .normal)
+        tip.setTitleColor(UIColor.init(white: 154.0 / 255.0, alpha: 1.0), for: .normal)
+        tip.isUserInteractionEnabled = false
         
         icon.layer.cornerRadius = 12.0
-        icon.setImage(UIImage.init(named: "icon"), forState: .Normal)
-        icon.addTarget(self, action: #selector(ExampleViewController.homePageAction), forControlEvents: .TouchUpInside)
+        icon.setImage(UIImage.init(named: "icon"), for: .normal)
+        icon.addTarget(self, action: #selector(ExampleViewController.homePageAction), for: .touchUpInside)
         
-        button.setTitle("  Click to pop or dismiss  ", forState: .Normal)
+        button.setTitle("  Click to pop or dismiss  ", for: .normal)
         button.backgroundColor = UIColor.init(white: 245.0 / 255.0, alpha: 1.0)
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.init(white: 154.0 / 255.0, alpha: 1.0).CGColor
+        button.layer.borderColor = UIColor.init(white: 154.0 / 255.0, alpha: 1.0).cgColor
         button.layer.cornerRadius = 15.0
-        button.setTitleColor(UIColor.init(white: 100.0 / 255.0, alpha: 1.0), forState: .Normal)
-        button.addTarget(self, action: #selector(ExampleViewController.backAction), forControlEvents: .TouchUpInside)
+        button.setTitleColor(UIColor.init(white: 100.0 / 255.0, alpha: 1.0), for: .normal)
+        button.addTarget(self, action: #selector(ExampleViewController.backAction), for: .touchUpInside)
         
         view.addSubview(icon)
         view.addSubview(button)
@@ -49,23 +49,23 @@ public class ExampleViewController: UIViewController {
     }
     
     public func homePageAction() {
-        let vc = WebViewController.init()
+        let vc = WebViewController()
         vc.hidesBottomBarWhenPushed = true
         if let navigationController = navigationController {
             navigationController.pushViewController(vc, animated: true)
             return
         }
-        presentViewController(vc, animated: true, completion: nil)
+        present(vc, animated: true, completion: nil)
     }
     
     public func backAction() {
         if let navigationController = navigationController {
             if navigationController.viewControllers.count > 1 {
-                navigationController.popViewControllerAnimated(true)
+                navigationController.popViewController(animated: true)
                 return
             }
         }
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
 }

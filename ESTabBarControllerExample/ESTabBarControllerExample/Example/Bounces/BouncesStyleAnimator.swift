@@ -18,25 +18,25 @@ public class BouncesStyleAnimator: ESTabBarItemAnimator {
         highlightTextColor = UIColor.init(red: 254/255.0, green: 73/255.0, blue: 42/255.0, alpha: 1.0)
         iconColor = UIColor.init(white: 175.0 / 255.0, alpha: 1.0)
         highlightIconColor = UIColor.init(red: 254/255.0, green: 73/255.0, blue: 42/255.0, alpha: 1.0)
-        backgroundColor = UIColor.clearColor()
-        highlightBackgroundColor = UIColor.clearColor()
+        backgroundColor = .clear
+        highlightBackgroundColor = .clear
     }
     
-    public override func selectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public override func selectAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         super.selectAnimation(content: content, animated: animated, completion: completion)
         if let content = content as? ESTabBarItemContent {
-            self.bounceAnimation(content.imageView)
+            self.bounceAnimation(view: content.imageView)
         }
     }
     
-    public override func reselectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public override func reselectAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         super.reselectAnimation(content: content, animated: animated, completion: completion)
         if let content = content as? ESTabBarItemContent {
-            self.bounceAnimation(content.imageView)
+            self.bounceAnimation(view: content.imageView)
         }
     }
     
-    public override func deselectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public override func deselectAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         super.deselectAnimation(content: content, animated: animated, completion: completion)
     }
     
@@ -46,7 +46,7 @@ public class BouncesStyleAnimator: ESTabBarItemAnimator {
         impliesAnimation.duration = duration * 2
         impliesAnimation.calculationMode = kCAAnimationCubic
         
-        view.layer.addAnimation(impliesAnimation, forKey: nil)
+        view.layer.add(impliesAnimation, forKey: nil)
     }
     
 }
