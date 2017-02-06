@@ -53,7 +53,7 @@ public class IrregularityStyleTabBarController: ESTabBarController {
     }
     
     func showPhoto() {
-		DispatchQueue.main.asyncAfter(deadline: .now() + 0.28 * Double(NSEC_PER_SEC)) {
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.28) {
 			let v1 = ExampleViewController()
 			let n1 = ExampleNavigationController.init(rootViewController: v1)
 			v1.title = "Example"
