@@ -49,7 +49,7 @@ public class ExampleViewController: UIViewController {
     }
     
     public func homePageAction() {
-        let vc = WebViewController()
+        let vc = WebViewController.instanceFromStoryBoard()
         vc.hidesBottomBarWhenPushed = true
         if let navigationController = navigationController {
             navigationController.pushViewController(vc, animated: true)

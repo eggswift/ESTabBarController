@@ -10,6 +10,9 @@ import UIKit
 
 public class WebViewController: UIViewController, UIWebViewDelegate {
 
+	public class func instanceFromStoryBoard() -> WebViewController {
+		return UIStoryboard(name: "WebView", bundle: nil).instantiateInitialViewController() as! WebViewController
+	}
     @IBOutlet weak var webView: UIWebView!
     
     override public func viewDidLoad() {

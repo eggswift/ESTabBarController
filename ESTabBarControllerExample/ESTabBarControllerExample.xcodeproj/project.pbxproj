@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9078C1901E487C7600716A46 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F1352C1CE9E0B70034D15D /* WebViewController.swift */; };
+		9078C1911E487C7700716A46 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F1352C1CE9E0B70034D15D /* WebViewController.swift */; };
+		9078C1951E487CFD00716A46 /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9078C1941E487CFD00716A46 /* WebView.storyboard */; };
 		F6BA9E851CEEA99500F07504 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BA9E831CEEA99500F07504 /* pop.framework */; };
 		F6BA9E861CEEA99500F07504 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BA9E831CEEA99500F07504 /* pop.framework */; };
 		F6BA9E871CEEA99600F07504 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BA9E831CEEA99500F07504 /* pop.framework */; };
@@ -72,7 +75,6 @@
 		F6F134BD1CE5B9170034D15D /* ESTabBarControllerExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F134BC1CE5B9170034D15D /* ESTabBarControllerExampleUITests.swift */; };
 		F6F1352A1CE9E09B0034D15D /* ExampleSpreadAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F135271CE9E09B0034D15D /* ExampleSpreadAnimator.swift */; };
 		F6F1352E1CE9E0B70034D15D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F1352C1CE9E0B70034D15D /* WebViewController.swift */; };
-		F6F1352F1CE9E0B70034D15D /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6F1352D1CE9E0B70034D15D /* WebViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9078C1941E487CFD00716A46 /* WebView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
 		F6BA9E831CEEA99500F07504 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pop.framework; sourceTree = "<group>"; };
 		F6C1734E1CF02096006C2501 /* BackgroundStyleTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundStyleTabBarController.swift; sourceTree = "<group>"; };
 		F6C173521CF021F2006C2501 /* ExampleNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleNavigationController.swift; sourceTree = "<group>"; };
@@ -141,7 +144,6 @@
 		F6F134BE1CE5B9170034D15D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6F135271CE9E09B0034D15D /* ExampleSpreadAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleSpreadAnimator.swift; sourceTree = "<group>"; };
 		F6F1352C1CE9E0B70034D15D /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		F6F1352D1CE9E0B70034D15D /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,7 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				F6F1352C1CE9E0B70034D15D /* WebViewController.swift */,
-				F6F1352D1CE9E0B70034D15D /* WebViewController.xib */,
+				9078C1941E487CFD00716A46 /* WebView.storyboard */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -428,8 +430,8 @@
 			files = (
 				F6F134A71CE5B9170034D15D /* LaunchScreen.storyboard in Resources */,
 				F6F134A41CE5B9170034D15D /* Assets.xcassets in Resources */,
+				9078C1951E487CFD00716A46 /* WebView.storyboard in Resources */,
 				F6F134A21CE5B9170034D15D /* Main.storyboard in Resources */,
-				F6F1352F1CE9E0B70034D15D /* WebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9078C1901E487C7600716A46 /* WebViewController.swift in Sources */,
 				F6C173951CF03B8B006C2501 /* NotificationStyleTabBarController.swift in Sources */,
 				F6C1736F1CF022DF006C2501 /* ESTabBarItemAnimator.swift in Sources */,
 				F6C1736C1CF022DF006C2501 /* ESTabBarItem.swift in Sources */,
@@ -508,6 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9078C1911E487C7700716A46 /* WebViewController.swift in Sources */,
 				F6C173961CF03B8B006C2501 /* NotificationStyleTabBarController.swift in Sources */,
 				F6C173701CF022DF006C2501 /* ESTabBarItemAnimator.swift in Sources */,
 				F6C1736D1CF022DF006C2501 /* ESTabBarItem.swift in Sources */,
