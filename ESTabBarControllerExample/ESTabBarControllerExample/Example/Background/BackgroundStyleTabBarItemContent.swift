@@ -12,15 +12,15 @@ public class BackgroundStyleTabBarItemContent: ESTabBarItemContent {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(BackgroundStyleTabBarItemContent.playImpliesAnimation(_:)), userInfo: nil, repeats: true)
-        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSRunLoopCommonModes)
+        let timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(BackgroundStyleTabBarItemContent.playImpliesAnimation(_:)), userInfo: nil, repeats: true)
+        RunLoop.current.add(timer, forMode: .commonModes)
     }
     
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    internal func playImpliesAnimation(sender: AnyObject?) {
+	internal func playImpliesAnimation(_ sender: AnyObject?) {
         if self.selected == true || self.highlighted == true {
             return
         }
@@ -29,8 +29,8 @@ public class BackgroundStyleTabBarItemContent: ESTabBarItemContent {
         impliesAnimation.values = [1.15, 0.8, 1.15]
         impliesAnimation.duration = 0.3
         impliesAnimation.calculationMode = kCAAnimationCubic
-        impliesAnimation.removedOnCompletion = true
-        view.layer.addAnimation(impliesAnimation, forKey: nil)
+        impliesAnimation.isRemovedOnCompletion = true
+        view.layer.add(impliesAnimation, forKey: nil)
     }
 
 }

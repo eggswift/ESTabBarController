@@ -34,15 +34,15 @@ public class ESTabBarBadge: UIView {
     
     public var maximumSize: CGSize = CGSize(width: 28.0, height: 16.0)
     public var minimumSize: CGSize = CGSize(width: 6.0, height: 6.0)
-    public var badgeColor: UIColor = UIColor.redColor()
+    public var badgeColor: UIColor = .red
     
     public var badgeValue: String? {
         didSet {
             guard let badgeValue = badgeValue else {
-                self.hidden = true
+                self.isHidden = true
                 return
             }
-            self.hidden = false
+            self.isHidden = false
             badgeLabel.text = badgeValue
         }
     }
@@ -53,9 +53,9 @@ public class ESTabBarBadge: UIView {
         super.init(frame: frame)
         self.backgroundColor = badgeColor
         badgeLabel = UILabel.init()
-        badgeLabel.font = UIFont.systemFontOfSize(11.0)
-        badgeLabel.textColor = UIColor.whiteColor()
-        badgeLabel.textAlignment = .Center
+        badgeLabel.font = UIFont.systemFont(ofSize: 11.0)
+        badgeLabel.textColor = .white
+        badgeLabel.textAlignment = .center
         addSubview(badgeLabel)
     }
     
@@ -72,7 +72,7 @@ public class ESTabBarBadge: UIView {
     }
     
     public override func sizeToFit() {
-        let size = self.sizeThatFits(CGSize.init(width: CGFloat.max, height: CGFloat.max))
+        let size = self.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
         let center = self.center
         UIView.performWithoutAnimation { 
             self.frame = CGRect.init(x: 0, y: 0, width: size.width, height: size.height)
@@ -80,13 +80,13 @@ public class ESTabBarBadge: UIView {
         }
     }
     
-    public override func sizeThatFits(size: CGSize) -> CGSize {
+    public override func sizeThatFits(_ size: CGSize) -> CGSize {
         var s = CGSize.zero
         guard let badgeValue = badgeValue else {
             return s
         }
         if badgeValue.characters.count > 0 {
-            s = badgeLabel.sizeThatFits(CGSize.init(width: CGFloat.max, height: CGFloat.max))
+            s = badgeLabel.sizeThatFits(CGSize.init(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
             s.width = ceil(min(maximumSize.width, max(maximumSize.height, s.width + 6.0)))
             s.height = ceil(maximumSize.height)
         } else {

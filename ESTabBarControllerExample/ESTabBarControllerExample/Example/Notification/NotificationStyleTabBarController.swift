@@ -13,8 +13,8 @@ public class NotificationStyleTabBarController: ESTabBarController {
     var value: Int64 = 0
     let button: UIButton = {
         let button = UIButton.init()
-        button.backgroundColor = UIColor.lightGrayColor()
-        button.setTitle("Click", forState: .Normal)
+        button.backgroundColor = .lightGray
+        button.setTitle("Click", for: .normal)
         button.layer.cornerRadius = 25.0
         button.clipsToBounds = true
         return button
@@ -23,7 +23,7 @@ public class NotificationStyleTabBarController: ESTabBarController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Notification"
-        button.addTarget(self, action: #selector(NotificationStyleTabBarController.buttonAction), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(NotificationStyleTabBarController.buttonAction), for: .touchUpInside)
         self.view.addSubview(button)
         
         let v1          = ExampleViewController()

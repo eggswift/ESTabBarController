@@ -28,43 +28,43 @@ import UIKit
 
 public protocol ESTabBarItemAnimatorProtocol {
     
-    mutating func selectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?)
+    mutating func selectAnimation(content: UIView, animated: Bool, completion: (() -> ())?)
     
-    mutating func deselectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?)
+    mutating func deselectAnimation(content: UIView, animated: Bool, completion: (() -> ())?)
     
-    mutating func reselectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?)
+    mutating func reselectAnimation(content: UIView, animated: Bool, completion: (() -> ())?)
     
-    mutating func highlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?)
+    mutating func highlightAnimation(content: UIView, animated: Bool, completion: (() -> ())?)
     
-    mutating func dehighlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?)
+    mutating func dehighlightAnimation(content: UIView, animated: Bool, completion: (() -> ())?)
     
-    mutating func badgeChangedAnimation(content content: UIView, completion: (() -> ())?)
+    mutating func badgeChangedAnimation(content: UIView, completion: (() -> ())?)
     
 }
 
 extension ESTabBarItemAnimatorProtocol {
     
-    public func selectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public func selectAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         // DO NOTHING...
     }
     
-    public func reselectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public func reselectAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         // DO NOTHING...
     }
     
-    public func deselectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public func deselectAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         // DO NOTHING...
     }
     
-    public func highlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public func highlightAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         // DO NOTHING...
     }
     
-    public func dehighlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public func dehighlightAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         // DO NOTHING...
     }
 
-    public func badgeChangedAnimation(content content: UIView, completion: (() -> ())?) {
+    public func badgeChangedAnimation(content: UIView, completion: (() -> ())?) {
         // DO NOTHING...
     }
     

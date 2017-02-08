@@ -34,15 +34,15 @@ public class ESTabBarItemAnimator: NSObject, ESTabBarItemAnimatorProtocol {
     public var highlightTextColor = UIColor.init(red: 0.0 / 255.0, green: 116.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
     public var iconColor = UIColor.init(white: 146.0 / 255.0, alpha: 1.0)
     public var highlightIconColor = UIColor.init(red: 0.0 / 255.0, green: 116.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
-    public var backgroundColor = UIColor.clearColor()
-    public var highlightBackgroundColor = UIColor.clearColor()
-    
-    public func selectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public var backgroundColor = UIColor.clear
+    public var highlightBackgroundColor = UIColor.clear
+	
+    public func selectAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         if let content = content as? ESTabBarItemContent {
             content.backgroundColor = highlightBackgroundColor
             content.titleLabel.textColor = highlightTextColor
             if let image = content.imageView.image {
-                let renderImage = image.imageWithRenderingMode(.AlwaysTemplate)
+                let renderImage = image.withRenderingMode(.alwaysTemplate)
                 content.imageView.image = renderImage
                 content.imageView.tintColor = highlightIconColor
             }
@@ -50,12 +50,12 @@ public class ESTabBarItemAnimator: NSObject, ESTabBarItemAnimatorProtocol {
         completion?()
     }
     
-    public func reselectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public func reselectAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         if let content = content as? ESTabBarItemContent {
             content.backgroundColor = highlightBackgroundColor
             content.titleLabel.textColor = highlightTextColor
             if let image = content.imageView.image {
-                let renderImage = image.imageWithRenderingMode(.AlwaysTemplate)
+                let renderImage = image.withRenderingMode(.alwaysTemplate)
                 content.imageView.image = renderImage
                 content.imageView.tintColor = highlightIconColor
             }
@@ -63,12 +63,12 @@ public class ESTabBarItemAnimator: NSObject, ESTabBarItemAnimatorProtocol {
         completion?()
     }
     
-    public func deselectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public func deselectAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         if let content = content as? ESTabBarItemContent {
             content.backgroundColor = backgroundColor
             content.titleLabel.textColor = textColor
             if let image = content.imageView.image {
-                let renderImage = image.imageWithRenderingMode(.AlwaysTemplate)
+                let renderImage = image.withRenderingMode(.alwaysTemplate)
                 content.imageView.image = renderImage
                 content.imageView.tintColor = iconColor
             }
@@ -76,15 +76,15 @@ public class ESTabBarItemAnimator: NSObject, ESTabBarItemAnimatorProtocol {
         completion?()
     }
 
-    public func highlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public func highlightAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         completion?()
     }
     
-    public func dehighlightAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
+    public func dehighlightAnimation(content: UIView, animated: Bool, completion: (() -> ())?) {
         completion?()
     }
     
-    public func badgeChangedAnimation(content content: UIView, completion: (() -> ())?) {
+    public func badgeChangedAnimation(content: UIView, completion: (() -> ())?) {
         completion?()
     }
 }

@@ -12,10 +12,10 @@ public class NotificationStyleAnimator: BackgroundStyleAnimator {
 
     public var duration = 0.3
 
-    public override func badgeChangedAnimation(content content: UIView, completion: (() -> ())?) {
+    public override func badgeChangedAnimation(content: UIView, completion: (() -> ())?) {
         super.badgeChangedAnimation(content: content, completion: completion)
         if let content = content as? ESTabBarItemContent {
-            notificationAnimation(content.imageView)
+            notificationAnimation(view: content.imageView)
         }
     }
     
@@ -25,7 +25,7 @@ public class NotificationStyleAnimator: BackgroundStyleAnimator {
         impliesAnimation.duration = duration * 2
         impliesAnimation.calculationMode = kCAAnimationCubic
         
-        view.layer.addAnimation(impliesAnimation, forKey: nil)
+        view.layer.add(impliesAnimation, forKey: nil)
     }
     
 }

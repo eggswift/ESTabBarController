@@ -26,19 +26,19 @@
 import Foundation
 import UIKit
 
-public typealias ESTabBarShouldHijackHandler = ((tabBarController: UITabBarController, viewController: UIViewController, index: Int) -> (Bool))
-public typealias ESTabBarHijackHandler = ((tabBarController: UITabBarController, viewController: UIViewController, index: Int) -> (Void))
+public typealias ESTabBarShouldHijackHandler = ((_ tabBarController: UITabBarController, _ viewController: UIViewController, _ index: Int) -> (Bool))
+public typealias ESTabBarHijackHandler = ((_ tabBarController: UITabBarController, _ viewController: UIViewController, _ index: Int) -> (Void))
 
 public class ESTabBarController: UITabBarController {
     
     /// Array for containers of all the customize tabbars.
     /// ESTabBarController will auto-create ESTabBarConainer object as container.
     /// The ESTabBarConainer object can handle all touch events to impletement customize tabbar.
-    private var containers = [String: AnyObject]()
+    fileprivate var containers = [String: AnyObject]()
     
     /// Whether to ignore animate. 
     /// Default is true because system will autoset selectedIndex = 0 at begining.
-    private var ignoreNextAnimation = true
+    fileprivate var ignoreNextAnimation = true
     
     /// Whether it has been initialized.
     /// This is a flag used to mark the current initialization state.
@@ -134,7 +134,7 @@ public class ESTabBarController: UITabBarController {
     }
 
     // The system calls this method when the iOS interface environment changes. Implement this method in view controllers and views, according to your app’s needs, to respond to such changes. For example, you might adjust the layout of the subviews of a view controller when an iPhone is rotated from portrait to landscape orientation. The default implementation of this method is empty.
-    public override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         if self.traitCollection.verticalSizeClass != previousTraitCollection?.verticalSizeClass ||
             self.traitCollection.horizontalSizeClass != previousTraitCollection?.horizontalSizeClass {
@@ -154,7 +154,7 @@ extension ESTabBarController /* Containers */ {
         containers.removeAll()
     }
     
-    private func reload() {
+    fileprivate func reload() {
         /// Remove all containers before create.
         /// It is very light weight because all of tabbar content are managed by tabbar item.
         removeAll()
@@ -166,17 +166,17 @@ extension ESTabBarController /* Containers */ {
         }
         
         /// Create containers, If the current viewControllers more than 5, only add four container. (PS: Because the 5th is UIMoreNavigationController)
-        let count = (moreNavigationController.parentViewController != nil) ? items.count - 1 : items.count
+        let count = (moreNavigationController.parent != nil) ? items.count - 1 : items.count
         for index in 0..<count {
             let container = ESTabBarConainer()
             container.tag = index
             /// ESTabBarConainer's actions: TouchUpInside   TouchDown   TouchDragEnter  TouchDragExit
             /// We need handle both select and highlight actions.
-            container.addTarget(self, action: #selector(ESTabBarController.selectAction(_:)), forControlEvents: .TouchUpInside)
-            container.addTarget(self, action: #selector(ESTabBarController.highlightAction(_:)), forControlEvents: .TouchDown)
-            container.addTarget(self, action: #selector(ESTabBarController.highlightAction(_:)), forControlEvents: .TouchDragEnter)
-            container.addTarget(self, action: #selector(ESTabBarController.dehighlightAction(_:)), forControlEvents: .TouchDragExit)
-            container.backgroundColor = UIColor.clearColor()
+            container.addTarget(self, action: #selector(ESTabBarController.selectAction(_:)), for: .touchUpInside)
+            container.addTarget(self, action: #selector(ESTabBarController.highlightAction(_:)), for: .touchDown)
+            container.addTarget(self, action: #selector(ESTabBarController.highlightAction(_:)), for: .touchDragEnter)
+            container.addTarget(self, action: #selector(ESTabBarController.dehighlightAction(_:)), for: .touchDragExit)
+            container.backgroundColor = .clear
             
             tabBar.addSubview(container)
             containers["container\(index)"] = container
@@ -200,7 +200,7 @@ extension ESTabBarController /* Containers */ {
         self.view.setNeedsLayout()
     }
     
-    internal func highlightAction(sender: AnyObject?) {
+    internal func highlightAction(_ sender: AnyObject?) {
         guard let items = tabBar.items else {
             reportEmptyItems()
             return
@@ -221,7 +221,7 @@ extension ESTabBarController /* Containers */ {
         }
         
         /// Selectability check
-        if vc.tabBarItem.enabled == false {
+        if vc.tabBarItem.isEnabled == false {
             return
         }
         if vc.tabBarItem.selectEnabled == false {
@@ -230,7 +230,7 @@ extension ESTabBarController /* Containers */ {
         
         // Check should select
         if let delegate = delegate {
-            let shouldSelect = delegate.tabBarController?(self, shouldSelectViewController: vc) ?? true
+            let shouldSelect = delegate.tabBarController?(self, shouldSelect: vc) ?? true
             if shouldSelect == false {
                 return
             }
@@ -238,7 +238,7 @@ extension ESTabBarController /* Containers */ {
         
         // Check should hijack
         if let shouldHijackHandler = shouldHijackHandler {
-            let shouldHijack = shouldHijackHandler(tabBarController: self, viewController: vc, index: targetIndex)
+            let shouldHijack = shouldHijackHandler(self, vc, targetIndex)
             if shouldHijack == true {
                 // Do animate when hijack
                 if targetIndex < items.count, let animationItem = items[targetIndex] as? ESTabBarItem {
@@ -256,7 +256,7 @@ extension ESTabBarController /* Containers */ {
         }
     }
     
-    internal func dehighlightAction(sender: AnyObject?) {
+    internal func dehighlightAction(_ sender: AnyObject?) {
         guard let items = tabBar.items else {
             reportEmptyItems()
             return
@@ -277,7 +277,7 @@ extension ESTabBarController /* Containers */ {
         }
         
         /// Selectability check
-        if vc.tabBarItem.enabled == false {
+        if vc.tabBarItem.isEnabled == false {
             return
         }
         if vc.tabBarItem.selectEnabled == false {
@@ -286,7 +286,7 @@ extension ESTabBarController /* Containers */ {
         
         // Check should select
         if let delegate = delegate {
-            let shouldSelect = delegate.tabBarController?(self, shouldSelectViewController: vc) ?? true
+            let shouldSelect = delegate.tabBarController?(self, shouldSelect: vc) ?? true
             if shouldSelect == false {
                 return
             }
@@ -294,7 +294,7 @@ extension ESTabBarController /* Containers */ {
         
         // Check should hijack
         if let shouldHijackHandler = shouldHijackHandler {
-            let shouldHijack = shouldHijackHandler(tabBarController: self, viewController: vc, index: targetIndex)
+            let shouldHijack = shouldHijackHandler(self, vc, targetIndex)
             if shouldHijack == true {
                 // Do animate when hijack
                 if targetIndex < items.count, let animationItem = items[targetIndex] as? ESTabBarItem {
@@ -312,7 +312,7 @@ extension ESTabBarController /* Containers */ {
         }
     }
     
-    internal func selectAction(sender: AnyObject?) {
+    internal func selectAction(_ sender: AnyObject?) {
         guard let items = tabBar.items else {
             reportEmptyItems()
             return
@@ -334,7 +334,7 @@ extension ESTabBarController /* Containers */ {
         }
         
         /// Selectability check
-        if vc.tabBarItem.enabled == false {
+        if vc.tabBarItem.isEnabled == false {
             return
         }
         if vc.tabBarItem.selectEnabled == false {
@@ -343,7 +343,7 @@ extension ESTabBarController /* Containers */ {
         
         // Check should select
         if let delegate = delegate {
-            let shouldSelect = delegate.tabBarController?(self, shouldSelectViewController: vc) ?? true
+            let shouldSelect = delegate.tabBarController?(self, shouldSelect: vc) ?? true
             if shouldSelect == false {
                 return
             }
@@ -351,9 +351,9 @@ extension ESTabBarController /* Containers */ {
 
         // Check should hijack
         if let shouldHijackHandler = shouldHijackHandler {
-            let shouldHijack = shouldHijackHandler(tabBarController: self, viewController: vc, index: targetIndex)
+            let shouldHijack = shouldHijackHandler(self, vc, targetIndex)
             if shouldHijack == true {
-                self.hijackHandler?(tabBarController: self, viewController: vc, index: targetIndex)
+                self.hijackHandler?(self, vc, targetIndex)
                 // Do animate when hijack
                 if targetIndex < items.count, let animationItem = items[targetIndex] as? ESTabBarItem {
                     animationItem.select(animated: true, completion: {
@@ -377,7 +377,7 @@ extension ESTabBarController /* Containers */ {
             ignoreNextAnimation = true
             selectedIndex = targetIndex
             // Delegate
-            delegate?.tabBarController?(self, didSelectViewController: self)
+            delegate?.tabBarController?(self, didSelect: self)
             
         } else if currentIndex == targetIndex {
             /// Click the same again tab may require animation, so have the following:
@@ -385,7 +385,7 @@ extension ESTabBarController /* Containers */ {
                 animationItem.reselect(animated: true, completion: nil)
             }
             if let navVC = viewControllers![selectedIndex] as? UINavigationController {
-                navVC.popToRootViewControllerAnimated(true)
+                navVC.popToRootViewController(animated: true)
             }
         }
     }
@@ -393,15 +393,15 @@ extension ESTabBarController /* Containers */ {
 }
 
 extension ESTabBarController /* Error Report */ {
-    private func reportEmptyItems() {
+    fileprivate func reportEmptyItems() {
         print("ESTabBarController emtpy items")
     }
     
-    private func reportInvalidIndex(index: Int) {
+    fileprivate func reportInvalidIndex(_ index: Int) {
         print("ESTabBarController index \(index) invalid")
     }
     
-    private func reportInvalidContainer() {
+    fileprivate func reportInvalidContainer() {
         print("ESTabBarController container invalid")
     }
 }

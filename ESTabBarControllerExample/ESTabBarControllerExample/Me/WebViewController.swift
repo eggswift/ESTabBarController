@@ -8,15 +8,18 @@
 
 import UIKit
 
-class WebViewController: UIViewController, UIWebViewDelegate {
+public class WebViewController: UIViewController, UIWebViewDelegate {
 
+	public class func instanceFromStoryBoard() -> WebViewController {
+		return UIStoryboard(name: "WebView", bundle: nil).instantiateInitialViewController() as! WebViewController
+	}
     @IBOutlet weak var webView: UIWebView!
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         self.title = "https://github.com/eggswift"
         self.webView.delegate = self
-        self.webView.loadRequest(NSURLRequest.init(URL: NSURL.init(string: "https://github.com/eggswift")!))
+        self.webView.loadRequest(URLRequest(url: URL(string: "https://github.com/eggswift")!))
         self.webView.scrollView.bounces = true
         self.webView.scrollView.alwaysBounceVertical = true
     }

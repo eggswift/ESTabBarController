@@ -68,14 +68,12 @@ public class BackgroundStyleTabBarController: ESTabBarController {
     }
 
     func showPhoto() {
-        let minseconds = 0.2 * Double(NSEC_PER_SEC)
-        let dtime = dispatch_time(DISPATCH_TIME_NOW, Int64(minseconds))
-        dispatch_after(dtime, dispatch_get_main_queue() , {
-            let v1 = ExampleViewController()
-            let n1 = ExampleNavigationController.init(rootViewController: v1)
-            v1.title = "Example"
-            self.presentViewController(n1, animated: true, completion: nil)
-        })
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.2 ) {
+			let v1 = ExampleViewController()
+			let n1 = ExampleNavigationController.init(rootViewController: v1)
+			v1.title = "Example"
+			self.present(n1, animated: true, completion: nil)
+		}
     }
 
 }

@@ -67,19 +67,19 @@ public class ESTabBarItem: UITabBarItem {
         self.content?.deselect(animated: false, completion: nil)
     }
     
-    public func select(animated animated: Bool, completion: (() -> ())?){
+    public func select(animated: Bool, completion: (() -> ())?){
         content?.select(animated: animated, completion: completion)
     }
     
-    public func reselect(animated animated: Bool, completion: (() -> ())?){
+    public func reselect(animated: Bool, completion: (() -> ())?){
         content?.reselect(animated: animated, completion: completion)
     }
     
-    public func deselect(animated animated: Bool, completion: (() -> ())?){
+    public func deselect(animated: Bool, completion: (() -> ())?){
         content?.deselect(animated: animated, completion: completion)
     }
     
-    public func highlight(highlight highlight: Bool, animated: Bool, completion: (() -> ())?){
+    public func highlight(highlight: Bool, animated: Bool, completion: (() -> ())?){
         content?.highlight(highlight: highlight, animated: animated, completion: completion)
     }
 
@@ -112,7 +112,7 @@ extension UITabBarItem {
         }
         set(newValue) {
             if let newValue = newValue {
-                objc_setAssociatedObject(self, &kSelectEnabledAssociateKey, NSNumber.init(bool: newValue), objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+                objc_setAssociatedObject(self, &kSelectEnabledAssociateKey, NSNumber(value: newValue), objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
             }
         }
     }

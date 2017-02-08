@@ -33,39 +33,40 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.view.backgroundColor = UIColor.init(white: 245.0 / 255.0, alpha: 1.0)
         self.navigationItem.title = "Example"
         if tableView != nil {
-            tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "UITableViewCell")
+            tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "UITableViewCell")
         }
     }
     
     // MARK: UITableViewDataSource
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 52.0
     }
+
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell")
+		cell?.textLabel?.textColor = UIColor.init(white: 0.0, alpha: 0.6)
+		cell?.textLabel?.font = UIFont.init(name: "ChalkboardSE-Bold", size: 14.0)
+		cell?.textLabel?.text = "\(indexPath.row + 1).  " + dataArray[indexPath.row]
+		return cell!
+	}
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell")
-        cell?.textLabel?.textColor = UIColor.init(white: 0.0, alpha: 0.6)
-        cell?.textLabel?.font = UIFont.init(name: "ChalkboardSE-Bold", size: 14.0)
-        cell?.textLabel?.text = "\(indexPath.row + 1).  " + dataArray[indexPath.row]
-        return cell!
-    }
-    
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.5
     }
     
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.bounds.size.width, height: 0.5))
-        view.backgroundColor = UIColor.lightGrayColor()
+        view.backgroundColor = .blue
         return view
     }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+	
+	
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
             systemStytle()
@@ -77,16 +78,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tabBarContainNaviStytle()
         case 4:
             let vc = BouncesStyleTabBarController.init()
-            self.present(vc)
+            self.present(vc: vc)
         case 5:
             let vc = BackgroundStyleTabBarController.init()
-            self.present(vc)
+            self.present(vc: vc)
         case 6:
             let vc = IrregularityStyleTabBarController.init()
-            self.present(vc)
+            self.present(vc: vc)
         case 7:
             let vc = NotificationStyleTabBarController.init()
-            self.present(vc)
+            self.present(vc: vc)
         default:
             
             break
@@ -96,10 +97,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func present(vc: UIViewController) {
         let nc = ExampleNavigationController.init(rootViewController: vc)
         nc.navigationBar.barTintColor = UIColor.init(red: 17/255.0, green: 86/255.0, blue: 136/255.0, alpha: 1.0)
-        nc.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName: UIFont.init(name: "ChalkboardSE-Bold", size: 17.0)!]
-        nc.navigationBar.tintColor = UIColor.whiteColor()
+        nc.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName: UIFont.init(name: "ChalkboardSE-Bold", size: 17.0)!]
+        nc.navigationBar.tintColor = .white
         nc.navigationBar.shadowImage = UIImage.init()
-        self.presentViewController(nc, animated: true, completion: nil)
+        self.present(nc, animated: true, completion: nil)
     }
     
 }
@@ -162,7 +163,7 @@ extension ViewController /**/ {
         vc.viewControllers = controllers
         
         let nc = ExampleNavigationController.init(rootViewController: vc)
-        self.presentViewController(nc, animated: true) {
+        self.present(nc, animated: true) {
             
         }
     }
@@ -205,7 +206,7 @@ extension ViewController /**/ {
         vc.viewControllers = controllers
         
         let nc = ExampleNavigationController.init(rootViewController: vc)
-        self.presentViewController(nc, animated: true) { 
+        self.present(nc, animated: true) { 
 
         }
     }
@@ -251,7 +252,7 @@ extension ViewController /**/ {
         
         let controllers = [n1, n2, n3, n4, n5]
         vc.viewControllers = controllers
-        self.presentViewController(vc, animated: true) {
+        self.present(vc, animated: true) {
             
         }
     }

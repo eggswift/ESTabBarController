@@ -17,8 +17,8 @@ public class ExampleBaseAnimator: ESTabBarItemAnimator {
         highlightTextColor = UIColor.init(red: 254/255.0, green: 73/255.0, blue: 42/255.0, alpha: 1.0)
         iconColor = UIColor.init(white: 175.0 / 255.0, alpha: 1.0)
         highlightIconColor = UIColor.init(red: 254/255.0, green: 73/255.0, blue: 42/255.0, alpha: 1.0)
-        backgroundColor = UIColor.clearColor()
-        highlightBackgroundColor = UIColor.clearColor()
+        backgroundColor = .clear
+        highlightBackgroundColor = .clear
     }
     
 }

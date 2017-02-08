@@ -30,7 +30,7 @@ public class ESTabBarItemContent: UIView {
     
     public weak var item: UITabBarItem!
     public var animator: ESTabBarItemAnimatorProtocol!
-    public var insets: UIEdgeInsets = UIEdgeInsetsZero
+    public var insets: UIEdgeInsets = UIEdgeInsets.zero
     public var highlighted: Bool = false
     public var highlightEnabled: Bool = true
     
@@ -81,28 +81,28 @@ public class ESTabBarItemContent: UIView {
     
     public var imageView: UIImageView = {
         let imageView = UIImageView.init(frame: CGRect.zero)
-        imageView.backgroundColor = UIColor.clearColor()
-        return imageView
+        imageView.backgroundColor = .clear
+		return imageView
     }()
     
     public var titleLabel: UILabel = {
         let titleLabel = UILabel.init(frame: CGRect.zero)
-        titleLabel.backgroundColor = UIColor.clearColor()
-        titleLabel.textColor = UIColor.clearColor()
-        titleLabel.font = UIFont.systemFontOfSize(9.0)
-        titleLabel.textAlignment = NSTextAlignment.Center
+        titleLabel.backgroundColor = .clear
+		titleLabel.textColor = .clear
+        titleLabel.font = UIFont.systemFont(ofSize: 9.0)
+        titleLabel.textAlignment = .center
         return titleLabel
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        userInteractionEnabled = false
+        isUserInteractionEnabled = false
         animator = ESTabBarItemAnimator.init()
         if let anim = animator as? ESTabBarItemAnimator {
             anim.content = self
         }
         badgeView = ESTabBarBadge()
-        badgeView?.hidden = true
+        badgeView?.isHidden = true
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(badgeView)
@@ -114,13 +114,13 @@ public class ESTabBarItemContent: UIView {
     
     public convenience init(animator anim: ESTabBarItemAnimatorProtocol) {
         self.init()
-        userInteractionEnabled = false
+        isUserInteractionEnabled = false
         animator = anim
         if let anim = anim as? ESTabBarItemAnimator {
             anim.content = self
         }
         badgeView = ESTabBarBadge()
-        badgeView?.hidden = true
+        badgeView?.isHidden = true
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(badgeView)
@@ -130,8 +130,8 @@ public class ESTabBarItemContent: UIView {
         super.layoutSubviews()
         let w = self.bounds.size.width
         let h = self.bounds.size.height
-        imageView.hidden = (imageView.image != nil) ? false : true
-        titleLabel.hidden = (titleLabel.text != nil) ? false : true
+        imageView.isHidden = (imageView.image != nil) ? false : true
+        titleLabel.isHidden = (titleLabel.text != nil) ? false : true
         if imageView.image != nil && titleLabel.text != nil {
             titleLabel.sizeToFit()
             imageView.sizeToFit()
@@ -152,7 +152,7 @@ public class ESTabBarItemContent: UIView {
         
     }
     
-    public func select(animated animated: Bool, completion: (() -> ())?){
+    public func select(animated: Bool, completion: (() -> ())?){
         selected = true
         if highlightEnabled == true && highlighted == true {
             highlighted = false
@@ -164,17 +164,17 @@ public class ESTabBarItemContent: UIView {
         }
     }
     
-    public func reselect(animated animated: Bool, completion: (() -> ())?){
+    public func reselect(animated: Bool, completion: (() -> ())?){
         selected = true
         animator.reselectAnimation(content: self, animated: animated, completion: completion)
     }
     
-    public func deselect(animated animated: Bool, completion: (() -> ())?){
+    public func deselect(animated: Bool, completion: (() -> ())?){
         selected = false
         animator.deselectAnimation(content: self, animated: animated, completion: completion)
     }
     
-    public func highlight(highlight highlight: Bool, animated: Bool, completion: (() -> ())?){
+    public func highlight(highlight: Bool, animated: Bool, completion: (() -> ())?){
         if highlightEnabled == true && highlighted != highlight {
             highlighted = highlight
             if highlighted == true {
