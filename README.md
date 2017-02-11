@@ -1,7 +1,7 @@
 ![ESTabBarController](logo.png)
 
 <center>
-[![Travis](https://travis-ci.org/eggswift/pull-to-refresh.svg?branch=master)](https://travis-ci.org/eggswift/ESTabBarController)
+[![Travis](https://travis-ci.org/eggswift/ESTabBarController.svg?branch=master)](https://travis-ci.org/eggswift/ESTabBarController)
 [![CocoaPods](https://img.shields.io/cocoapods/v/ESTabBarController-swift.svg)](http://cocoapods.org/pods/ESTabBarController-swift)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Swift v3](https://img.shields.io/badge/Swift-2.1-orange.svg?style=flat)](https://developer.apple.com/swift/)
@@ -39,7 +39,7 @@
 
 ## Demo
 
-下载后运行ESPullToRefreshExample工程，你可以看到一些使用ESPullToRefresh实现的自定义下拉刷新和加载更多例子。
+下载后运行ESTabBarControllerExample工程，你可以看到一些使用ESTabBarController实现的自定义TabBar的更多例子。
 
 ## 如何安装
 
