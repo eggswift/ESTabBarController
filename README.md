@@ -1,5 +1,4 @@
-<center>![logo](logo.png)</center>
-</p>
+![ESTabBarController](logo.png)
 
 <center>
 [![Travis](https://travis-ci.org/eggswift/pull-to-refresh.svg?branch=master)](https://travis-ci.org/eggswift/ESTabBarController)
