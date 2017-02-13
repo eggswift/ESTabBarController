@@ -1,41 +1,51 @@
-<center>![logo](logo.png)</center>
-</br>
+![ESTabBarController](logo.png)
 
-
-<!--[![Travis](https://img.shields.io/travis/eggwift/ESTabBarController.svg)](https://travis-ci.org/eggswift/ESTabBarController)-->
+<center>
+[![Travis](https://travis-ci.org/eggswift/ESTabBarController.svg?branch=master)](https://travis-ci.org/eggswift/ESTabBarController)
 [![CocoaPods](https://img.shields.io/cocoapods/v/ESTabBarController-swift.svg)](http://cocoapods.org/pods/ESTabBarController-swift)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Swift 2.2](https://img.shields.io/badge/Swift-2.1-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift v3](https://img.shields.io/badge/Swift-2.1-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![Twitter](https://img.shields.io/badge/Twitter-@lihao_iOS-blue.svg?style=flat)](https://twitter.com/lihao_iOS)
 [![Twitter](https://img.shields.io/badge/Weibo-@李昊_____-orange.svg?style=flat)](http://weibo.com/5120522686/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1)
+</center>
 
-**ESTabBarController** is a Swift module to customize special tabbar item animations, and  it's inherited from UITabBarController.	[中文介绍](README_CN.md)
+**ESTabBarController**是一个高度自定义的TabBarController组件，继承自UITabBarController。
 
-## Why?
+### 为什么要使用?
 
-There are greate possibilities for us to customize UITabBar. For instance, changing the font, adding some animations, setting a larger item than default. However it's hard to realize these only by using UITabBarItem.
+在开发工作中，我们可能会遇到需要自定义UITabBar的情况。例如：改变文字样式、添加一些动画效果、设置一个比默认更大的样式等等，以上需求如果只通过UITabBarItem往往很难实现。
 
-**With ESTabBarController, You can easily realize these and more !**
+**有了ESTabBarController，你可以轻松地实现这些！**
 
-1. Nest any UITabBarController and UINavigationController objects as you want
-2. Support Portrait, Landscape and Split View
-3. Add more extra tabs to the More Item automatically
-4. Changeable tabbar item font and images, customize irregular items
-5. Some pre-set special select, deselect and slected animations
-6. Hijack click event to jump page more flexibly
-7. Realize user-guiding animation
-8. Much more...
+-| 功能 |说明
+-------------|-------------|-------------
+1| 支持默认样式 | 如果直接使用ESTabBarController进行初始化，你会得到与UITabBarController完全相同的仿系统样式 </p> UITabBarController样式: </p> ![enter image description here](Resources/SystemStyle.png) </p> ESTabBarController仿系统样式: </p> ![enter image description here](Resources/CustomStyle.png)
+2| 支持带有"More"的默认样式 | 使用ESTabBarController进行初始化，若item大于最大显示数量则显示"More"，样式与UITabBarController一致 </p> 带有"More"的UITabBarController样式: </p> ![enter image description here](Resources/SystemMoreStyle.png) </p> 带有"More"的ESTabBarController样式: </p> ![enter image description here](Resources/CustomMoreStyle.png)
+3| 支持UITabBarItem和ESTabBarItem混合 | 可以任意设置tabbar的items，支持即包含UITabBarItem，同时也包含ESTabBarItem </p> ESTabBar和UITabBar混合样式: </p> ![enter image description here](Resources/MixtureStyle.png) </p> 带有'More'的ESTabBar和UITabBar混合样式: </p> ![enter image description here](Resources/MixtureMoreStyle.png)
+4| 通过系统api进行设置 | 支持UITabBarController、UITabBar和UITabBarItem的大部分api属性，使原有代码无需任何修改即可无缝迁移到ESTabBarController </p> 默认index非0的ESTabBarController桥接实现: </p> ![enter image description here](Resources/SelectIndexCode.png)
+5| 与UINavigationController任意嵌套 | 通常在使用`UITabBarController`过程中，会存在两种比较常见的层级处理方式: </p> 第一种: </p> ├── UITabBarController </p> └──── UINavigationController </p> └────── UIViewController </p> └──────── SubviewControllers </p> 第二种: </p> ├── UITabBarController </p> └──── UINavigationController </p> └────── UIViewController </p> └──────── SubviewControllers </p> 第一种情况在push子视图的时候需要设置 `hidesBottomBarWhenPushed = true` , 第二种则不需要 </p> 在ESTabBarController中，通过添加Container视图到UITabBar的方式来兼容这两种层级处理方式。
+6| 自定义 | 使用ESTabBarController可以实现：</p> 1. 自定义选中颜色和样式 </p> ![enter image description here](Resources/CustomSelectStyleGif.gif) </p> 2. 添加选中时的动画效果 </p> ![enter image description here](Resources/CustomSelectAnimateGif.gif) </p> 3. 自定义Item的背景颜色 </p> ![enter image description here](Resources/CustomBackgroundGif.gif) </p> 4. 添加高亮时的动画效果 </p> ![enter image description here](Resources/CustomHighlightGif.gif) </p> 5. 添加一些动画暗示用户点击 </p> ![enter image description here](Resources/CustomImpliesGif.gif) </p> 6. 等等...... </p>
+7| 支持自定义按钮大小 </p> 支持自定义点击事件 | ESTabBarController支持自定义按钮的大小，你可以轻松定制不规则大小的tab按钮。</p> **当按钮frame大于TabBar时，通过HitTest方法使其超出TabBar区域点击仍然有效。** </p> 另外，ESTabBarController能够自定义点击事件，并通过一个block回调给上层处理。 </p> 中间带有较大按钮样式: </p> ![enter image description here](Resources/CustomStyle2.png) </p> 带有特殊提醒框样式: </p> ![enter image description here](Resources/CustomStyle3.png) </p> 自定义按钮点击事件: </p> ![enter image description here](Resources/CustomHitGif.gif)
+8| 支持默认通知样式 | 如果直接使用ESTabBarController进行初始化，你会得到与UITabBarController完全相同的仿系统通知样式 </p> UITabBarController样式: </p> ![enter image description here](Resources/SystemNotificationStyle.png) </p> ESTabBarController仿系统样式: </p> ![enter image description here](Resources/CustomNotificationStyle.png)
+9| 自定义 | 使用ESTabBarController可以实现：</p> 1. 自定义提醒动画 </p> ![enter image description here](Resources/CustomNofticationGif.gif) </p> ![enter image description here](Resources/CustomNofticationGif2.gif) </p> 2. 自定义提醒样式 </p> ![enter image description here](Resources/CustomNofticationGif3.gif) </p> 3. 等等...... </p>
+10| 支持Lottie | 通过自定义ContentView，能够添加Lottie的LAAnimationView到Item </p> ![enter image description here](Resources/LottieGif.gif)
 
-## Requirement
+## 支持环境
 
-* Xcode 7.0 or later
+* Xcode 8 or later
 * iOS 8.0 or later
 * ARC
+* Swift 3 or later
 
-## Installation
+## Demo
+
+下载后运行ESTabBarControllerExample工程，你可以看到一些使用ESTabBarController实现的自定义TabBar的更多例子。
+
+## 如何安装
+
 ### CocoaPods
 
-```ruby
+``` ruby
 pod "ESTabBarController-swift"
 ```
 
@@ -45,237 +55,30 @@ pod "ESTabBarController-swift"
 github "eggswift/ESTabBarController"
 ```
 
-### Manually
+### 手动安装
 
-```ruby
+``` ruby
 git clone https://github.com/eggswift/ESTabBarController.git
 open ESTabBarController
 ```
 
-## Usage
+## 未完成的事
 
-### Handle UI layers
-
-Usually, there are two ways to handle layers when using `UITabBarController`:
-
-First:
-
-```swift
-    - UITabBarController
-    --- UINaviBarController
-    ----- ViewController
-    ------- SubViewController
-```
-Second:
-
-```swift
-    - UINaviBarController
-    --- UITabBarController
-    ----- ViewController
-    ------- SubViewController
-```
-
-In the first situation, need to set `hidesBottomBarWhenPushed = true` when pushing subView. But not in the second one.
-
-In ESTabBarController, to be compatible with the two ways by adding corresponding `container view` to UITabBar:
-
-```swift
-    func example() {
-        let vc = ESTabBarController.init()
-        vc.title = "Example"
-
-        let v1          = ExampleViewController()
-        let v2          = ExampleViewController()
-        let v3          = ExampleViewController()
-        let v4          = ExampleViewController()
-        let v5          = ExampleViewController()
-
-        v1.tabBarItem   = ESTabBarItem.init(content: ESTabBarItemContent.init(animator: ExampleBaseAnimator.init()))
-        v2.tabBarItem   = ESTabBarItem.init(content: ESTabBarItemContent.init(animator: ExampleBaseAnimator.init()))
-        v3.tabBarItem   = ESTabBarItem.init(content: ESTabBarItemContent.init(animator: ExampleBaseAnimator.init()))
-        v4.tabBarItem   = ESTabBarItem.init(content: ESTabBarItemContent.init(animator: ExampleBaseAnimator.init()))
-        v5.tabBarItem   = ESTabBarItem.init(content: ESTabBarItemContent.init(animator: ExampleBaseAnimator.init()))
-
-        v1.tabBarItem.image = UIImage.init(named: "home")
-        v2.tabBarItem.image = UIImage.init(named: "find")
-        v3.tabBarItem.image = UIImage.init(named: "photo")
-        v4.tabBarItem.image = UIImage.init(named: "favor")
-        v5.tabBarItem.image = UIImage.init(named: "me")
-        v1.tabBarItem.selectedImage = UIImage.init(named: "home_1")
-        v2.tabBarItem.selectedImage = UIImage.init(named: "find_1")
-        v3.tabBarItem.selectedImage = UIImage.init(named: "photo_1")
-        v4.tabBarItem.selectedImage = UIImage.init(named: "favor_1")
-        v5.tabBarItem.selectedImage = UIImage.init(named: "me_1")
-
-        v1.title        = "Home"
-        v2.title        = "Find"
-        v3.title        = "Photo"
-        v4.title        = "List"
-        v5.title        = "Me"
-
-        let controllers = [v1, v2, v3, v4, v5]
-        vc.viewControllers = controllers
-
-        let nc = ExampleNavigationController.init(rootViewController: vc)
-        self.presentViewController(nc, animated: true) { 
-
-        }
-    }
-```
-
-For more examples, look over the following functions in`Example`
-
-```swift
-    func systemStytle() 
-    func naviContainTabBarStytle() 
-    func tabBarContainNaviStytle()
-```
-
- Demo:
-
-![](Example_GIFs/normal.gif)
-
-
-
-### UIMoreNavigationController
-
-If the count ofViewControllers is more than the default count，UITabBarController will combine extra Tabs to More Tab，and ESTabBarController support this situation  well. 
-By doing this:
-
-```swift
-(moreNavigationController.parentViewController != nil) ? items.count - 1 : items.count 
-```
-
-to ensure the count of UITabBarItems which are need to add Container，if UITabBarController's object UIMoreNavigationController is exist and the parentViewController is not nil, then show the More Tab
-
-Demo:
-
-![](Example_GIFs/more.gif)
-
-
-
-### Add animations to TabBarItem
-
-ESTabBarController can customize the TabBar's style and presence, so you can customize style and animation by inhierting from ESTabBarItemContent or ESTabBarItemAnimator respectively.
-ESTabBarItemAnimator decide when the animation happens by realizing the ESTabBarItemAnimatorProtocol. Of cause you can customize your own Animator, just inhiert from ESTabBarItemAnimatorProtocol.
-[Example](https://github.com/eggswift/ESTabBarController/tree/master/ESTabBarControllerExample) realized some customized Animator, you can look over ExampleBackgroundAnimator, ExampleSpreadAnimator and  ExampleBounceAnimator, and get how they are realized.
-
-Demo:
-
-![](Example_GIFs/customize.gif)
-
-
-
-### Comstomize click event
-
-You can determine whether UITabBarController response to click and switch the corresponding index by setting the value of `shouldHijackHandler` if `false` indicate the current event is been hijacked. And the `hijackHandle`  realize to customize how to handle click event.
-Code:
-
-```swift
-    let vc = ESTabBarController.init()
-    vc.title = "Example"
-    vc.shouldHijackHandler = {
-        tabbarController, viewController, index in
-        if index == 2 {
-            return true
-        }
-        return false
-    }
-
-    vc.hijackHandler = {
-        [weak vc] tabbarController, viewController, index in
-        if index == 2 {
-            let minseconds = 0.2 * Double(NSEC_PER_SEC)
-            let dtime = dispatch_time(DISPATCH_TIME_NOW, Int64(minseconds))
-            dispatch_after(dtime, dispatch_get_main_queue() , {
-                let v1 = ExampleViewController()
-                let n1 = ExampleNavigationController.init(rootViewController: v1)
-                v1.title = "Example"
-                vc?.presentViewController(n1, animated: true, completion: nil)
-            })
-        }
-    }
-```
-
-Demo:
-
-![](Example_GIFs/hijack.gif)
-
-
-
-### User-Guding animation
-
-`Example` pre-set a user-guding animation to attract user to tap one of the Tabs. by inheriting ESTabBarItemContent to realize `TabBar` style.
-Code：
-
-```swift
-viewController.tabBarItem = ESTabBarItem.init(content: ExampleImpliesTabBarItemContent.init(animator: ExampleBackgroundAnimator.init(special: true)))
-```
-
-Demo:
-
-![](Example_GIFs/implies.gif)
-
-
-
-### How to customize
-
-If situations in the [Example](https://github.com/eggswift/ESTabBarController/tree/master/ESTabBarControllerExample) are not suitable for you, you will need to customize you own TabBar.
-You can modify the UITabBarItem style as you want by inhierting from ESTabBarItemContent. Pay attention: Please set `userInteractionEnabled = false` to guarant ESTabBarViewController can handle customized TabBar click event.
-To realize this by instancing ESTabBarItemAnimator.And if any object is obey `<ESTabBarItemAnimatorProtocol>` , You can customize animation as you want.
-For example: ExampleBounceAnimator, you need create a method:
-
-```swift
-    func bounceAnimation(view: UIView) {
-        let impliesAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
-        impliesAnimation.values = [1.0 ,1.4, 0.9, 1.15, 0.95, 1.02, 1.0]
-        impliesAnimation.duration = duration * 2
-        impliesAnimation.calculationMode = kCAAnimationCubic
-        view.layer.addAnimation(impliesAnimation, forKey: nil)
-    }
-```
-
-ExampleBounceAnimator inhierted from ESTabBarItemAnimator, realize `<ESTabBarItemAnimatorProtocol>`
-
-```swift
-    public override func selectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
-        super.selectAnimation(content: content, animated: animated, completion: completion)
-        if let content = content as? ESTabBarItemContent {
-            /// Add animation here
-            self.bounceAnimation(content.imageView)
-        }
-    }
-
-    public override func reselectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
-        super.reselectAnimation(content: content, animated: animated, completion: completion)
-        if let content = content as? ESTabBarItemContent {
-            /// Add animation here
-            self.bounceAnimation(content.imageView)
-        }
-    }
-
-    public override func deselectAnimation(content content: UIView, animated: Bool, completion: (() -> ())?) {
-        super.deselectAnimation(content: content, animated: animated, completion: completion)
-    }
-```
-
-## Something unfinished
-
-1. Use AutoLayout instead of pure code will be better to realize the Container portion UI.
-2. The 'More' has some issues When the iPadx or iPhone6x Plus devices is landscape, Because of thankless of handling `itemWidth`and `itemSpacing` when doing the Containers' layout.
+1. Containers的布局方式目前是纯代码布局，使用Autolayout应该会更好。
+2. 当存在"More"时，若进行Edit会出现问题。
 3. ...
 
-## Thanks
 
-* [animated-tab-bar](https://github.com/Ramotion/animated-tab-bar) by <http://ramotion.com>
-* most images are  from<http://www.iconfont.cn>
+## 感谢:
+
+* [animated-tab-bar](https://github.com/Ramotion/animated-tab-bar) by <http://ramotion.com> 
+* Example中部分图片资源来自 <http://www.iconfont.cn>
 
 
-## About
+## 关于
 
-ESTabBarController is developed and maintained by [lihao](mailto:lihao_iOS@hotmail.com).If you have any doubt or questions, Welcome to open [issues](https://github.com/eggswift/ESTabBarController/issues) to discuss.
-
-If you want contribute to ESTabBarController, Please  [Pull Request](https://github.com/eggswift/ESTabBarController/pulls)，I'll as soon as possible to deal with.
+ESTabBarController是由[lihao](mailto:lihao_iOS@hotmail.com)开发和维护。如果你在使用过程中遇到什么疑问或任何问题，欢迎提交 [issue](https://github.com/eggswift/ESTabBarController/issues) 随时交流。</br>
+如果你想为ESTabBarController输出代码，请提交 [Pull Request](https://github.com/eggswift/ESTabBarController/pulls)，我会尽可能快的去处理。</br>
 
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https://github.com/eggswift/ESTabBarController)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lihao_ios.svg?style=social)](https://twitter.com/lihao_iOS)
@@ -284,7 +87,7 @@ If you want contribute to ESTabBarController, Please  [Pull Request](https://git
 
 The MIT License (MIT)
 
-Copyright (c) 2013-2015 eggswift. All rights reserved.
+Copyright (c) 2013-2016 eggswift. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
