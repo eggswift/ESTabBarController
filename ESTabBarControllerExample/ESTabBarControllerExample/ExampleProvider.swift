@@ -282,10 +282,17 @@ enum ExampleProvider {
         }
         tabBarController.didHijackHandler = {
             [weak tabBarController] tabbarController, viewController, index in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2 ) {
-                let actionSheet = UIActionSheet.init(title: nil, delegate: nil, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "拍照", "从相册选取")
-                actionSheet.show(in: tabBarController!.view)
-            }
+            
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+				let alertController = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
+				let takePictureAction = UIAlertAction(title: "拍照", style: .default, handler: nil)
+				alertController.addAction(takePictureAction)
+				let selectFromAlbumAction = UIAlertAction(title: "从相册选取", style: .default, handler: nil)
+				alertController.addAction(selectFromAlbumAction)
+				let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+				alertController.addAction(cancelAction)
+				tabBarController?.present(alertController, animated: true, completion: nil)
+			}
         }
 
         let v1 = ExampleViewController()
