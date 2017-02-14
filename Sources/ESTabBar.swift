@@ -47,6 +47,7 @@ public enum ESTabBarItemPositioning : Int {
 }
 
 
+
 /// 对UITabBarDelegate进行扩展，以支持UITabBarControllerDelegate的相关方法桥接
 internal protocol ESTabBarDelegate {
 
@@ -116,9 +117,7 @@ open class ESTabBar: UITabBar {
     internal weak var tabBarController: UITabBarController?
     /// 自定义'More'按钮样式，继承自ESTabBarItemContentView
     open var moreContentView: ESTabBarItemContentView? = ESTabBarItemMoreContentView.init() {
-        didSet {
-            self.reload()
-        }
+        didSet { self.reload() }
     }
     
     
