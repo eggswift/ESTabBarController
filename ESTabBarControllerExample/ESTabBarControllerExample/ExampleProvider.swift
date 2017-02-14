@@ -357,7 +357,9 @@ enum ExampleProvider {
         v1.tabBarItem.badgeValue = "New"
         v2.tabBarItem.badgeValue = "99+"
         v3.tabBarItem.badgeValue = "1"
-        v3.tabBarItem.badgeColor = UIColor.blue
+        if let tabBarItem = v3.tabBarItem as? ESTabBarItem {
+            tabBarItem.badgeColor = UIColor.blue
+        }
         v4.tabBarItem.badgeValue = ""
         v5.tabBarItem.badgeValue = nil
         
