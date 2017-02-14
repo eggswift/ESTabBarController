@@ -79,7 +79,6 @@ open class ESTabBarItem: UITabBarItem {
         set(newValue) { contentView?.badgeColor = newValue }
     }
     
-    
     open override var tag: Int // default is 0
         {
         didSet { self.contentView?.tag = tag }
