@@ -357,7 +357,11 @@ enum ExampleProvider {
         v1.tabBarItem.badgeValue = "New"
         v2.tabBarItem.badgeValue = "99+"
         v3.tabBarItem.badgeValue = "1"
-        v3.tabBarItem.badgeColor = UIColor.blue
+        if #available(iOS 10.0, *) {
+            v3.tabBarItem.badgeColor = UIColor.blue
+        } else {
+            // Fallback on earlier versions
+        }
         v4.tabBarItem.badgeValue = ""
         v5.tabBarItem.badgeValue = nil
         
