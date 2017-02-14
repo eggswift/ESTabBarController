@@ -9,28 +9,30 @@
 [![Twitter](https://img.shields.io/badge/Weibo-@李昊_____-orange.svg?style=flat)](http://weibo.com/5120522686/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1)
 </center>
 
-**ESTabBarController**是一个高度自定义的TabBarController组件，继承自UITabBarController。
+### [中文介绍](README_CN.md)
 
-### 为什么要使用?
+**ESTabBarController** is a highly customizable TabBarController component, which is inherited from UITabBarController.
 
-在开发工作中，我们可能会遇到需要自定义UITabBar的情况。例如：改变文字样式、添加一些动画效果、设置一个比默认更大的样式等等，以上需求如果只通过UITabBarItem往往很难实现。
+### Why?
 
-**有了ESTabBarController，你可以轻松地实现这些！**
+In real-world development, we may encounter the situation that customizing the UITabBar. For instance: change font style, add animation, use bigger item. However it's hard to do with UITabBarItem.
 
--| 功能 |说明
+**With ESTabBarController, You can easily achieve these！**
+
+-| Feature |Description
 -------------|-------------|-------------
-1| 支持默认样式 | 如果直接使用ESTabBarController进行初始化，你会得到与UITabBarController完全相同的仿系统样式 </p> UITabBarController样式: </p> ![enter image description here](Resources/SystemStyle.png) </p> ESTabBarController仿系统样式: </p> ![enter image description here](Resources/CustomStyle.png)
-2| 支持带有"More"的默认样式 | 使用ESTabBarController进行初始化，若item大于最大显示数量则显示"More"，样式与UITabBarController一致 </p> 带有"More"的UITabBarController样式: </p> ![enter image description here](Resources/SystemMoreStyle.png) </p> 带有"More"的ESTabBarController样式: </p> ![enter image description here](Resources/CustomMoreStyle.png)
-3| 支持UITabBarItem和ESTabBarItem混合 | 可以任意设置tabbar的items，支持即包含UITabBarItem，同时也包含ESTabBarItem </p> ESTabBar和UITabBar混合样式: </p> ![enter image description here](Resources/MixtureStyle.png) </p> 带有'More'的ESTabBar和UITabBar混合样式: </p> ![enter image description here](Resources/MixtureMoreStyle.png)
-4| 支持UIKit属性 | 支持UITabBarController、UITabBar和UITabBarItem的大部分api属性，使原有代码无需任何修改即可无缝迁移到ESTabBarController </p> 支持UITabBarController的selectedIndex属性的实现: </p> ![enter image description here](Resources/SelectIndexCode.png)
-5| 支持与UINavigationController任意嵌套 | 通常在使用`UITabBarController`过程中，会存在两种比较常见的层级处理方式: </p> 第一种: </p> ├── UITabBarController </p> └──── UINavigationController </p> └────── UIViewController </p> └──────── SubviewControllers </p> 第二种: </p> ├── UINavigationController </p> └──── UITabBarController </p> └────── UIViewController </p> └──────── SubviewControllers </p> 第一种情况在push子视图的时候需要设置 `hidesBottomBarWhenPushed = true` , 第二种则不需要 </p> 在ESTabBarController中，通过添加Container视图到UITabBar的方式来兼容这两种层级处理方式。
-6| 支持自定义 | 使用ESTabBarController可以实现：</p> 1. 自定义选中颜色和样式 </p> ![enter image description here](Resources/CustomSelectStyleGif.gif) </p> 2. 添加选中时的动画效果 </p> ![enter image description here](Resources/CustomSelectAnimateGif.gif) </p> 3. 自定义Item的背景颜色 </p> ![enter image description here](Resources/CustomBackgroundGif.gif) </p> 4. 添加高亮时的动画效果 </p> ![enter image description here](Resources/CustomHighlightGif.gif) </p> 5. 添加一些动画暗示用户点击 </p> ![enter image description here](Resources/CustomImpliesGif.gif) </p> 6. 等等...... </p>
-7| 支持自定义按钮大小 </p> 支持自定义点击事件 | ESTabBarController支持自定义按钮的大小，你可以轻松定制不规则大小的tab按钮。</p> **当按钮frame大于TabBar时，通过HitTest方法使其超出TabBar区域点击仍然有效。** </p> 另外，ESTabBarController能够自定义点击事件，并通过一个block回调给上层处理。 </p> 中间带有较大按钮样式: </p> ![enter image description here](Resources/CustomStyle2.png) </p> 带有特殊提醒框样式: </p> ![enter image description here](Resources/CustomStyle3.png) </p> 自定义按钮点击事件: </p> ![enter image description here](Resources/CustomHitGif.gif)
-8| 支持默认通知样式 | 如果直接使用ESTabBarController进行初始化，你会得到与UITabBarController完全相同的仿系统通知样式 </p> UITabBarController样式: </p> ![enter image description here](Resources/SystemNotificationStyle.png) </p> ESTabBarController仿系统样式: </p> ![enter image description here](Resources/CustomNotificationStyle.png)
-9| 支持自定义通知样式 | 使用ESTabBarController可以实现：</p> 1. 自定义提醒动画 </p> ![enter image description here](Resources/CustomNofticationGif.gif) </p> ![enter image description here](Resources/CustomNofticationGif2.gif) </p> 2. 自定义提醒样式 </p> ![enter image description here](Resources/CustomNofticationGif3.gif) </p> 3. 等等...... </p>
-10| 支持Lottie | 通过自定义ContentView，能够添加Lottie的LAAnimationView到Item </p> ![enter image description here](Resources/LottieGif.gif)
+1| Default style | You can get system-like style by initializing the TabBar with ESTabBarController directly.  </p> UITabBarController style: </p> ![System native style](Resources/SystemStyle.png) </p> ESTabBarController default style: </p> ![ES system-like style](Resources/CustomStyle.png)
+2| Default style with "More" item | If the items are more than the maximum number of displays, there will be a "More" item. </p> UITabBarController with "More": </p> ![enter image description here](Resources/SystemMoreStyle.png) </p> ESTabBarController with "More": </p> ![enter image description here](Resources/CustomMoreStyle.png)
+3| Mix UITabBarItem and ESTabBarItem | You can set any item as you want, including UITabBarItem and ESTabBarItem. </p> ESTabBar and UITabBar mixed style: </p> ![enter image description here](Resources/MixtureStyle.png) </p> ESTabBar and UITabBar mixed style with "More": </p> ![enter image description here](Resources/MixtureMoreStyle.png)
+4| UIKit attributes | ESTabBarController is compatible with UITabBarController, UITabBar and UITabBarItem's most API attributes. You can migrate to ESTabBarController without any modification of the origin code.  </p> Compatible with UITabBarController's `selectedIndex`: </p> ![enter image description here](Resources/SelectIndexCode.png)
+5| Any nesting with UINavigationController | Developing with`UITabBarController`, there are two common ways to handle layers: </p> First : </p> ├── UITabBarController </p> └──── UINavigationController </p> └────── UIViewController </p> └──────── SubviewControllers </p> Second : </p> ├── UINavigationController </p> └──── UITabBarController </p> └────── UIViewController </p> └──────── SubviewControllers </p> In the first case, need to set `hidesBottomBarWhenPushed = true` when pushing subViews. The second is not. </p> In ESTabBarController, add Container views to UITabBar to be compatible with these two ways。
+6| Customizable style | With ESTabBarController, you can：</p> 1. Customize selected item's color and style: </p> ![enter image description here](Resources/CustomSelectStyleGif.gif) </p> 2. Add selecting animation:  </p> ![enter image description here](Resources/CustomSelectAnimateGif.gif) </p> 3. Customize item's background color: </p> ![enter image description here](Resources/CustomBackgroundGif.gif) </p> 4. Add highlight animation: </p> ![enter image description here](Resources/CustomHighlightGif.gif) </p> 5. Add animation to prompt users: </p> ![enter image description here](Resources/CustomImpliesGif.gif) </p> 6. And much more ... </p>
+7| Customizable item's size </p> Customizable click event | You can easily customize item's size using ESTabBarController. </p> **When the button's frame is larger than TabBar, through the use of HitTest to achieve making outer TabBar area click valid.** </p> In addition, ESTabBarController can customize click event, and through a block to callback super-layer to handle. </p> With big item in the middle of TabBar: </p> ![enter image description here](Resources/CustomStyle2.png) </p> With a special hint style: </p> ![enter image description here](Resources/CustomStyle3.png) </p> Customize click event: </p> ![enter image description here](Resources/CustomHitGif.gif)
+8| Default notification style |  You can get system-like notification style by initializing the TabBar with ESTabBarController directly. </p> UITabBarController notification style: </p> ![enter image description here](Resources/SystemNotificationStyle.png) </p> ESTabBarController system-like notification style: </p> ![enter image description here](Resources/CustomNotificationStyle.png)
+9| Customizable notification style | With ESTabBarController, you can：</p> 1. Customize notification animation: </p> ![enter image description here](Resources/CustomNofticationGif.gif) </p> ![enter image description here](Resources/CustomNofticationGif2.gif) </p> 2. Customize prompt style: </p> ![enter image description here](Resources/CustomNofticationGif3.gif) </p> 3. And much more ... </p>
+10| Lottie | Through customizing ContentView, you are able to add Lottie's LAAnimationView to Item(s) </p> ![enter image description here](Resources/LottieGif.gif)
 
-## 支持环境
+## Requirements
 
 * Xcode 8 or later
 * iOS 8.0 or later
@@ -39,9 +41,9 @@
 
 ## Demo
 
-下载后运行ESTabBarControllerExample工程，你可以看到一些使用ESTabBarController实现的自定义TabBar的更多例子。
+You can download and build ESTabBarControllerExample project, and you will find more examples to use ESTabBarController, and also more examples to customize UITabBar。
 
-## 如何安装
+## Usage
 
 ### CocoaPods
 
@@ -55,30 +57,30 @@ pod "ESTabBarController-swift"
 github "eggswift/ESTabBarController"
 ```
 
-### 手动安装
+### Manually
 
 ``` ruby
 git clone https://github.com/eggswift/ESTabBarController.git
 open ESTabBarController
 ```
 
-## 未完成的事
+## TODO
 
-1. Containers的布局方式目前是纯代码布局，使用Autolayout应该会更好。
-2. 当存在"More"时，若进行Edit会出现问题。
+1. The Containers' layout is purely based on code，using Autolayout will be better.
+2. When there is "More", if edit it will occurs problem.
 3. ...
 
 
-## 感谢:
+## Acknowledgement
 
 * [animated-tab-bar](https://github.com/Ramotion/animated-tab-bar) by <http://ramotion.com> 
-* Example中部分图片资源来自 <http://www.iconfont.cn>
+* Partial pictures in Example are from <http://www.iconfont.cn>
 
 
-## 关于
+## About
 
-ESTabBarController是由[lihao](mailto:lihao_iOS@hotmail.com)开发和维护。如果你在使用过程中遇到什么疑问或任何问题，欢迎提交 [issue](https://github.com/eggswift/ESTabBarController/issues) 随时交流。</br>
-如果你想为ESTabBarController输出代码，请提交 [Pull Request](https://github.com/eggswift/ESTabBarController/pulls)，我会尽可能快的去处理。</br>
+ESTabBarController is developed and maintained by [lihao](mailto:lihao_iOS@hotmail.com). If you have any questions or issues in using ESTabBarController, welcome to [issue](https://github.com/eggswift/ESTabBarController/issues). </br>
+If you want to contribute to ESTabBarController, Please submit [Pull Request](https://github.com/eggswift/ESTabBarController/pulls), I will deal with it as soon as possible. </br>
 
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https://github.com/eggswift/ESTabBarController)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lihao_ios.svg?style=social)](https://twitter.com/lihao_iOS)
