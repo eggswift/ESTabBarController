@@ -21,8 +21,8 @@ public class ViewController: UIViewController, UITableViewDataSource, UITableVie
 			"UITabBarController style with 'More'",
 			"ESTabBarController style with 'More'",
 			"Mix ESTabBar and UITabBar with 'More'",
-			"UITabBarController style with no-zero default index",
-			"ESTabBarController style with no-zero default index"
+			"UITabBarController style with non-zero default index",
+			"ESTabBarController style with non-zero default index"
 		],
 		[
 			"ESTabBarController embeds the UINavigationController style",
