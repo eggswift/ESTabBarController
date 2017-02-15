@@ -17,12 +17,12 @@ public class ViewController: UIViewController, UITableViewDataSource, UITableVie
 		[
 			"UITabBarController default style",
 			"ESTabBarController default style",
-			"mix ESTabBar and UITabBar ",
+			"Mix ESTabBar and UITabBar ",
 			"UITabBarController style with 'More'",
 			"ESTabBarController style with 'More'",
-			"mix ESTabBar and UITabBar with 'More'",
-			"UITabBarController style with default index isn't zero",
-			"ESTabBarController style with default index isn't zero"
+			"Mix ESTabBar and UITabBar with 'More'",
+			"UITabBarController style with no-zero default index",
+			"ESTabBarController style with no-zero default index"
 		],
 		[
 			"ESTabBarController embeds the UINavigationController style",
