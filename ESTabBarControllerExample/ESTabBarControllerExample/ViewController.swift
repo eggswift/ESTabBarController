@@ -40,7 +40,7 @@ public class ViewController: UIViewController, UITableViewDataSource, UITableVie
 			],
 		[
 			"Hijack button click event",
-			"Add a action sheet",
+			"Add a special reminder box",
 			],
 		[
 			"System remind style",
