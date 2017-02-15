@@ -285,11 +285,11 @@ enum ExampleProvider {
             
 			DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
 				let alertController = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
-				let takePictureAction = UIAlertAction(title: "拍照", style: .default, handler: nil)
-				alertController.addAction(takePictureAction)
-				let selectFromAlbumAction = UIAlertAction(title: "从相册选取", style: .default, handler: nil)
+				let takePhotoAction = UIAlertAction(title: "Take a photo", style: .default, handler: nil)
+				alertController.addAction(takePhotoAction)
+				let selectFromAlbumAction = UIAlertAction(title: "Select from album", style: .default, handler: nil)
 				alertController.addAction(selectFromAlbumAction)
-				let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+				let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 				alertController.addAction(cancelAction)
 				tabBarController?.present(alertController, animated: true, completion: nil)
 			}
