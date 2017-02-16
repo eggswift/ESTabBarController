@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name              = 'ESTabBarController-swift'
-s.version           = '2.0'
+s.version           = '2.1'
 s.summary           = 'An easy way to customize tabBarController and tabBarItem.'
 s.homepage          = 'https://github.com/eggswift/ESTabBarController'
 

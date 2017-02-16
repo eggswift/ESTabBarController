@@ -91,6 +91,7 @@ open class ESTabBarController: UITabBarController, ESTabBarDelegate {
         let tabBar = { () -> ESTabBar in 
             let tabBar = ESTabBar()
             tabBar.delegate = self
+            tabBar.customDelegate = self
             tabBar.tabBarController = self
             return tabBar
         }()
@@ -111,6 +112,18 @@ open class ESTabBarController: UITabBarController, ESTabBarDelegate {
             ignoreNextSelection = true
             selectedIndex = idx
             delegate?.tabBarController?(self, didSelect: vc)
+        }
+    }
+    
+    open override func tabBar(_ tabBar: UITabBar, willBeginCustomizing items: [UITabBarItem]) {
+        if let tabBar = tabBar as? ESTabBar {
+            tabBar.updateLayout()
+        }
+    }
+    
+    open override func tabBar(_ tabBar: UITabBar, didEndCustomizing items: [UITabBarItem], changed: Bool) {
+        if let tabBar = tabBar as? ESTabBar {
+            tabBar.updateLayout()
         }
     }
     

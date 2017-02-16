@@ -1,5 +1,5 @@
 //
-//  ESTabBarItemContent.swift
+//  Package.swift
 //
 //  Created by egg swift on 16/4/7.
 //  Copyright (c) 2013-2016 ESPullToRefresh (https://github.com/eggswift/ESTabBarController)

@@ -83,14 +83,6 @@ open class ESTabBar: UITabBar {
     
     internal var customDelegate: ESTabBarDelegate?
     
-    open override var delegate: UITabBarDelegate? {
-        didSet {
-            if let delegate = self.delegate as? ESTabBarDelegate {
-                self.customDelegate = delegate
-            }
-        }
-    }
-    
     /// tabBar中items布局偏移量
     public var itemEdgeInsets = UIEdgeInsets.zero
     /// 是否设置为自定义布局方式，默认为空。如果为空，则通过itemPositioning属性来设置。如果不为空则忽略itemPositioning,所以当tabBar的itemCustomPositioning属性不为空时，如果想改变布局规则，请设置此属性而非itemPositioning。
@@ -120,16 +112,33 @@ open class ESTabBar: UITabBar {
         didSet { self.reload() }
     }
     
-    
     open override var items: [UITabBarItem]? {
         didSet {
             self.reload()
         }
     }
     
+    open var isEditing: Bool = false {
+        didSet {
+            if oldValue != isEditing {
+                self.updateLayout()
+            }
+        }
+    }
+    
     open override func setItems(_ items: [UITabBarItem]?, animated: Bool) {
         super.setItems(items, animated: animated)
         self.reload()
+    }
+    
+    open override func beginCustomizingItems(_ items: [UITabBarItem]) {
+        ESTabBarController.printError("beginCustomizingItems(_:) is unsupported in ESTabBar.")
+        super.beginCustomizingItems(items)
+    }
+    
+    open override func endCustomizing(animated: Bool) -> Bool {
+        ESTabBarController.printError("endCustomizing(_:) is unsupported in ESTabBar.")
+        return super.endCustomizing(animated: animated)
     }
     
     open override func layoutSubviews() {
@@ -168,14 +177,27 @@ internal extension ESTabBar /* Layout */ {
                 return subview1.frame.origin.x < subview2.frame.origin.x
         }
         
-        for (idx, item) in tabBarItems.enumerated() {
-            if let _ = item as? ESTabBarItem {
-                tabBarButtons[idx].isHidden = true
-            } else {
+        if isCustomizing {
+            for (idx, _) in tabBarItems.enumerated() {
                 tabBarButtons[idx].isHidden = false
+                moreContentView?.isHidden = true
             }
-            if isMoreItem(idx), let _ = moreContentView {
-                tabBarButtons[idx].isHidden = true
+            for (_, container) in containers.enumerated(){
+                container.isHidden = true
+            }
+        } else {
+            for (idx, item) in tabBarItems.enumerated() {
+                if let _ = item as? ESTabBarItem {
+                    tabBarButtons[idx].isHidden = true
+                } else {
+                    tabBarButtons[idx].isHidden = false
+                }
+                if isMoreItem(idx), let _ = moreContentView {
+                    tabBarButtons[idx].isHidden = true
+                }
+            }
+            for (_, container) in containers.enumerated(){
+                container.isHidden = false
             }
         }
         

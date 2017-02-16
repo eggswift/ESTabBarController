@@ -302,7 +302,7 @@
 				TargetAttributes = {
 					F6EE45531E4AC173001E0FA1 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = F7X2NLC97S;
+						DevelopmentTeam = A367N9R36B;
 						ProvisioningStyle = Automatic;
 					};
 					F6EE457C1E4AC1FF001E0FA1 = {
@@ -525,7 +525,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F7X2NLC97S;
+				DEVELOPMENT_TEAM = A367N9R36B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ESTabBarControllerExample/Framework",
@@ -534,7 +534,7 @@
 				INFOPLIST_FILE = ESTabBarControllerExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.eggswift.ESTabBarControllerExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eggswift.ESTabBarControllerExample1;
 				PRODUCT_NAME = Example;
 				SWIFT_VERSION = 3.0;
 			};
@@ -545,7 +545,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = F7X2NLC97S;
+				DEVELOPMENT_TEAM = A367N9R36B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ESTabBarControllerExample/Framework",
@@ -554,7 +554,7 @@
 				INFOPLIST_FILE = ESTabBarControllerExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.eggswift.ESTabBarControllerExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eggswift.ESTabBarControllerExample1;
 				PRODUCT_NAME = Example;
 				SWIFT_VERSION = 3.0;
 			};
