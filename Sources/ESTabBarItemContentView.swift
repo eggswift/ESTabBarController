@@ -82,7 +82,7 @@ open class ESTabBarItemContentView: UIView {
     open var image: UIImage? {
         didSet {
             if !selected {
-                self.imageView.image = image?.withRenderingMode(.alwaysTemplate)
+                self.imageView.image = image
                 self.imageView.tintColor = iconColor
                 self.updateLayout()
             }
@@ -92,7 +92,7 @@ open class ESTabBarItemContentView: UIView {
     open var selectedImage: UIImage? {
         didSet {
             if selected {
-                self.imageView.image = selectedImage?.withRenderingMode(.alwaysTemplate) ?? image?.withRenderingMode(.alwaysTemplate)
+                self.imageView.image = selectedImage ?? image
                 self.imageView.tintColor = highlightIconColor
                 self.updateLayout()
             }
@@ -185,12 +185,12 @@ open class ESTabBarItemContentView: UIView {
     open func updateDisplay() {
         if selected {
             backgroundColor = highlightBackdropColor
-            imageView.image = selectedImage?.withRenderingMode(.alwaysTemplate) ?? image?.withRenderingMode(.alwaysTemplate)
+            imageView.image = selectedImage ?? image
             imageView.tintColor = highlightIconColor
             titleLabel.textColor = highlightTextColor
         } else {
             backgroundColor = backdropColor
-            imageView.image = image?.withRenderingMode(.alwaysTemplate)
+            imageView.image = image
             imageView.tintColor = iconColor
             titleLabel.textColor = textColor
         }
