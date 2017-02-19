@@ -22,5 +22,40 @@ class ExampleBasicContentView: ESTabBarItemContentView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    override var image: UIImage? {
+        didSet {
+            if !selected {
+                self.imageView.image = image?.withRenderingMode(.alwaysTemplate)
+                self.imageView.tintColor = iconColor
+                self.updateLayout()
+            }
+        }
+    }
+    
+    override var selectedImage: UIImage? {
+        didSet {
+            if selected {
+                self.imageView.image = selectedImage?.withRenderingMode(.alwaysTemplate) ?? image?.withRenderingMode(.alwaysTemplate)
+                self.imageView.tintColor = highlightIconColor
+                self.updateLayout()
+            }
+        }
+    }
+    
+    override func updateDisplay() {
+        if selected {
+            backgroundColor = highlightBackdropColor
+            imageView.image = selectedImage?.withRenderingMode(.alwaysTemplate) ?? image?.withRenderingMode(.alwaysTemplate)
+            imageView.tintColor = highlightIconColor
+            titleLabel.textColor = highlightTextColor
+        } else {
+            backgroundColor = backdropColor
+            imageView.image = image?.withRenderingMode(.alwaysTemplate)
+            imageView.tintColor = iconColor
+            titleLabel.textColor = textColor
+        }
+    }
+
 
 }
