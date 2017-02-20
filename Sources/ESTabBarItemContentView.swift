@@ -82,7 +82,7 @@ open class ESTabBarItemContentView: UIView {
     open var image: UIImage? {
         didSet {
             if !selected {
-                self.imageView.image = image?.withRenderingMode(.alwaysTemplate)
+                set(imageViewImage: image)
                 self.imageView.tintColor = iconColor
                 self.updateLayout()
             }
@@ -92,13 +92,13 @@ open class ESTabBarItemContentView: UIView {
     open var selectedImage: UIImage? {
         didSet {
             if selected {
-                self.imageView.image = selectedImage?.withRenderingMode(.alwaysTemplate) ?? image?.withRenderingMode(.alwaysTemplate)
+                set(imageViewImage: selectedImage ?? image)
                 self.imageView.tintColor = highlightIconColor
                 self.updateLayout()
             }
         }
     }
-
+    
     open var title: String? {
         didSet {
             self.titleLabel.text = title
@@ -185,12 +185,12 @@ open class ESTabBarItemContentView: UIView {
     open func updateDisplay() {
         if selected {
             backgroundColor = highlightBackdropColor
-            imageView.image = selectedImage?.withRenderingMode(.alwaysTemplate) ?? image?.withRenderingMode(.alwaysTemplate)
+            set(imageViewImage: selectedImage ?? image)
             imageView.tintColor = highlightIconColor
             titleLabel.textColor = highlightTextColor
         } else {
             backgroundColor = backdropColor
-            imageView.image = image?.withRenderingMode(.alwaysTemplate)
+            set(imageViewImage: image)
             imageView.tintColor = iconColor
             titleLabel.textColor = textColor
         }
@@ -224,6 +224,17 @@ open class ESTabBarItemContentView: UIView {
         if let _ = badgeView.superview {
             let size = badgeView.sizeThatFits(self.frame.size)
             badgeView.frame = CGRect.init(origin: CGPoint.init(x: w / 2.0 + badgeOffset.horizontal, y: h / 2.0 + badgeOffset.vertical), size: size)
+        }
+    }
+    
+    internal final func set(imageViewImage image: UIImage?) -> Void {
+        if let image = image {
+            switch image.renderingMode {
+            case .automatic:
+                self.imageView.image = image.withRenderingMode(.alwaysTemplate)
+            case .alwaysOriginal, .alwaysTemplate:
+                self.imageView.image = image
+            }
         }
     }
 
