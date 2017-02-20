@@ -27,82 +27,87 @@ import UIKit
 
 open class ESTabBarItemContentView: UIView {
     
-    /// 设置contentView的偏移
-    open var insets: UIEdgeInsets = UIEdgeInsets.zero
-    /// 当前是否被选中
-    open var selected: Bool = false
-    /// 当前是否高亮
-    open var highlighted: Bool = false
-    /// 是否支持高亮
-    open var highlightEnabled: Bool = true
+    // MARK: - PROPERTY SETTING
 
-    open var textColor = UIColor(white: 146.0 / 255.0, alpha: 1.0) {
+    /// 设置contentView的偏移
+    open var insets = UIEdgeInsets.zero
+    
+    /// 是否被选中
+    open var selected = false
+    
+    /// 是否处于高亮状态
+    open var highlighted = false
+    
+    /// 是否支持高亮
+    open var highlightEnabled = true
+
+    /// 文字颜色
+    open var textColor = UIColor(white: 0.57254902, alpha: 1.0) {
         didSet {
-            if !selected {
-                titleLabel.textColor = textColor
-            }
-        }
-    }
-    open var highlightTextColor = UIColor(red: 0.0 / 255.0, green: 122.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0) {
-        didSet {
-            if selected {
-                titleLabel.textColor = highlightIconColor
-            }
-        }
-    }
-    open var iconColor = UIColor(white: 146.0 / 255.0, alpha: 1.0) {
-        didSet {
-            if !selected {
-                imageView.tintColor = iconColor
-            }
-        }
-    }
-    open var highlightIconColor = UIColor(red: 0.0 / 255.0, green: 122.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0) {
-        didSet {
-            if selected {
-                imageView.tintColor = highlightIconColor
-            }
-        }
-    }
-    open var backdropColor = UIColor.clear {
-        didSet {
-            if !selected {
-                backgroundColor = backdropColor
-            }
-        }
-    }
-    open var highlightBackdropColor = UIColor.clear {
-        didSet {
-            if selected {
-                backgroundColor = highlightBackdropColor
-            }
+            if !selected { titleLabel.textColor = textColor }
         }
     }
     
+    /// 高亮时文字颜色
+    open var highlightTextColor = UIColor(red: 0.0, green: 0.47843137, blue: 1.0, alpha: 1.0) {
+        didSet {
+            if selected { titleLabel.textColor = highlightIconColor }
+        }
+    }
+    
+    /// icon颜色
+    open var iconColor = UIColor(white: 0.57254902, alpha: 1.0) {
+        didSet {
+            if !selected { imageView.tintColor = iconColor }
+        }
+    }
+    
+    /// 高亮时icon颜色
+    open var highlightIconColor = UIColor(red: 0.0, green: 0.47843137, blue: 1.0, alpha: 1.0) {
+        didSet {
+            if selected { imageView.tintColor = highlightIconColor }
+        }
+    }
+    
+    /// 背景颜色
+    open var backdropColor = UIColor.clear {
+        didSet {
+            if !selected { backgroundColor = backdropColor }
+        }
+    }
+    
+    /// 高亮时背景颜色
+    open var highlightBackdropColor = UIColor.clear {
+        didSet {
+            if selected { backgroundColor = highlightBackdropColor }
+        }
+    }
+    
+    open var title: String? {
+        didSet {
+            self.titleLabel.text = title
+            self.updateLayout()
+        }
+    }
+    
+    /// Icon imageView renderingMode, default is .alwaysTemplate like UITabBarItem
+    open var renderingMode: UIImageRenderingMode = .alwaysTemplate {
+        didSet {
+            self.updateDisplay()
+        }
+    }
+    
+    
+    /// Icon imageView's image
     open var image: UIImage? {
         didSet {
-            if !selected {
-                self.imageView.image = image?.withRenderingMode(.alwaysTemplate)
-                self.imageView.tintColor = iconColor
-                self.updateLayout()
-            }
+            if !selected { self.updateDisplay() }
         }
     }
     
     open var selectedImage: UIImage? {
         didSet {
-            if selected {
-                self.imageView.image = selectedImage?.withRenderingMode(.alwaysTemplate) ?? image?.withRenderingMode(.alwaysTemplate)
-                self.imageView.tintColor = highlightIconColor
-                self.updateLayout()
-            }
-        }
-    }
-
-    open var title: String? {
-        didSet {
-            self.titleLabel.text = title
-            self.updateLayout()
+            if selected { self.updateDisplay() }
         }
     }
     
@@ -165,7 +170,7 @@ open class ESTabBarItemContentView: UIView {
         }
     }
     
-
+    // MARK: -
     public override init(frame: CGRect) {
         super.init(frame: frame)
         self.isUserInteractionEnabled = false
@@ -183,17 +188,10 @@ open class ESTabBarItemContentView: UIView {
     }
 
     open func updateDisplay() {
-        if selected {
-            backgroundColor = highlightBackdropColor
-            imageView.image = selectedImage?.withRenderingMode(.alwaysTemplate) ?? image?.withRenderingMode(.alwaysTemplate)
-            imageView.tintColor = highlightIconColor
-            titleLabel.textColor = highlightTextColor
-        } else {
-            backgroundColor = backdropColor
-            imageView.image = image?.withRenderingMode(.alwaysTemplate)
-            imageView.tintColor = iconColor
-            titleLabel.textColor = textColor
-        }
+        imageView.image = (selected ? (selectedImage ?? image) : image)?.withRenderingMode(renderingMode)
+        imageView.tintColor = selected ? highlightIconColor : iconColor
+        titleLabel.textColor = selected ? highlightTextColor : textColor
+        backgroundColor = selected ? highlightBackdropColor : backdropColor
     }
     
     open func updateLayout() {
@@ -227,6 +225,7 @@ open class ESTabBarItemContentView: UIView {
         }
     }
 
+    // MARK: - INTERNAL METHODS
     internal final func select(animated: Bool, completion: (() -> ())?) {
         selected = true
         if highlightEnabled && highlighted {
@@ -288,6 +287,7 @@ open class ESTabBarItemContentView: UIView {
         self.badgeChangedAnimation(animated: animated, completion: completion)
     }
     
+    // MARK: - ANIMATION METHODS
     open func selectAnimation(animated: Bool, completion: (() -> ())?) {
         completion?()
     }
