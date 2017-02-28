@@ -55,7 +55,7 @@ open class ESTabBarController: UITabBarController, ESTabBarDelegate {
     /// Observer tabBarController's selectedViewController. change its selection when it will-set.
     open override var selectedViewController: UIViewController? {
         willSet {
-            guard let newValue = newValue else {
+            guard let newValue = selectedViewController else {
                 return
             }
             guard !ignoreNextSelection else {
@@ -98,7 +98,7 @@ open class ESTabBarController: UITabBarController, ESTabBarDelegate {
         self.setValue(tabBar, forKey: "tabBar")
     }
 
-    // MARK: UITabBar delegate
+    // MARK: - UITabBar delegate
     open override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         guard let idx = tabBar.items?.index(of: item) else {
             return;
@@ -127,7 +127,7 @@ open class ESTabBarController: UITabBarController, ESTabBarDelegate {
         }
     }
     
-    // MARK: ESTabBar delegate
+    // MARK: - ESTabBar delegate
     internal func tabBar(_ tabBar: UITabBar, shouldSelect item: UITabBarItem) -> Bool {
         if let idx = tabBar.items?.index(of: item), let vc = viewControllers?[idx] {
             return delegate?.tabBarController?(self, shouldSelect: vc) ?? true
