@@ -371,8 +371,16 @@ internal extension ESTabBar /* Actions */ {
             } else if self.isMoreItem(newIndex) {
                 moreContentView?.reselect(animated: animated, completion: nil)
             }
-            if let navVC = tabBarController?.selectedViewController?.navigationController {
-                navVC.popToRootViewController(animated: animated)
+            if let tabBarController = tabBarController, let navVC = tabBarController.selectedViewController?.navigationController {
+                if navVC.viewControllers.contains(tabBarController) {
+                    if navVC.viewControllers.count > 1 && navVC.viewControllers.last != tabBarController {
+                        navVC.popToViewController(tabBarController, animated: true);
+                    }
+                } else {
+                    if navVC.viewControllers.count > 1 {
+                        navVC.popToRootViewController(animated: animated)
+                    }
+                }
             }
         }
     }
