@@ -86,6 +86,10 @@ ESTabBarController是由[lihao](mailto:lihao_iOS@hotmail.com)开发和维护。�
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https://github.com/eggswift/ESTabBarController)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lihao_ios.svg?style=social)](https://twitter.com/lihao_iOS)
 
+## 贡献者
+* [Tony](xiaozao@aivr.space)
+持续更新中...
+
 ## License
 
 The MIT License (MIT)

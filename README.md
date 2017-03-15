@@ -86,6 +86,10 @@ If you want to contribute to ESTabBarController, Please submit [Pull Request](ht
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https://github.com/eggswift/ESTabBarController)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lihao_ios.svg?style=social)](https://twitter.com/lihao_iOS)
 
+## contributors
+[Tony](xiaozao@aivr.space)
+Updating...
+
 ## License
 
 The MIT License (MIT)
