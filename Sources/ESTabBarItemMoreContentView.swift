@@ -31,8 +31,8 @@ open class ESTabBarItemMoreContentView: ESTabBarItemContentView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         self.title = "More"
-        self.image = createImage(selected:false)
-        self.selectedImage = createImage(selected:true)
+        self.image = systemTypeMore(selected:false)
+        self.selectedImage = systemTypeMore(selected:true)
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -42,19 +42,21 @@ open class ESTabBarItemMoreContentView: ESTabBarItemContentView {
 }
 
 // draw More image
-func createImage(selected:Bool) -> UIImage {
+func systemTypeMore(selected:Bool) -> UIImage {
+    // create empty image for drawing
     let image = UIImage()
     let circleDiameter  = selected ? 5 : 4;
     
-    UIGraphicsBeginImageContextWithOptions(CGSize.init(width: 32, height: 32), false, UIScreen.main.scale) // 比例基于设备屏幕
+    UIGraphicsBeginImageContextWithOptions(CGSize.init(width: 32, height: 32), false, UIScreen.main.scale) // different scale for different screen
     let context = UIGraphicsGetCurrentContext()!
     context.setLineWidth(1)
+    // draw Three dots
     for index in 0...2 {
         let tmpRect = CGRect.init(x: 5 + 9*index, y: 14, width: circleDiameter, height: circleDiameter)
         context.addEllipse(in: tmpRect)
         image.draw(in: tmpRect)
     }
-    
+    // selected or not
     if selected {
         context.setFillColor(UIColor.blue.cgColor)
         context.fillPath()
@@ -62,10 +64,10 @@ func createImage(selected:Bool) -> UIImage {
         context.strokePath()
     }
     
-    let newImage = UIGraphicsGetImageFromCurrentImageContext()
+    let newImage = UIGraphicsGetImageFromCurrentImageContext()!
     UIGraphicsEndImageContext()
     
-    return newImage!
+    return newImage
 }
 
 
