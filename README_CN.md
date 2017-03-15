@@ -69,7 +69,7 @@ open ESTabBarController
 1. Containers的布局方式目前是纯代码布局，使用Autolayout应该会更好。
 2. 当存在"More"时，若进行Edit会出现问题。
 3. UITabBarItem的部分属性还没有桥接到ESTabBarItem。
-4. ESTabBarItemMoreContentView中的"More"图片目前还未设置到framework中，计划将它转化为创建CGBitmap的代码。
+
 
 
 ## 感谢:
@@ -85,6 +85,10 @@ ESTabBarController是由[lihao](mailto:lihao_iOS@hotmail.com)开发和维护。�
 
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https://github.com/eggswift/ESTabBarController)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lihao_ios.svg?style=social)](https://twitter.com/lihao_iOS)
+
+## 贡献者
+* [Tony](xiaozao@aivr.space)
+持续更新中...
 
 ## License
 

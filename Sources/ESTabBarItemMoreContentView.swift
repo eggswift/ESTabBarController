@@ -25,13 +25,14 @@
 
 import UIKit
 
+
 open class ESTabBarItemMoreContentView: ESTabBarItemContentView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
         self.title = "More"
-        self.image = UIImage(named: "more")
-        self.selectedImage = UIImage(named: "more_1")
+        self.image = systemTypeMore(selected:false)
+        self.selectedImage = systemTypeMore(selected:true)
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -39,3 +40,35 @@ open class ESTabBarItemMoreContentView: ESTabBarItemContentView {
     }
     
 }
+
+// draw More image
+func systemTypeMore(selected:Bool) -> UIImage? {
+    // create empty image for drawing
+    let image = UIImage()
+    let circleDiameter  = selected ? 5 : 4;
+    
+    UIGraphicsBeginImageContextWithOptions(CGSize.init(width: 32, height: 32), false, UIScreen.main.scale) // different scale for different screen
+    let context = UIGraphicsGetCurrentContext()!
+    context.setLineWidth(1)
+    // draw Three dots
+    for index in 0...2 {
+        let tmpRect = CGRect.init(x: 5 + 9*index, y: 14, width: circleDiameter, height: circleDiameter)
+        context.addEllipse(in: tmpRect)
+        image.draw(in: tmpRect)
+    }
+    // selected or not
+    if selected {
+        context.setFillColor(UIColor.blue.cgColor)
+        context.fillPath()
+    } else {
+        context.strokePath()
+    }
+    
+    let newImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return newImage
+}
+
+
+

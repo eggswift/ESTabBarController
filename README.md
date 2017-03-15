@@ -69,7 +69,7 @@ open ESTabBarController
 1. The Containers' layout is purely based on code，using Autolayout will be better.
 2. When there is "More", if edit it will occurs problem.
 3. Partial UITabBarItem attributes are not bridge to ESTabBarItem.
-4. The picture of "More" item in ESTabBarItemMoreContentView is not set into framework, plan to convert it to CGBitmap.
+
 
 
 ## Acknowledgement
@@ -85,6 +85,10 @@ If you want to contribute to ESTabBarController, Please submit [Pull Request](ht
 
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https://github.com/eggswift/ESTabBarController)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lihao_ios.svg?style=social)](https://twitter.com/lihao_iOS)
+
+## contributors
+[Tony](xiaozao@aivr.space)
+Updating...
 
 ## License
 
