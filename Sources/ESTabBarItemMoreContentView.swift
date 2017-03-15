@@ -42,7 +42,7 @@ open class ESTabBarItemMoreContentView: ESTabBarItemContentView {
 }
 
 // draw More image
-func systemTypeMore(selected:Bool) -> UIImage! {
+func systemTypeMore(selected:Bool) -> UIImage? {
     // create empty image for drawing
     let image = UIImage()
     let circleDiameter  = selected ? 5 : 4;
