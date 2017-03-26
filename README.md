@@ -10,6 +10,8 @@
 
 ### [中文介绍](README_CN.md)
 
+[![Join the chat at https://gitter.im/ESTabBarController/Lobby](https://badges.gitter.im/ESTabBarController/Lobby.svg)](https://gitter.im/ESTabBarController/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 **ESTabBarController** is a highly customizable TabBarController component, which is inherited from UITabBarController.
 
 ### Why?
