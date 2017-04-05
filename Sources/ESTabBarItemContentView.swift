@@ -222,6 +222,7 @@ open class ESTabBarItemContentView: UIView {
         if let _ = badgeView.superview {
             let size = badgeView.sizeThatFits(self.frame.size)
             badgeView.frame = CGRect.init(origin: CGPoint.init(x: w / 2.0 + badgeOffset.horizontal, y: h / 2.0 + badgeOffset.vertical), size: size)
+            badgeView.setNeedsLayout()
         }
     }
 
