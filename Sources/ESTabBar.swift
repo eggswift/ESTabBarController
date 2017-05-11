@@ -83,6 +83,13 @@ open class ESTabBar: UITabBar {
 
     internal weak var customDelegate: ESTabBarDelegate?
     
+    /**
+     *  If the value is set is will be used to override size returned from
+     *  `sizeThatFits(_)` function and lead to changed size of tab bar.
+     *
+     *  @see    `sizeThatFits(_)`
+     */
+    @IBInspectable public var preferredHeight: CGFloat?
     /// tabBar中items布局偏移量
     public var itemEdgeInsets = UIEdgeInsets.zero
     /// 是否设置为自定义布局方式，默认为空。如果为空，则通过itemPositioning属性来设置。如果不为空则忽略itemPositioning,所以当tabBar的itemCustomPositioning属性不为空时，如果想改变布局规则，请设置此属性而非itemPositioning。
@@ -156,6 +163,16 @@ open class ESTabBar: UITabBar {
             }
         }
         return b
+    }
+    
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        var preferredSize = super.sizeThatFits(size)
+        
+        if let preferredHeight = preferredHeight {
+            preferredSize.height = preferredHeight
+        }
+        
+        return preferredSize
     }
     
 }
