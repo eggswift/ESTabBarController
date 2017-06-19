@@ -29,7 +29,7 @@ open class ESTabBarItemMoreContentView: ESTabBarItemContentView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        self.title = "More"
+        self.title = NSLocalizedString("More_TabBarItem", bundle: Bundle(for:ESTabBarController.self), comment: "")
         self.image = systemMore(highlighted: false)
         self.selectedImage = systemMore(highlighted: true)
     }

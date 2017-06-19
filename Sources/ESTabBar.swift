@@ -383,5 +383,31 @@ internal extension ESTabBar /* Actions */ {
                 }
             }
         }
+        
+        self.updateAccessibilityLabels()
+    }
+    
+    internal func updateAccessibilityLabels() {
+        guard let tabBarItems = self.items, tabBarItems.count == self.containers.count else {
+            return
+        }
+        
+        for (idx, item) in tabBarItems.enumerated() {
+            let container = self.containers[idx]
+            var accessibilityTitle = ""
+            
+            if let item = item as? ESTabBarItem {
+                accessibilityTitle = item.title ?? ""
+            }
+            if self.isMoreItem(idx) {
+                accessibilityTitle = NSLocalizedString("More_TabBarItem", bundle: Bundle(for:ESTabBarController.self), comment: "")
+            }
+            
+            let formatString = NSLocalizedString(item == selectedItem ? "TabBarItem_Selected_AccessibilityLabel" : "TabBarItem_AccessibilityLabel",
+                                                 bundle: Bundle(for: ESTabBarController.self),
+                                                 comment: "")
+            container.accessibilityLabel = String(format: formatString, accessibilityTitle, idx + 1, tabBarItems.count)
+            
+        }
     }
 }

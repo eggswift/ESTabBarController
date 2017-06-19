@@ -8,6 +8,7 @@
 
 import UIKit
 import pop
+import ESTabBarController
 
 class ExampleIrregularityBasicContentView: ExampleBouncesContentView {
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ESTabBarController
 
 class ExampleBasicContentView: ESTabBarItemContentView {
 
