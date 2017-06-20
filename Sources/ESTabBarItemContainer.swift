@@ -35,6 +35,7 @@ internal class ESTabBarItemContainer: UIControl {
         self.addTarget(target, action: #selector(ESTabBar.highlightAction(_:)), for: .touchDragEnter)
         self.addTarget(target, action: #selector(ESTabBar.dehighlightAction(_:)), for: .touchDragExit)
         self.backgroundColor = .clear
+        self.isAccessibilityElement = true
     }
     
     internal required init?(coder aDecoder: NSCoder) {
