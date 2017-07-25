@@ -277,7 +277,7 @@ internal extension ESTabBar /* Actions */ {
         self.setNeedsLayout()
     }
     
-    internal func highlightAction(_ sender: AnyObject?) {
+    @objc internal func highlightAction(_ sender: AnyObject?) {
         guard let container = sender as? ESTabBarItemContainer else {
             return
         }
@@ -297,7 +297,7 @@ internal extension ESTabBar /* Actions */ {
         }
     }
     
-    internal func dehighlightAction(_ sender: AnyObject?) {
+    @objc internal func dehighlightAction(_ sender: AnyObject?) {
         guard let container = sender as? ESTabBarItemContainer else {
             return
         }
@@ -317,14 +317,14 @@ internal extension ESTabBar /* Actions */ {
         }
     }
     
-    internal func selectAction(_ sender: AnyObject?) {
+    @objc internal func selectAction(_ sender: AnyObject?) {
         guard let container = sender as? ESTabBarItemContainer else {
             return
         }
         select(itemAtIndex: container.tag - 1000, animated: true)
     }
     
-    internal func select(itemAtIndex idx: Int, animated: Bool) {
+    @objc internal func select(itemAtIndex idx: Int, animated: Bool) {
         let newIndex = max(0, idx)
         let currentIndex = (selectedItem != nil) ? (items?.index(of: selectedItem!) ?? -1) : -1
         guard newIndex < items?.count ?? 0, let item = self.items?[newIndex], item.isEnabled == true else {
