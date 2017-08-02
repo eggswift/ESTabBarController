@@ -40,7 +40,7 @@ class ExampleBackgroundContentView: ExampleBasicContentView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    internal func playImpliesAnimation(_ sender: AnyObject?) {
+    @objc internal func playImpliesAnimation(_ sender: AnyObject?) {
         if self.selected == true || self.highlighted == true {
             return
         }
