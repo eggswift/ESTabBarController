@@ -10,5 +10,6 @@ s.social_media_url  = 'https://github.com/eggswift'
 s.platform          = :ios, '8.0'
 s.source            = {:git => 'https://github.com/eggswift/ESTabBarController.git', :tag => s.version}
 s.source_files      = ['Sources/**/*.{swift}']
+s.resources         = ['Sources/**/*.{lproj}']
 s.requires_arc      = true
 end
