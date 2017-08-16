@@ -46,26 +46,26 @@ import UIKit
 open class ESTabBarItem: UITabBarItem {
     
     /// Customize content view
-    open var contentView: ESTabBarItemContentView?
+    @IBOutlet open var contentView: ESTabBarItemContentView?
     
     // MARK: UIBarItem properties
-    open override var title: String? // default is nil
+    @IBInspectable open override var title: String? // default is nil
         {
         didSet { self.contentView?.title = title }
     }
     
-    open override var image: UIImage? // default is nil
+    @IBInspectable open override var image: UIImage? // default is nil
         {
         didSet { self.contentView?.image = image }
     }
     
     // MARK: UITabBarItem properties
-    open override var selectedImage: UIImage? // default is nil
+    @IBInspectable open override var selectedImage: UIImage? // default is nil
         {
         didSet { self.contentView?.selectedImage = selectedImage }
     }
     
-    open override var badgeValue: String? // default is nil
+    @IBInspectable open override var badgeValue: String? // default is nil
         {
         get { return contentView?.badgeValue }
         set(newValue) { contentView?.badgeValue = newValue }
@@ -74,12 +74,12 @@ open class ESTabBarItem: UITabBarItem {
     /// Override UITabBarItem.badgeColor, make it available for iOS8.0 and later.
     /// If this item displays a badge, this color will be used for the badge's background. If set to nil, the default background color will be used instead.
     @available(iOS 8.0, *)
-    open override var badgeColor: UIColor? {
+    @IBInspectable open override var badgeColor: UIColor? {
         get { return contentView?.badgeColor }
         set(newValue) { contentView?.badgeColor = newValue }
     }
     
-    open override var tag: Int // default is 0
+    @IBInspectable open override var tag: Int // default is 0
         {
         didSet { self.contentView?.tag = tag }
     }

@@ -32,7 +32,7 @@ public typealias ESTabBarControllerDidHijackHandler = ((_ tabBarController: UITa
 
 open class ESTabBarController: UITabBarController, ESTabBarDelegate {
     
-    /// 打印异常
+    /// Print errors
     open static func printError(_ description: String) {
         #if DEBUG
             print("ERROR: ESTabBarController catch an error '\(description)' \n")
@@ -84,6 +84,35 @@ open class ESTabBarController: UITabBarController, ESTabBarDelegate {
             let value = (ESTabBarController.isShowingMore(self) && newValue > items.count - 1) ? items.count - 1 : newValue
             tabBar.select(itemAtIndex: value, animated: false)
         }
+    }
+    
+    /**
+     Returns a newly initialized view controller with the nib file in the specified bundle.
+     
+     - parameter nibNameOrNil:   The name of the nib file to associate with the view controller. The nib file name should
+     not contain any leading path information. If you specify nil, the nibName property is set to nil.
+     
+     - parameter nibBundleOrNil: The bundle in which to search for the nib file. This method looks for the nib file in the
+     bundle's language-specific project directories first, followed by the Resources directory. If this parameter is nil,
+     the method uses the heuristics described below to locate the nib file.
+     
+     - returns: A newly initialized ESTabBarController object.
+     */
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+    }
+    
+    /**
+     Returns a newly initialized view controller with the nib file in the specified bundle.
+     
+     - parameter aDecoder: An unarchiver object.
+     
+     - returns: A newly initialized ESTabBarController object.
+     */
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
     }
     
     /// Customize set tabBar use KVC.

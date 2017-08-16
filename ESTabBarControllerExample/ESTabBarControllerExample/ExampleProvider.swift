@@ -497,6 +497,13 @@ enum ExampleProvider {
         return navigationController
     }
     
+    static func storyboardStyle() -> ESTabBarController {
+        let storyboard = UIStoryboard.init(name: "ExampleTabBarController", bundle: Bundle.main)
+        let vc = storyboard.instantiateInitialViewController() as! ESTabBarController
+        
+        return vc
+    }
+    
     static func lottieSytle() -> ESTabBarController {
         let tabBarController = ESTabBarController()
         let v1 = ExampleViewController()

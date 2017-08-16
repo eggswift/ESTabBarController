@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hqJ-Cr-Ybp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Find-->
+        <scene sceneID="EiJ-Nd-nTJ">
+            <objects>
+                <viewController title="Find" id="lnh-t3-0Lx" customClass="ExampleViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ueB-aJ-c3S"/>
+                        <viewControllerLayoutGuide type="bottom" id="uac-Ve-iNj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3sm-at-ftj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Find" id="ium-Kh-hxC" customClass="ESTabBarItem" customModule="Example" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Find"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="find"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="find_1"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gj0-Pd-ttH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1598" y="492"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="UMA-7U-adl">
+            <objects>
+                <viewController title="Home" automaticallyAdjustsScrollViewInsets="NO" id="p99-kS-5lz" customClass="ExampleViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RmW-qs-plW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Se5-3E-CSH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BUd-LZ-hVj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" selectedImage="home" id="KxS-bZ-u6U" customClass="ESTabBarItem" customModule="Example" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Home"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="home"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="home_1"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FoV-1v-njZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1598" y="-967"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wmg-HQ-WP5">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hqJ-Cr-Ybp" customClass="ESTabBarController" customModule="ESTabBarController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="EGL-It-Jru">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="p99-kS-5lz" kind="relationship" relationship="viewControllers" id="a7L-Rz-08N"/>
+                        <segue destination="lnh-t3-0Lx" kind="relationship" relationship="viewControllers" id="wnb-V5-Szj"/>
+                        <segue destination="Qdk-Ve-PyF" kind="relationship" relationship="viewControllers" id="VPw-hX-DRs"/>
+                        <segue destination="D2Y-lK-Hld" kind="relationship" relationship="viewControllers" id="Q7F-Ht-3Sy"/>
+                        <segue destination="gxa-eB-gR6" kind="relationship" relationship="viewControllers" id="dig-Xo-YXw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IID-Ax-0Nl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-534" y="1428"/>
+        </scene>
+        <!--Photo-->
+        <scene sceneID="aFP-nt-ok2">
+            <objects>
+                <viewController title="Photo" automaticallyAdjustsScrollViewInsets="NO" id="Qdk-Ve-PyF" customClass="ExampleViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sr5-AQ-S6b"/>
+                        <viewControllerLayoutGuide type="bottom" id="IQX-Xf-oZo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hln-Xe-vLh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Photo" id="UMq-ok-QKP" customClass="ESTabBarItem" customModule="Example" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Photo"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="photo"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="photo_1"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XpL-uz-3Um" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1598" y="1247"/>
+        </scene>
+        <!--Favor-->
+        <scene sceneID="wW6-33-bqq">
+            <objects>
+                <viewController title="Favor" automaticallyAdjustsScrollViewInsets="NO" id="D2Y-lK-Hld" customClass="ExampleViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="db7-Et-93h"/>
+                        <viewControllerLayoutGuide type="bottom" id="YRt-k7-iYG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EY0-j2-PC5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favor" selectedImage="home" id="udT-i8-gUx" customClass="ESTabBarItem" customModule="Example" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Favor"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="favor"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="favor_1"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2dk-7X-w4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1598" y="-250"/>
+        </scene>
+        <!--Me-->
+        <scene sceneID="W44-cY-GSv">
+            <objects>
+                <viewController title="Me" automaticallyAdjustsScrollViewInsets="NO" id="gxa-eB-gR6" customClass="ExampleViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DCl-JT-rLm"/>
+                        <viewControllerLayoutGuide type="bottom" id="uGd-75-E4c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J6k-6L-XeF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Me" id="jtQ-10-diw" customClass="ESTabBarItem" customModule="Example" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Me"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="me"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="me_1"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tlZ-v0-aTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1598" y="1961"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="favor" width="23" height="23"/>
+        <image name="favor_1" width="23" height="23"/>
+        <image name="find" width="23" height="23"/>
+        <image name="find_1" width="23" height="23"/>
+        <image name="home" width="23" height="23"/>
+        <image name="home_1" width="23" height="23"/>
+        <image name="me" width="23" height="23"/>
+        <image name="me_1" width="23" height="23"/>
+        <image name="photo" width="23" height="23"/>
+        <image name="photo_1" width="23" height="23"/>
+    </resources>
+</document>

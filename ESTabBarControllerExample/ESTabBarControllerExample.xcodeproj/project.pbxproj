@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3C69F8171EF81895009D5F4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C69F8191EF81895009D5F4A /* Localizable.strings */; };
+		BFE425041F43EAFD0081AC8F /* ExampleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE425021F43EAFD0081AC8F /* ExampleTabBarController.swift */; };
+		BFE425091F43EBD80081AC8F /* ExampleTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE425081F43EBD80081AC8F /* ExampleTabBarController.storyboard */; };
 		F6858F411E4F435C002DAF6C /* IconTransitions.json in Resources */ = {isa = PBXBuildFile; fileRef = F6858F3F1E4F435C002DAF6C /* IconTransitions.json */; };
 		F6858F441E4F436F002DAF6C /* ExampleLottieAnimateContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6858F431E4F436F002DAF6C /* ExampleLottieAnimateContentView.swift */; };
 		F6858F461E4F4384002DAF6C /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F6858F401E4F435C002DAF6C /* Lottie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -72,6 +74,8 @@
 
 /* Begin PBXFileReference section */
 		3C69F8181EF81895009D5F4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BFE425021F43EAFD0081AC8F /* ExampleTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTabBarController.swift; sourceTree = "<group>"; };
+		BFE425081F43EBD80081AC8F /* ExampleTabBarController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExampleTabBarController.storyboard; sourceTree = "<group>"; };
 		F6858F3F1E4F435C002DAF6C /* IconTransitions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IconTransitions.json; sourceTree = "<group>"; };
 		F6858F401E4F435C002DAF6C /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Lottie.framework; sourceTree = "<group>"; };
 		F6858F431E4F436F002DAF6C /* ExampleLottieAnimateContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleLottieAnimateContentView.swift; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 				F6EE45A11E4C4BC4001E0FA1 /* ExampleProvider.swift */,
 				F6EE45A31E4C4D72001E0FA1 /* ExampleViewController.swift */,
 				F6EE45A41E4C4D72001E0FA1 /* ExampleNavigationController.swift */,
+				BFE425021F43EAFD0081AC8F /* ExampleTabBarController.swift */,
+				BFE425081F43EBD80081AC8F /* ExampleTabBarController.storyboard */,
 				F6858F4A1E4F516F002DAF6C /* Content */,
 				F6858F3E1E4F435C002DAF6C /* Lottie */,
 				F6EE45A71E4C4DA3001E0FA1 /* Me */,
@@ -334,6 +340,7 @@
 			files = (
 				F6EE45621E4AC173001E0FA1 /* LaunchScreen.storyboard in Resources */,
 				F6858F491E4F45A9002DAF6C /* LottieLogo1.json in Resources */,
+				BFE425091F43EBD80081AC8F /* ExampleTabBarController.storyboard in Resources */,
 				F6858F411E4F435C002DAF6C /* IconTransitions.json in Resources */,
 				F6EE455F1E4AC173001E0FA1 /* Assets.xcassets in Resources */,
 				F6EE45AA1E4C4DA3001E0FA1 /* WebView.storyboard in Resources */,
@@ -362,6 +369,7 @@
 				F6858F571E4F516F002DAF6C /* ExampleIrregularityContentView.swift in Sources */,
 				F6858F561E4F516F002DAF6C /* ExampleHighlightableContentView.swift in Sources */,
 				F6EE45A61E4C4D72001E0FA1 /* ExampleNavigationController.swift in Sources */,
+				BFE425041F43EAFD0081AC8F /* ExampleTabBarController.swift in Sources */,
 				F6858F441E4F436F002DAF6C /* ExampleLottieAnimateContentView.swift in Sources */,
 				F6EE45A21E4C4BC5001E0FA1 /* ExampleProvider.swift in Sources */,
 				F6858F521E4F516F002DAF6C /* ExampleAnimateTipsContentView.swift in Sources */,

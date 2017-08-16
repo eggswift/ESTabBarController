@@ -12,8 +12,8 @@ public class ViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var tableView: UITableView!
     
-	public let sectionTitleArray = ["Basic", "Embed", "Animation", "Irregular", "Customize click", "Remind", "Lottie"]
-    public let sectionSubtitleArray = ["基本", "嵌套", "动画", "不规则", "自定义点击", "提醒", "Lottie"]
+    public let sectionTitleArray = ["Basic", "Embed", "Animation", "Irregular", "Customize click", "Remind", "Storybaord", "Lottie"]
+    public let sectionSubtitleArray = ["基本", "嵌套", "动画", "不规则", "自定义点击", "提醒", "Storybaord", "Lottie"]
 	public let titleArray = [
 		[
 			"UITabBarController style",
@@ -50,6 +50,9 @@ public class ViewController: UIViewController, UITableViewDataSource, UITableVie
 			"Remind style with animation(2)",
 			"Customize remind style",
 			],
+		[
+            "Storyboard",
+            ],
 		[
 			"Lottie",
 			],
@@ -90,6 +93,9 @@ public class ViewController: UIViewController, UITableViewDataSource, UITableVie
             "带动画提醒样式",
             "带动画提醒样式(2)",
             "自定义提醒样式",
+            ],
+        [
+            "Storyboard",
             ],
         [
             "Lottie",
@@ -227,6 +233,13 @@ public class ViewController: UIViewController, UITableViewDataSource, UITableVie
                 break
             }
         case 6:
+            switch indexPath.row {
+            case 0:
+                self.present(ExampleProvider.storyboardStyle(), animated: true, completion: nil)
+            default:
+                break
+            }
+        case 7:
             switch indexPath.row {
             case 0:
                 self.present(ExampleProvider.lottieSytle(), animated: true, completion: nil)
