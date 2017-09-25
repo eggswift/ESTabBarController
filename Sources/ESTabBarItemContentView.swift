@@ -121,7 +121,6 @@ open class ESTabBarItemContentView: UIView {
         let titleLabel = UILabel.init(frame: CGRect.zero)
         titleLabel.backgroundColor = .clear
         titleLabel.textColor = .clear
-        titleLabel.font = UIFont.systemFont(ofSize: 10.0)
         titleLabel.textAlignment = .center
         return titleLabel
     }()
@@ -197,26 +196,55 @@ open class ESTabBarItemContentView: UIView {
     open func updateLayout() {
         let w = self.bounds.size.width
         let h = self.bounds.size.height
+        let isLandscape = UIDeviceOrientationIsLandscape(UIDevice.current.orientation) // is landscape
+        var s: CGFloat = 0.0 // image size
+        var f: CGFloat = 0.0 // font
+        
         imageView.isHidden = (imageView.image == nil)
         titleLabel.isHidden = (titleLabel.text == nil)
         
+        if #available(iOS 11.0, *), isLandscape {
+            s = UIScreen.main.scale == 3.0 ? 23.0 : 20.0
+            f = UIScreen.main.scale == 3.0 ? 13.0 : 12.0
+        } else {
+            s = 23.0
+            f = 10.0
+        }
+        
         if !imageView.isHidden && !titleLabel.isHidden {
+            titleLabel.font = UIFont.systemFont(ofSize: f)
             titleLabel.sizeToFit()
-            imageView.sizeToFit()
+            if #available(iOS 11.0, *), isLandscape {
+                titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0 + (UIScreen.main.scale == 3.0 ? 142.5 : 12.25),
+                                               y: (h - titleLabel.bounds.size.height) / 2.0,
+                                               width: titleLabel.bounds.size.width,
+                                               height: titleLabel.bounds.size.height)
+                imageView.frame = CGRect.init(x: titleLabel.frame.origin.x - s - (UIScreen.main.scale == 3.0 ? 6.0 : 5.0),
+                                              y: (h - s) / 2.0,
+                                              width: s,
+                                              height: s)
+            } else {
+                titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0,
+                                               y: h - titleLabel.bounds.size.height - 1.0,
+                                               width: titleLabel.bounds.size.width,
+                                               height: titleLabel.bounds.size.height)
+                imageView.frame = CGRect.init(x: (w - s) / 2.0,
+                                              y: (h - s) / 2.0 - 6.0,
+                                              width: s,
+                                              height: s)
+            }
+        } else if !imageView.isHidden {
+            imageView.frame = CGRect.init(x: (w - s) / 2.0,
+                                          y: (h - s) / 2.0,
+                                          width: s,
+                                          height: s)
+        } else if !titleLabel.isHidden {
+            titleLabel.font = UIFont.systemFont(ofSize: f)
+            titleLabel.sizeToFit()
             titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0,
-                                           y: h - titleLabel.bounds.size.height - 1.0,
+                                           y: (h - titleLabel.bounds.size.height) / 2.0,
                                            width: titleLabel.bounds.size.width,
                                            height: titleLabel.bounds.size.height)
-            imageView.frame = CGRect.init(x: (w - imageView.bounds.size.width) / 2.0,
-                                          y: (h - imageView.bounds.size.height) / 2.0 - 6.0,
-                                          width: imageView.bounds.size.width,
-                                          height: imageView.bounds.size.height)
-        } else if !imageView.isHidden {
-            imageView.sizeToFit()
-            imageView.center = CGPoint.init(x: w / 2.0, y: h / 2.0)
-        } else if !titleLabel.isHidden {
-            titleLabel.sizeToFit()
-            titleLabel.center = CGPoint.init(x: w / 2.0, y: h / 2.0)
         }
         
         if let _ = badgeView.superview {
