@@ -41,7 +41,7 @@ class ExampleIrregularityContentView: ESTabBarItemContentView {
         let transform = CGAffineTransform.identity
         self.imageView.transform = transform
         self.superview?.bringSubview(toFront: self)
-        
+
         textColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
         highlightTextColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
         iconColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
@@ -57,6 +57,12 @@ class ExampleIrregularityContentView: ESTabBarItemContentView {
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         let p = CGPoint.init(x: point.x - imageView.frame.origin.x, y: point.y - imageView.frame.origin.y)
         return sqrt(pow(imageView.bounds.size.width / 2.0 - p.x, 2) + pow(imageView.bounds.size.height / 2.0 - p.y, 2)) < imageView.bounds.size.width / 2.0
+    }
+    
+    override func updateLayout() {
+        super.updateLayout()
+        self.imageView.sizeToFit()
+        self.imageView.center = CGPoint.init(x: self.bounds.size.width / 2.0, y: self.bounds.size.height / 2.0)
     }
     
     public override func selectAnimation(animated: Bool, completion: (() -> ())?) {
