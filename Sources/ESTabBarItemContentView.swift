@@ -215,7 +215,7 @@ open class ESTabBarItemContentView: UIView {
             titleLabel.font = UIFont.systemFont(ofSize: f)
             titleLabel.sizeToFit()
             if #available(iOS 11.0, *), isLandscape {
-                titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0 + (UIScreen.main.scale == 3.0 ? 142.5 : 12.25),
+                titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0 + (UIScreen.main.scale == 3.0 ? 14.25 : 12.25),
                                                y: (h - titleLabel.bounds.size.height) / 2.0,
                                                width: titleLabel.bounds.size.width,
                                                height: titleLabel.bounds.size.height)
