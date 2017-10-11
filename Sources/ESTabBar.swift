@@ -418,7 +418,7 @@ internal extension ESTabBar /* Actions */ {
                                                  bundle: Bundle(for: ESTabBarController.self),
                                                  comment: "")
             container.accessibilityLabel = String(format: formatString, accessibilityTitle, idx + 1, tabBarItems.count)
-            
+            container.accessibilityIdentifier = "TabBarItem_AccessibilityIdentifier_\(idx)"
         }
     }
 }
