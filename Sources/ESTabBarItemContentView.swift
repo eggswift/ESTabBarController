@@ -196,14 +196,14 @@ open class ESTabBarItemContentView: UIView {
     open func updateLayout() {
         let w = self.bounds.size.width
         let h = self.bounds.size.height
-        let isLandscape = UIDeviceOrientationIsLandscape(UIDevice.current.orientation) // is landscape
+        let isWide = UIDeviceOrientationIsLandscape(UIDevice.current.orientation) || traitCollection.horizontalSizeClass == .regular // is landscape or regular
         var s: CGFloat = 0.0 // image size
         var f: CGFloat = 0.0 // font
         
         imageView.isHidden = (imageView.image == nil)
         titleLabel.isHidden = (titleLabel.text == nil)
         
-        if #available(iOS 11.0, *), isLandscape {
+        if #available(iOS 11.0, *), isWide {
             s = UIScreen.main.scale == 3.0 ? 23.0 : 20.0
             f = UIScreen.main.scale == 3.0 ? 13.0 : 12.0
         } else {
@@ -214,7 +214,7 @@ open class ESTabBarItemContentView: UIView {
         if !imageView.isHidden && !titleLabel.isHidden {
             titleLabel.font = UIFont.systemFont(ofSize: f)
             titleLabel.sizeToFit()
-            if #available(iOS 11.0, *), isLandscape {
+            if #available(iOS 11.0, *), isWide {
                 titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0 + (UIScreen.main.scale == 3.0 ? 14.25 : 12.25),
                                                y: (h - titleLabel.bounds.size.height) / 2.0,
                                                width: titleLabel.bounds.size.width,
