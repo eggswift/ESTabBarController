@@ -408,7 +408,7 @@ internal extension ESTabBar /* Actions */ {
             var accessibilityTitle = ""
             
             if let item = item as? ESTabBarItem {
-                accessibilityTitle = item.title ?? ""
+                accessibilityTitle = item.accessibilityLabel ?? item.title ?? ""
             }
             if self.isMoreItem(idx) {
                 accessibilityTitle = NSLocalizedString("More_TabBarItem", bundle: Bundle(for:ESTabBarController.self), comment: "")
@@ -417,6 +417,7 @@ internal extension ESTabBar /* Actions */ {
             let formatString = NSLocalizedString(item == selectedItem ? "TabBarItem_Selected_AccessibilityLabel" : "TabBarItem_AccessibilityLabel",
                                                  bundle: Bundle(for: ESTabBarController.self),
                                                  comment: "")
+            container.accessibilityIdentifier = item.accessibilityIdentifier
             container.accessibilityLabel = String(format: formatString, accessibilityTitle, idx + 1, tabBarItems.count)
             
         }
