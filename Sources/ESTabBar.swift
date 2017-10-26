@@ -419,7 +419,7 @@ internal extension ESTabBar /* Actions */ {
                                                  comment: "")
             container.accessibilityIdentifier = item.accessibilityIdentifier
             container.accessibilityLabel = String(format: formatString, accessibilityTitle, idx + 1, tabBarItems.count)
-            
+            container.accessibilityIdentifier = "TabBarItem_AccessibilityIdentifier_\(idx)"
         }
     }
 }
