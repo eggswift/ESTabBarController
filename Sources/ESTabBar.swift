@@ -72,8 +72,8 @@ internal protocol ESTabBarDelegate: NSObjectProtocol {
     /// - Parameters:
     ///   - tabBar: tabBar
     ///   - item: 当前item
-    /// - Returns: Void
-    func tabBar(_ tabBar: UITabBar, didHijack item: UITabBarItem)
+    /// - Returns: Should deselect the item
+    func tabBar(_ tabBar: UITabBar, didHijack item: UITabBarItem) -> Bool
 }
 
 
@@ -336,11 +336,13 @@ internal extension ESTabBar /* Actions */ {
         }
         
         if (customDelegate?.tabBar(self, shouldHijack: item) ?? false) == true {
-            customDelegate?.tabBar(self, didHijack: item)
+            let shouldDeselect = customDelegate?.tabBar(self, didHijack: item)
             if animated {
                 if let item = item as? ESTabBarItem {
                     item.contentView?.select(animated: animated, completion: {
-                        item.contentView?.deselect(animated: false, completion: nil)
+                        if let deselect = shouldDeselect, deselect {
+                            item.contentView?.deselect(animated: false, completion: nil)
+                        }
                     })
                 } else if self.isMoreItem(newIndex) {
                     moreContentView?.select(animated: animated, completion: {
