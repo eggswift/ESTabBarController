@@ -196,7 +196,13 @@ open class ESTabBarItemContentView: UIView {
     open func updateLayout() {
         let w = self.bounds.size.width
         let h = self.bounds.size.height
-        let isWide = UIDeviceOrientationIsLandscape(UIDevice.current.orientation) || traitCollection.horizontalSizeClass == .regular // is landscape or regular
+        
+        var isLandscape = false
+        if let keyWindow = UIApplication.shared.keyWindow {
+            isLandscape = keyWindow.bounds.width > keyWindow.bounds.height
+        }
+        let isWide = isLandscape || traitCollection.horizontalSizeClass == .regular // is landscape or regular
+        
         var s: CGFloat = 0.0 // image size
         var f: CGFloat = 0.0 // font
         
