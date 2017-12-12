@@ -216,6 +216,16 @@ open class ESTabBarItemContentView: UIView {
             s = 23.0
             f = 10.0
         }
+
+        // Fix for not square image
+        var imageHeight = s
+        if !imageView.isHidden {
+            if imageView.bounds.width == imageView.bounds.height {
+                imageView.sizeToFit()
+                s = imageView.bounds.width
+                imageHeight = imageView.bounds.height
+            }
+        }
         
         if !imageView.isHidden && !titleLabel.isHidden {
             titleLabel.font = UIFont.systemFont(ofSize: f)
@@ -228,7 +238,7 @@ open class ESTabBarItemContentView: UIView {
                 imageView.frame = CGRect.init(x: titleLabel.frame.origin.x - s - (UIScreen.main.scale == 3.0 ? 6.0 : 5.0),
                                               y: (h - s) / 2.0,
                                               width: s,
-                                              height: s)
+                                              height: imageHeight)
             } else {
                 titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0,
                                                y: h - titleLabel.bounds.size.height - 1.0,
@@ -237,13 +247,13 @@ open class ESTabBarItemContentView: UIView {
                 imageView.frame = CGRect.init(x: (w - s) / 2.0,
                                               y: (h - s) / 2.0 - 6.0,
                                               width: s,
-                                              height: s)
+                                              height: imageHeight)
             }
         } else if !imageView.isHidden {
             imageView.frame = CGRect.init(x: (w - s) / 2.0,
                                           y: (h - s) / 2.0,
                                           width: s,
-                                          height: s)
+                                          height: imageHeight)
         } else if !titleLabel.isHidden {
             titleLabel.font = UIFont.systemFont(ofSize: f)
             titleLabel.sizeToFit()
