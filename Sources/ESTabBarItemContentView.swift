@@ -220,7 +220,7 @@ open class ESTabBarItemContentView: UIView {
         // Fix for not square image
         var imageHeight = s
         if !imageView.isHidden {
-            if imageView.bounds.width == imageView.bounds.height {
+            if let image = image, image.size.width != image.size.height {
                 imageView.sizeToFit()
                 s = imageView.bounds.width
                 imageHeight = imageView.bounds.height
