@@ -234,6 +234,11 @@ open class ESTabBarItemContentView: UIView {
             badgeView.setNeedsLayout()
         }
     }
+    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        updateLayout()
+    }
 
     // MARK: - INTERNAL METHODS
     internal final func select(animated: Bool, completion: (() -> ())?) {
