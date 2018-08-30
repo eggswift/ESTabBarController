@@ -214,6 +214,15 @@ open class ESTabBarItemContentView: UIView {
         imageView.isHidden = (imageView.image == nil)
         titleLabel.isHidden = (titleLabel.text == nil)
 
+        var titleYOffset: CGFloat = 1
+        var imageYOffset: CGFloat = 6
+        var centerYOffset: CGFloat = 0
+        if #available(iOS 11.0, *), safeAreaInsets.bottom > 0  {
+            titleYOffset += safeAreaInsets.bottom
+            imageYOffset += safeAreaInsets.bottom / 2
+            centerYOffset += safeAreaInsets.bottom / 2
+        }
+
         if self.itemContentMode == .alwaysTemplate {
             var s: CGFloat = 0.0 // image size
             var f: CGFloat = 0.0 // font
@@ -244,11 +253,11 @@ open class ESTabBarItemContentView: UIView {
                                                   height: s)
                 } else {
                     titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0,
-                                                   y: h - titleLabel.bounds.size.height - 1.0,
+                                                   y: h - titleLabel.bounds.size.height - titleYOffset,
                                                    width: titleLabel.bounds.size.width,
                                                    height: titleLabel.bounds.size.height)
                     imageView.frame = CGRect.init(x: (w - s) / 2.0,
-                                                  y: (h - s) / 2.0 - 6.0,
+                                                  y: (h - s) / 2.0 - imageYOffset,
                                                   width: s,
                                                   height: s)
                 }
@@ -281,11 +290,11 @@ open class ESTabBarItemContentView: UIView {
                 titleLabel.sizeToFit()
                 imageView.sizeToFit()
                 titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0,
-                                               y: h - titleLabel.bounds.size.height - 1.0,
+                                               y: h - titleLabel.bounds.size.height - titleYOffset,
                                                width: titleLabel.bounds.size.width,
                                                height: titleLabel.bounds.size.height)
                 imageView.frame = CGRect.init(x: (w - imageView.bounds.size.width) / 2.0,
-                                              y: (h - imageView.bounds.size.height) / 2.0 - 6.0,
+                                              y: (h - imageView.bounds.size.height) / 2.0 - imageYOffset,
                                               width: imageView.bounds.size.width,
                                               height: imageView.bounds.size.height)
             } else if !imageView.isHidden {
@@ -302,6 +311,11 @@ open class ESTabBarItemContentView: UIView {
                 badgeView.setNeedsLayout()
             }
         }
+    }
+
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        updateLayout()
     }
 
     // MARK: - INTERNAL METHODS
