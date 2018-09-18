@@ -364,7 +364,6 @@ internal extension ESTabBar /* Actions */ {
             } else if self.isMoreItem(newIndex) {
                 moreContentView?.select(animated: animated, completion: nil)
             }
-            delegate?.tabBar?(self, didSelect: item)
         } else if currentIndex == newIndex {
             if let item = item as? ESTabBarItem {
                 item.contentView?.reselect(animated: animated, completion: nil)
@@ -395,6 +394,7 @@ internal extension ESTabBar /* Actions */ {
             }
         }
         
+        delegate?.tabBar?(self, didSelect: item)
         self.updateAccessibilityLabels()
     }
     

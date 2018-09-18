@@ -1,4 +1,4 @@
-osx_image: xcode7.3
+osx_image: xcode9.4
 language: swift
 
 xcode_project: ESTabBarControllerExample/ESTabBarControllerExample.xcodeproj
