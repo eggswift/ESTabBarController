@@ -31,7 +31,7 @@ class ExampleBackgroundContentView: ExampleBasicContentView {
         highlightBackdropColor = UIColor.init(red: 22/255.0, green: 24/255.0, blue: 25/255.0, alpha: 1.0)
         if implies {
             let timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(ExampleBackgroundContentView.playImpliesAnimation(_:)), userInfo: nil, repeats: true)
-            RunLoop.current.add(timer, forMode: .commonModes)
+            RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
         }
         
     }
@@ -48,7 +48,7 @@ class ExampleBackgroundContentView: ExampleBasicContentView {
         let impliesAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         impliesAnimation.values = [1.15, 0.8, 1.15]
         impliesAnimation.duration = 0.3
-        impliesAnimation.calculationMode = kCAAnimationCubic
+        impliesAnimation.calculationMode = CAAnimationCalculationMode.cubic
         impliesAnimation.isRemovedOnCompletion = true
         view.layer.add(impliesAnimation, forKey: nil)
     }

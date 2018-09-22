@@ -21,7 +21,7 @@ class ExampleAnimateTipsContentView: ExampleBackgroundContentView {
         let impliesAnimation = CAKeyframeAnimation(keyPath: "transform.translation.y")
         impliesAnimation.values = [0.0 ,-8.0, 4.0, -4.0, 3.0, -2.0, 0.0]
         impliesAnimation.duration = duration * 2
-        impliesAnimation.calculationMode = kCAAnimationCubic
+        impliesAnimation.calculationMode = CAAnimationCalculationMode.cubic
         
         imageView.layer.add(impliesAnimation, forKey: nil)
     }
@@ -33,7 +33,7 @@ class ExampleAnimateTipsContentView2: ExampleAnimateTipsContentView {
         let impliesAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         impliesAnimation.values = [1.0 ,1.4, 0.9, 1.15, 0.95, 1.02, 1.0]
         impliesAnimation.duration = duration * 2
-        impliesAnimation.calculationMode = kCAAnimationCubic
+        impliesAnimation.calculationMode = CAAnimationCalculationMode.cubic
         self.badgeView.layer.add(impliesAnimation, forKey: nil)
     }
 }

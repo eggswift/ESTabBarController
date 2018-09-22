@@ -37,10 +37,10 @@ class ExampleIrregularityContentView: ESTabBarItemContentView {
         self.imageView.layer.borderWidth = 3.0
         self.imageView.layer.borderColor = UIColor.init(white: 235 / 255.0, alpha: 1.0).cgColor
         self.imageView.layer.cornerRadius = 35
-        self.insets = UIEdgeInsetsMake(-32, 0, 0, 0)
+        self.insets = UIEdgeInsets.init(top: -32, left: 0, bottom: 0, right: 0)
         let transform = CGAffineTransform.identity
         self.imageView.transform = transform
-        self.superview?.bringSubview(toFront: self)
+        self.superview?.bringSubviewToFront(self)
 
         textColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
         highlightTextColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
@@ -112,7 +112,7 @@ class ExampleIrregularityContentView: ESTabBarItemContentView {
         scale?.toValue = NSValue.init(cgSize: CGSize.init(width: 36.0, height: 36.0))
         scale?.beginTime = CACurrentMediaTime()
         scale?.duration = 0.3
-        scale?.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+        scale?.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeOut)
         scale?.removedOnCompletion = true
         
         let alpha = POPBasicAnimation.init(propertyNamed: kPOPLayerOpacity)
@@ -120,7 +120,7 @@ class ExampleIrregularityContentView: ESTabBarItemContentView {
         alpha?.toValue = 0.6
         alpha?.beginTime = CACurrentMediaTime()
         alpha?.duration = 0.25
-        alpha?.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseOut)
+        alpha?.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeOut)
         alpha?.removedOnCompletion = true
         
         view.layer.pop_add(scale, forKey: "scale")

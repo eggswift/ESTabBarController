@@ -30,7 +30,7 @@ class ExampleTipsBasicContentView: ExampleBouncesContentView {
 class ExampleTipsContentView: ExampleTipsBasicContentView {
     
     var tipsImageView: UIImageView = {
-        let tipsImageView = UIImageView.init(image: UIImage.init(named: "tips")?.resizableImage(withCapInsets: UIEdgeInsets.init(top: 10, left: 10, bottom: 25, right: 25), resizingMode: UIImageResizingMode.stretch))
+        let tipsImageView = UIImageView.init(image: UIImage.init(named: "tips")?.resizableImage(withCapInsets: UIEdgeInsets.init(top: 10, left: 10, bottom: 25, right: 25), resizingMode: UIImage.ResizingMode.stretch))
         return tipsImageView
     }()
     
