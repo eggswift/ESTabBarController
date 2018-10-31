@@ -214,7 +214,9 @@ internal extension ESTabBar /* Layout */ {
         if layoutBaseSystem {
             // System itemPositioning
             for (idx, container) in containers.enumerated(){
-                container.frame = tabBarButtons[idx].frame
+                if !tabBarButtons[idx].frame.isEmpty {
+                    container.frame = tabBarButtons[idx].frame
+                }
             }
         } else {
             // Custom itemPositioning
