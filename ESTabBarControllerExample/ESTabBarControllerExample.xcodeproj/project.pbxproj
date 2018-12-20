@@ -72,7 +72,9 @@
 
 /* Begin PBXFileReference section */
 		3C69F8181EF81895009D5F4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		D8059B0C21CBF69900115F6F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D8059B0F21CBFB4E00115F6F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		D8059B1021CBFB4E00115F6F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D8059B1121CBFB4E00115F6F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F6858F3F1E4F435C002DAF6C /* IconTransitions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IconTransitions.json; sourceTree = "<group>"; };
 		F6858F401E4F435C002DAF6C /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Lottie.framework; sourceTree = "<group>"; };
 		F6858F431E4F436F002DAF6C /* ExampleLottieAnimateContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleLottieAnimateContentView.swift; sourceTree = "<group>"; };
@@ -405,7 +407,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3C69F8181EF81895009D5F4A /* en */,
-				D8059B0C21CBF69900115F6F /* fr */,
+				D8059B1121CBFB4E00115F6F /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -414,6 +416,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F6EE455C1E4AC173001E0FA1 /* Base */,
+				D8059B0F21CBFB4E00115F6F /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F6EE45611E4AC173001E0FA1 /* Base */,
+				D8059B1021CBFB4E00115F6F /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
