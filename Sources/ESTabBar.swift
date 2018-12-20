@@ -274,6 +274,7 @@ internal extension ESTabBar /* Actions */ {
             if self.isMoreItem(idx), let moreContentView = moreContentView {
                 container.addSubview(moreContentView)
             }
+            updateAccessibilityLabels()
         }
         
         self.setNeedsLayout()
