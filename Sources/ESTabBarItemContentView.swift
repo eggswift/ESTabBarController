@@ -233,7 +233,8 @@ open class ESTabBarItemContentView: UIView {
             if !imageView.isHidden && !titleLabel.isHidden {
                 titleLabel.font = UIFont.systemFont(ofSize: f)
                 titleLabel.sizeToFit()
-                if #available(iOS 11.0, *), isWide {
+                if #available(iOS 11.0, *) {
+                    if isWide {
                     titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0 + (UIScreen.main.scale == 3.0 ? 14.25 : 12.25),
                                                    y: (h - titleLabel.bounds.size.height) / 2.0,
                                                    width: titleLabel.bounds.size.width,
@@ -242,6 +243,24 @@ open class ESTabBarItemContentView: UIView {
                                                   y: (h - s) / 2.0,
                                                   width: s,
                                                   height: s)
+                    }
+                    else {
+                        var titleY: CGFloat = 20.0
+                        var imageY: CGFloat = 20.0
+                        if let window = UIApplication.shared.keyWindow, window.safeAreaInsets.bottom == 0.0 {
+                            titleY = 1.0
+                            imageY = 6.0
+                        }
+
+                        titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0,
+                                                       y: h - titleLabel.bounds.size.height - titleY,
+                                                       width: titleLabel.bounds.size.width,
+                                                       height: titleLabel.bounds.size.height)
+                        imageView.frame = CGRect.init(x: (w - s) / 2.0,
+                                                      y: (h - s) / 2.0 - imageY,
+                                                      width: s,
+                                                      height: s)
+                    }
                 } else {
                     titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0,
                                                    y: h - titleLabel.bounds.size.height - 1.0,
