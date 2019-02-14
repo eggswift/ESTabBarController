@@ -418,7 +418,6 @@ internal extension ESTabBar /* Actions */ {
             if let explicitLabel = item.accessibilityLabel {
                 container.accessibilityLabel = explicitLabel
                 container.accessibilityHint = item.accessibilityHint ?? container.accessibilityHint
-                container.accessibilityTraits = item.accessibilityTraits
             } else {
                 var accessibilityTitle = ""
                 if let item = item as? ESTabBarItem {
