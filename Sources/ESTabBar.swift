@@ -276,6 +276,7 @@ internal extension ESTabBar /* Actions */ {
             }
         }
         
+        self.updateAccessibilityLabels()
         self.setNeedsLayout()
     }
     
@@ -407,20 +408,30 @@ internal extension ESTabBar /* Actions */ {
         
         for (idx, item) in tabBarItems.enumerated() {
             let container = self.containers[idx]
-            var accessibilityTitle = ""
-            
-            if let item = item as? ESTabBarItem {
-                accessibilityTitle = item.accessibilityLabel ?? item.title ?? ""
-            }
-            if self.isMoreItem(idx) {
-                accessibilityTitle = NSLocalizedString("More_TabBarItem", bundle: Bundle(for:ESTabBarController.self), comment: "")
-            }
-            
-            let formatString = NSLocalizedString(item == selectedItem ? "TabBarItem_Selected_AccessibilityLabel" : "TabBarItem_AccessibilityLabel",
-                                                 bundle: Bundle(for: ESTabBarController.self),
-                                                 comment: "")
             container.accessibilityIdentifier = item.accessibilityIdentifier
-            container.accessibilityLabel = String(format: formatString, accessibilityTitle, idx + 1, tabBarItems.count)
+            container.accessibilityTraits = item.accessibilityTraits
+            
+            if item == selectedItem {
+                container.accessibilityTraits = container.accessibilityTraits.union(.selected)
+            }
+            
+            if let explicitLabel = item.accessibilityLabel {
+                container.accessibilityLabel = explicitLabel
+                container.accessibilityHint = item.accessibilityHint ?? container.accessibilityHint
+            } else {
+                var accessibilityTitle = ""
+                if let item = item as? ESTabBarItem {
+                    accessibilityTitle = item.accessibilityLabel ?? item.title ?? ""
+                }
+                if self.isMoreItem(idx) {
+                    accessibilityTitle = NSLocalizedString("More_TabBarItem", bundle: Bundle(for:ESTabBarController.self), comment: "")
+                }
+                
+                let formatString = NSLocalizedString(item == selectedItem ? "TabBarItem_Selected_AccessibilityLabel" : "TabBarItem_AccessibilityLabel",
+                                                     bundle: Bundle(for: ESTabBarController.self),
+                                                     comment: "")
+                container.accessibilityLabel = String(format: formatString, accessibilityTitle, idx + 1, tabBarItems.count)
+            }
             
         }
     }
