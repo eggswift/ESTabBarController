@@ -231,7 +231,10 @@ internal extension ESTabBar /* Layout */ {
                 break
             }
             let width = bounds.size.width - itemEdgeInsets.left - itemEdgeInsets.right
-            let height = bounds.size.height - y - itemEdgeInsets.bottom
+            var height = bounds.size.height - y - itemEdgeInsets.bottom
+            if #available(iOS 11.0, *) {
+                height -= safeAreaInsets.bottom
+            }
             let eachWidth = itemWidth == 0.0 ? width / CGFloat(containers.count) : itemWidth
             let eachSpacing = itemSpacing == 0.0 ? 0.0 : itemSpacing
             
