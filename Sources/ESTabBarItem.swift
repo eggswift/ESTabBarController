@@ -71,6 +71,12 @@ open class ESTabBarItem: UITabBarItem {
         set(newValue) { contentView?.badgeValue = newValue }
     }
     
+    open override var titlePositionAdjustment: UIOffset // default titlePositionAdjustment is zero
+        {
+        get {return contentView?.titlePositionAdjustment ?? UIOffset.zero}
+        set(newValue) { contentView?.titlePositionAdjustment = newValue}
+    }
+    
     /// Override UITabBarItem.badgeColor, make it available for iOS8.0 and later.
     /// If this item displays a badge, this color will be used for the badge's background. If set to nil, the default background color will be used instead.
     @available(iOS 8.0, *)
