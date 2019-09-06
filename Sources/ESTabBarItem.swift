@@ -53,6 +53,12 @@ open class ESTabBarItem: UITabBarItem {
         {
         didSet { self.contentView?.title = title }
     }
+
+    open var titleFont: UIFont? {
+        didSet {
+            self.contentView?.titleFont = titleFont
+        }
+    }
     
     open override var image: UIImage? // default is nil
         {
