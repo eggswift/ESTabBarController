@@ -25,11 +25,13 @@
 
 import UIKit
 
-public enum ESTabBarItemContentMode : Int {
+public enum ESTabBarItemContentMode {
     
     case alwaysOriginal // Always set the original image size
     
     case alwaysTemplate // Always set the image as a template image size
+    
+    case fixed(imageSize: CGSize, labelSize: CGSize) // Fix the sizes of imageView and titleLabel
 }
 
 
@@ -139,6 +141,23 @@ open class ESTabBarItemContentView: UIView {
         return titleLabel
     }()
     
+    open var defaultItemSizes: (imageSize: CGFloat, fontSize: CGFloat) {
+        var s: CGFloat = 0.0 // image size
+        var f: CGFloat = 0.0 // font
+        var isLandscape = false
+        if let keyWindow = UIApplication.shared.keyWindow {
+            isLandscape = keyWindow.bounds.width > keyWindow.bounds.height
+        }
+        let isWide = isLandscape || traitCollection.horizontalSizeClass == .regular // is landscape or regular
+        if #available(iOS 11.0, *), isWide {
+            s = UIScreen.main.scale == 3.0 ? 23.0 : 20.0
+            f = UIScreen.main.scale == 3.0 ? 13.0 : 12.0
+        } else {
+            s = 23.0
+            f = 10.0
+        }
+        return (s, f)
+    }
     
     /// Badge value
     open var badgeValue: String? {
@@ -214,7 +233,8 @@ open class ESTabBarItemContentView: UIView {
         imageView.isHidden = (imageView.image == nil)
         titleLabel.isHidden = (titleLabel.text == nil)
 
-        if self.itemContentMode == .alwaysTemplate {
+        switch self.itemContentMode {
+        case .alwaysTemplate:
             var s: CGFloat = 0.0 // image size
             var f: CGFloat = 0.0 // font
             var isLandscape = false
@@ -275,8 +295,7 @@ open class ESTabBarItemContentView: UIView {
                 }
                 badgeView.setNeedsLayout()
             }
-            
-        } else {
+        case .alwaysOriginal:
             if !imageView.isHidden && !titleLabel.isHidden {
                 titleLabel.sizeToFit()
                 imageView.sizeToFit()
@@ -293,6 +312,29 @@ open class ESTabBarItemContentView: UIView {
                 imageView.center = CGPoint.init(x: w / 2.0, y: h / 2.0)
             } else if !titleLabel.isHidden {
                 titleLabel.sizeToFit()
+                titleLabel.center = CGPoint.init(x: w / 2.0, y: h / 2.0)
+            }
+            
+            if let _ = badgeView.superview {
+                let size = badgeView.sizeThatFits(self.frame.size)
+                badgeView.frame = CGRect.init(origin: CGPoint.init(x: w / 2.0 + badgeOffset.horizontal, y: h / 2.0 + badgeOffset.vertical), size: size)
+                badgeView.setNeedsLayout()
+            }
+        case .fixed(let imageSize, let labelSize):
+            if !imageView.isHidden && !titleLabel.isHidden {
+                titleLabel.frame = CGRect.init(x: (w - labelSize.width) / 2.0,
+                                               y: h - labelSize.height - 1.0,
+                                               width: labelSize.width,
+                                               height: labelSize.height)
+                imageView.frame = CGRect.init(x: (w - imageSize.width) / 2.0,
+                                              y: (h - imageSize.height) / 2.0 - 6.0,
+                                              width: imageSize.width,
+                                              height: imageSize.height)
+            } else if !imageView.isHidden {
+                imageView.frame = CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height)
+                imageView.center = CGPoint.init(x: w / 2.0, y: h / 2.0)
+            } else if !titleLabel.isHidden {
+                titleLabel.frame = CGRect(x: 0, y: 0, width: labelSize.width, height: labelSize.height)
                 titleLabel.center = CGPoint.init(x: w / 2.0, y: h / 2.0)
             }
             
