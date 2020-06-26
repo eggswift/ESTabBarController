@@ -71,6 +71,14 @@ open ESTabBarController
 4. ~~The picture of 'More' item in ESTabBarItemMoreContentView is not set into framework, plan to convert it to CGBitmap.~~
 
 
+## Sponsor
+
+You can support the project by checking out our sponsor page. It takes only one click:
+
+<a href='https://tracking.gitads.io/?repo=estabbarcontroller'><img src="https://images.gitads.io/estabbarcontroller" alt="git-ad"/></a>
+<br><i>This advert was placed by <a href="https://tracking.gitads.io/?campaign=gitads&repo=estabbarcontroller&redirect=gitads.io">GitAds</a> </i>
+
+
 ## Acknowledgement
 
 * [animated-tab-bar](https://github.com/Ramotion/animated-tab-bar) by <http://ramotion.com> 
@@ -84,14 +92,6 @@ If you want to contribute to ESTabBarController, Please submit [Pull Request](ht
 
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https://github.com/eggswift/ESTabBarController)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lihao_ios.svg?style=social)](https://twitter.com/lihao_iOS)
-
-
-## Sponsor
-
-You can support the project by checking out our sponsor page. It takes only one click:
-
-<a href='https://tracking.gitads.io/?repo=estabbarcontroller'><img src="https://images.gitads.io/estabbarcontroller" alt="git-ad"/></a>
-<br><i>This advert was placed by <a href="https://tracking.gitads.io/?campaign=gitads&repo=estabbarcontroller&redirect=gitads.io">GitAds</a> </i>
 
 
 ## License
