@@ -86,6 +86,14 @@ If you want to contribute to ESTabBarController, Please submit [Pull Request](ht
 [![Twitter Follow](https://img.shields.io/twitter/follow/lihao_ios.svg?style=social)](https://twitter.com/lihao_iOS)
 
 
+## Sponsor
+
+You can support the project by checking out our sponsor page. It takes only one click:
+
+<a href='https://tracking.gitads.io/?repo=estabbarcontroller'><img src="https://images.gitads.io/estabbarcontroller" alt="git-ad"/></a>
+<br><i>This advert was placed by <a href="https://tracking.gitads.io/?campaign=gitads&repo=estabbarcontroller&redirect=gitads.io">GitAds</a> </i>
+
+
 ## License
 
 The MIT License (MIT)
