@@ -75,8 +75,8 @@ open ESTabBarController
 
 You can support the project by checking out our sponsor page. It takes only one click:
 
-<a href='https://tracking.gitads.io/?repo=estabbarcontroller'><img src="https://images.gitads.io/estabbarcontroller" alt="git-ad"/></a>
-<br><i>This advert was placed by <a href="https://tracking.gitads.io/?campaign=gitads&repo=estabbarcontroller&redirect=gitads.io">GitAds</a> </i>
+<a href='https://tracking.gitads.io/?repo=ESTabBarController'><img src="https://images.gitads.io/ESTabBarController" alt="git-ad"/></a>
+<br><i>This advert was placed by <a href="https://tracking.gitads.io/?campaign=gitads&repo=ESTabBarController&redirect=gitads.io">GitAds</a> </i>
 
 
 ## Acknowledgement
