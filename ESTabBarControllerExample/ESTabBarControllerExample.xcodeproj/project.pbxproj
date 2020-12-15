@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C69F8171EF81895009D5F4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C69F8191EF81895009D5F4A /* Localizable.strings */; };
+		7594959E258860A700C80CF6 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6858F401E4F435C002DAF6C /* Lottie.framework */; };
 		F6858F411E4F435C002DAF6C /* IconTransitions.json in Resources */ = {isa = PBXBuildFile; fileRef = F6858F3F1E4F435C002DAF6C /* IconTransitions.json */; };
 		F6858F441E4F436F002DAF6C /* ExampleLottieAnimateContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6858F431E4F436F002DAF6C /* ExampleLottieAnimateContentView.swift */; };
 		F6858F461E4F4384002DAF6C /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F6858F401E4F435C002DAF6C /* Lottie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -114,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6EE45AE1E4C6085001E0FA1 /* pop.framework in Frameworks */,
+				7594959E258860A700C80CF6 /* Lottie.framework in Frameworks */,
 				F6EE45841E4AC1FF001E0FA1 /* ESTabBarController.framework in Frameworks */,
 				F6858F471E4F4394002DAF6C /* Lottie.framework in Frameworks */,
 			);
@@ -178,6 +180,13 @@
 			path = Irregularity;
 			sourceTree = "<group>";
 		};
+		7594959D258860A700C80CF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F6858F3E1E4F435C002DAF6C /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +218,7 @@
 				F6EE45561E4AC173001E0FA1 /* ESTabBarControllerExample */,
 				F6EE457E1E4AC1FF001E0FA1 /* ESTabBarController */,
 				F6EE45551E4AC173001E0FA1 /* Products */,
+				7594959D258860A700C80CF6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -595,17 +605,18 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 2.8.0;
+				CURRENT_PROJECT_VERSION = 2.9.0;
 				DEVELOPMENT_TEAM = A367N9R36B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ESTabBarControllerExample/Framework",
 					"$(PROJECT_DIR)/ESTabBarControllerExample/Lottie",
+					"$(PROJECT_DIR)/ESTabBarControllerExample/Content/Lottie",
 				);
 				INFOPLIST_FILE = ESTabBarControllerExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.8.0;
+				MARKETING_VERSION = 2.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eggswift.ESTabBarControllerExample1;
 				PRODUCT_NAME = Example;
 				SWIFT_VERSION = 5.0;
@@ -617,17 +628,18 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 2.8.0;
+				CURRENT_PROJECT_VERSION = 2.9.0;
 				DEVELOPMENT_TEAM = A367N9R36B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ESTabBarControllerExample/Framework",
 					"$(PROJECT_DIR)/ESTabBarControllerExample/Lottie",
+					"$(PROJECT_DIR)/ESTabBarControllerExample/Content/Lottie",
 				);
 				INFOPLIST_FILE = ESTabBarControllerExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.8.0;
+				MARKETING_VERSION = 2.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eggswift.ESTabBarControllerExample1;
 				PRODUCT_NAME = Example;
 				SWIFT_VERSION = 5.0;
@@ -639,7 +651,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2.9.0;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -648,7 +660,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 2.8.0;
+				MARKETING_VERSION = 2.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eggswift.ESTabBarController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -664,7 +676,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2.9.0;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -673,7 +685,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 2.8.0;
+				MARKETING_VERSION = 2.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eggswift.ESTabBarController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
