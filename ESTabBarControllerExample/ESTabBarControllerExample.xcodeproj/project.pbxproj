@@ -129,6 +129,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7594959025875BF100C80CF6 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				F6858F4D1E4F516F002DAF6C /* ExampleBasicContentView.swift */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		7594959125875C0200C80CF6 /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				F6858F4C1E4F516F002DAF6C /* ExampleBackgroundContentView.swift */,
+			);
+			path = Background;
+			sourceTree = "<group>";
+		};
+		7594959325885FC400C80CF6 /* Bounces */ = {
+			isa = PBXGroup;
+			children = (
+				F6858F4E1E4F516F002DAF6C /* ExampleBouncesContentView.swift */,
+			);
+			path = Bounces;
+			sourceTree = "<group>";
+		};
+		7594959425885FCA00C80CF6 /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				F6858F511E4F516F002DAF6C /* ExampleTipsContentView.swift */,
+				F6858F4B1E4F516F002DAF6C /* ExampleAnimateTipsContentView.swift */,
+			);
+			path = Tips;
+			sourceTree = "<group>";
+		};
+		7594959525885FD400C80CF6 /* Highlight */ = {
+			isa = PBXGroup;
+			children = (
+				F6858F4F1E4F516F002DAF6C /* ExampleHighlightableContentView.swift */,
+			);
+			path = Highlight;
+			sourceTree = "<group>";
+		};
+		7594959725885FEA00C80CF6 /* Irregularity */ = {
+			isa = PBXGroup;
+			children = (
+				F6858F501E4F516F002DAF6C /* ExampleIrregularityContentView.swift */,
+			);
+			path = Irregularity;
+			sourceTree = "<group>";
+		};
 		F6858F3E1E4F435C002DAF6C /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,13 +192,13 @@
 		F6858F4A1E4F516F002DAF6C /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				F6858F4B1E4F516F002DAF6C /* ExampleAnimateTipsContentView.swift */,
-				F6858F4C1E4F516F002DAF6C /* ExampleBackgroundContentView.swift */,
-				F6858F4D1E4F516F002DAF6C /* ExampleBasicContentView.swift */,
-				F6858F4E1E4F516F002DAF6C /* ExampleBouncesContentView.swift */,
-				F6858F4F1E4F516F002DAF6C /* ExampleHighlightableContentView.swift */,
-				F6858F501E4F516F002DAF6C /* ExampleIrregularityContentView.swift */,
-				F6858F511E4F516F002DAF6C /* ExampleTipsContentView.swift */,
+				7594959025875BF100C80CF6 /* Basic */,
+				7594959125875C0200C80CF6 /* Background */,
+				7594959525885FD400C80CF6 /* Highlight */,
+				7594959325885FC400C80CF6 /* Bounces */,
+				7594959725885FEA00C80CF6 /* Irregularity */,
+				7594959425885FCA00C80CF6 /* Tips */,
+				F6858F3E1E4F435C002DAF6C /* Lottie */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -182,7 +231,6 @@
 				F6EE45A31E4C4D72001E0FA1 /* ExampleViewController.swift */,
 				F6EE45A41E4C4D72001E0FA1 /* ExampleNavigationController.swift */,
 				F6858F4A1E4F516F002DAF6C /* Content */,
-				F6858F3E1E4F435C002DAF6C /* Lottie */,
 				F6EE45A71E4C4DA3001E0FA1 /* Me */,
 				F6EE455B1E4AC173001E0FA1 /* Main.storyboard */,
 				F6EE455E1E4AC173001E0FA1 /* Assets.xcassets */,

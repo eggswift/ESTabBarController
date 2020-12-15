@@ -2,7 +2,7 @@
 //  ESTabBarController.swift
 //
 //  Created by Vincent Li on 2017/2/8.
-//  Copyright (c) 2013-2018 ESTabBarController (https://github.com/eggswift/ESTabBarController)
+//  Copyright (c) 2013-2020 ESTabBarController (https://github.com/eggswift/ESTabBarController)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,83 +25,104 @@
 
 import UIKit
 
-/*
- * ESTabBarItem继承自UITabBarItem，目的是为ESTabBarItemContentView提供UITabBarItem属性的设置。
- * 目前支持大多常用的属性，例如image, selectedImage, title, tag 等。
- *
- * Unsupport properties:
- *  MARK: UIBarItem properties
- *      1. var isEnabled: Bool
- *      2. var landscapeImagePhone: UIImage?
- *      3. var imageInsets: UIEdgeInsets
- *      4.  var landscapeImagePhoneInsets: UIEdgeInsets
- *      5. func setTitleTextAttributes(_ attributes: [String : Any]?, for state: UIControlState)
- *      6. func titleTextAttributes(for state: UIControlState) -> [String : Any]?
- *  MARK: UITabBarItem properties
- *      7. var titlePositionAdjustment: UIOffset
- *      8. func setBadgeTextAttributes(_ textAttributes: [String : Any]?, for state: UIControlState)
- *      9. func badgeTextAttributes(for state: UIControlState) -> [String : Any]?
- */
+/// ESTabBarItem inherits from UITabBarItem, the purpose is to provide UITabBarItem property settings for ESTabBarItemContentView.
+/// Support most commonly used attributes, such as image, selectedImage, title, tag etc.
+///
+/// Unsupport properties:
+/// MARK: UIBarItem properties
+///     1. var landscapeImagePhone: UIImage?
+///     2. var imageInsets: UIEdgeInsets
+///     3. var landscapeImagePhoneInsets: UIEdgeInsets
+///     4. func setTitleTextAttributes(_ attributes: [String : Any]?, for state: UIControlState)
+///     5. func titleTextAttributes(for state: UIControlState) -> [String : Any]?
+/// MARK: UITabBarItem properties
+///     1. func setBadgeTextAttributes(_ textAttributes: [String : Any]?, for state: UIControlState)
+///     2. func badgeTextAttributes(for state: UIControlState) -> [String : Any]?
+///
 @available(iOS 8.0, *)
 open class ESTabBarItem: UITabBarItem {
     
-    /// Customize content view
-    open var contentView: ESTabBarItemContentView?
+    // MARK: UIView properties
     
-    // MARK: UIBarItem properties
-    open override var title: String? // default is nil
-        {
-        didSet { self.contentView?.title = title }
+    /// The receiver’s tag, an application-supplied integer that you can use to identify bar item objects in your application. default is `0`
+    open override var tag: Int
+    {
+        didSet { self.contentView.tag = tag }
     }
     
-    open override var image: UIImage? // default is nil
-        {
-        didSet { self.contentView?.image = image }
+    // MARK: UIBarItem properties
+    
+    /// A Boolean value indicating whether the item is enabled, default is `YES`.
+    open override var isEnabled: Bool
+    {
+        didSet { self.contentView.enabled = isEnabled }
+    }
+    
+    /// The title displayed on the item, default is `nil`
+    open override var title: String?
+    {
+        didSet { self.contentView.title = title }
+    }
+    
+    /// The image used to represent the item, default is `nil`
+    open override var image: UIImage?
+    {
+        didSet { self.contentView.image = image }
     }
     
     // MARK: UITabBarItem properties
-    open override var selectedImage: UIImage? // default is nil
-        {
-        didSet { self.contentView?.selectedImage = selectedImage }
+    
+    /// The image displayed when the tab bar item is selected, default is `nil`.
+    open override var selectedImage: UIImage?
+    {
+        get { return contentView.selectedImage }
+        set(newValue) { contentView.selectedImage = newValue }
     }
     
-    open override var badgeValue: String? // default is nil
-        {
-        get { return contentView?.badgeValue }
-        set(newValue) { contentView?.badgeValue = newValue }
+    /// Text that is displayed in the upper-right corner of the item with a surrounding red oval, default is `nil`.
+    open override var badgeValue: String?
+    {
+        get { return contentView.badgeValue }
+        set(newValue) { contentView.badgeValue = newValue }
     }
     
-    /// Override UITabBarItem.badgeColor, make it available for iOS8.0 and later.
-    /// If this item displays a badge, this color will be used for the badge's background. If set to nil, the default background color will be used instead.
+    /// The offset to use to adjust the title position, default is `UIOffset.zero`.
+    open override var titlePositionAdjustment: UIOffset
+    {
+        get { return contentView.titlePositionAdjustment }
+        set(newValue) { contentView.titlePositionAdjustment = newValue }
+    }
+    
+    /// The background color to apply to the badge, make it available for iOS8.0 and later. If this item displays a badge, this color will be used for the badge's background. If set to nil, the default background color will be used instead.
     @available(iOS 8.0, *)
     open override var badgeColor: UIColor? {
-        get { return contentView?.badgeColor }
-        set(newValue) { contentView?.badgeColor = newValue }
+        get { return contentView.badgeColor }
+        set(newValue) { contentView.badgeColor = newValue }
     }
     
-    open override var tag: Int // default is 0
-        {
-        didSet { self.contentView?.tag = tag }
+    // MARK: ESTabBarItem properties
+    
+    /// Customize content view, default is `ESTabBarItemContentView`
+    open var contentView: ESTabBarItemContentView = ESTabBarItemContentView()
+    {
+        didSet {
+            self.contentView.updateLayout()
+            self.contentView.updateDisplay()
+        }
     }
     
-    /* The unselected image is autogenerated from the image argument. The selected image
-     is autogenerated from the selectedImage if provided and the image argument otherwise.
-     To prevent system coloring, provide images with UIImageRenderingModeAlwaysOriginal (see UIImage.h)
-     */
+    /// The unselected image is autogenerated from the image argument. The selected image is autogenerated from the selectedImage if provided and the image argument otherwise. To prevent system coloring, provide images with UIImageRenderingModeAlwaysOriginal (see UIImage.h)
     public init(_ contentView: ESTabBarItemContentView = ESTabBarItemContentView(), title: String? = nil, image: UIImage? = nil, selectedImage: UIImage? = nil, tag: Int = 0) {
         super.init()
         self.contentView = contentView
-        self.setTitle(title, image: image, selectedImage: selectedImage, tag: tag)
-    }
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.contentView.title = title
+        self.contentView.image = image
+        self.contentView.selectedImage = selectedImage
+        self.contentView.tag = tag
     }
     
-    open func setTitle(_ title: String? = nil, image: UIImage? = nil, selectedImage: UIImage? = nil, tag: Int = 0) {
-        self.title = title
-        self.image = image
-        self.selectedImage = selectedImage
-        self.tag = tag
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
 }

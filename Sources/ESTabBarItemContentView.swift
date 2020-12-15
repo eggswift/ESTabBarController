@@ -2,7 +2,7 @@
 //  ESTabBarContentView.swift
 //
 //  Created by Vincent Li on 2017/2/8.
-//  Copyright (c) 2013-2018 ESTabBarController (https://github.com/eggswift/ESTabBarController)
+//  Copyright (c) 2013-2020 ESTabBarController (https://github.com/eggswift/ESTabBarController)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -36,61 +36,8 @@ public enum ESTabBarItemContentMode : Int {
 open class ESTabBarItemContentView: UIView {
     
     // MARK: - PROPERTY SETTING
-
-    /// 设置contentView的偏移
-    open var insets = UIEdgeInsets.zero
     
-    /// 是否被选中
-    open var selected = false
-    
-    /// 是否处于高亮状态
-    open var highlighted = false
-    
-    /// 是否支持高亮
-    open var highlightEnabled = true
-    
-    /// 文字颜色
-    open var textColor = UIColor(white: 0.57254902, alpha: 1.0) {
-        didSet {
-            if !selected { titleLabel.textColor = textColor }
-        }
-    }
-    
-    /// 高亮时文字颜色
-    open var highlightTextColor = UIColor(red: 0.0, green: 0.47843137, blue: 1.0, alpha: 1.0) {
-        didSet {
-            if selected { titleLabel.textColor = highlightIconColor }
-        }
-    }
-    
-    /// icon颜色
-    open var iconColor = UIColor(white: 0.57254902, alpha: 1.0) {
-        didSet {
-            if !selected { imageView.tintColor = iconColor }
-        }
-    }
-    
-    /// 高亮时icon颜色
-    open var highlightIconColor = UIColor(red: 0.0, green: 0.47843137, blue: 1.0, alpha: 1.0) {
-        didSet {
-            if selected { imageView.tintColor = highlightIconColor }
-        }
-    }
-    
-    /// 背景颜色
-    open var backdropColor = UIColor.clear {
-        didSet {
-            if !selected { backgroundColor = backdropColor }
-        }
-    }
-    
-    /// 高亮时背景颜色
-    open var highlightBackdropColor = UIColor.clear {
-        didSet {
-            if selected { backgroundColor = highlightBackdropColor }
-        }
-    }
-    
+    /// The title displayed on the item, default is `nil`
     open var title: String? {
         didSet {
             self.titleLabel.text = title
@@ -98,30 +45,97 @@ open class ESTabBarItemContentView: UIView {
         }
     }
     
-    /// Icon imageView renderingMode, default is .alwaysTemplate like UITabBarItem
-    open var renderingMode: UIImage.RenderingMode = .alwaysTemplate {
-        didSet {
-            self.updateDisplay()
-        }
-    }
-    
-    /// Item content mode, default is .alwaysTemplate like UITabBarItem
-    open var itemContentMode: ESTabBarItemContentMode = .alwaysTemplate {
-        didSet {
-            self.updateDisplay()
-        }
-    }
-    
-    /// Icon imageView's image
+    /// The image used to represent the item, default is `nil`
     open var image: UIImage? {
         didSet {
             if !selected { self.updateDisplay() }
         }
     }
     
+    /// The image displayed when the tab bar item is selected, default is `nil`.
     open var selectedImage: UIImage? {
         didSet {
             if selected { self.updateDisplay() }
+        }
+    }
+    
+    /// A Boolean value indicating whether the item is enabled, default is `YES`.
+    open var enabled = true
+    
+    /// A Boolean value indicating whether the item is selected, default is `NO`.
+    open var selected = false
+    
+    /// A Boolean value indicating whether the item is highlighted, default is `NO`.
+    open var highlighted = false
+    
+    /// Text color, default is `UIColor(white: 0.57254902, alpha: 1.0)`.
+    open var textColor = UIColor(white: 0.57254902, alpha: 1.0) {
+        didSet {
+            if !selected { titleLabel.textColor = textColor }
+        }
+    }
+    
+    /// Text color when highlighted, default is `UIColor(red: 0.0, green: 0.47843137, blue: 1.0, alpha: 1.0)`.
+    open var highlightTextColor = UIColor(red: 0.0, green: 0.47843137, blue: 1.0, alpha: 1.0) {
+        didSet {
+            if selected { titleLabel.textColor = highlightIconColor }
+        }
+    }
+    
+    /// Icon color, default is `UIColor(white: 0.57254902, alpha: 1.0)`.
+    open var iconColor = UIColor(white: 0.57254902, alpha: 1.0) {
+        didSet {
+            if !selected { imageView.tintColor = iconColor }
+        }
+    }
+    
+    /// Icon color when highlighted, default is `UIColor(red: 0.0, green: 0.47843137, blue: 1.0, alpha: 1.0)`.
+    open var highlightIconColor = UIColor(red: 0.0, green: 0.47843137, blue: 1.0, alpha: 1.0) {
+        didSet {
+            if selected { imageView.tintColor = highlightIconColor }
+        }
+    }
+    
+    /// Background color, default is `UIColor.clear`.
+    open var backdropColor = UIColor.clear {
+        didSet {
+            if !selected { backgroundColor = backdropColor }
+        }
+    }
+    
+    /// Background color when highlighted, default is `UIColor.clear`.
+    open var highlightBackdropColor = UIColor.clear {
+        didSet {
+            if selected { backgroundColor = highlightBackdropColor }
+        }
+    }
+    
+    /// Icon imageView renderingMode, default is `.alwaysTemplate`.
+    open var renderingMode: UIImage.RenderingMode = .alwaysTemplate {
+        didSet {
+            self.updateDisplay()
+        }
+    }
+    
+    /// Item content mode, default is `.alwaysTemplate`
+    open var itemContentMode: ESTabBarItemContentMode = .alwaysTemplate {
+        didSet {
+            self.updateDisplay()
+        }
+    }
+    
+    /// The offset to use to adjust the title position, default is `UIOffset.zero`.
+    open var titlePositionAdjustment: UIOffset = UIOffset.zero {
+        didSet {
+            self.updateLayout()
+        }
+    }
+    
+    /// The insets that you use to determine the insets edge for contents, default is `UIEdgeInsets.zero`
+    open var insets = UIEdgeInsets.zero
+    {
+        didSet {
+            self.updateLayout()
         }
     }
     
@@ -139,7 +153,7 @@ open class ESTabBarItemContentView: UIView {
         return titleLabel
     }()
     
-    /// Badge value
+    /// Badge value, default is `nil`.
     open var badgeValue: String? {
         didSet {
             if let _ = badgeValue {
@@ -153,6 +167,8 @@ open class ESTabBarItemContentView: UIView {
             badgeChanged(animated: true, completion: nil)
         }
     }
+    
+    /// Badge color, default is `nil`.
     open var badgeColor: UIColor? {
         didSet {
             if let _ = badgeColor {
@@ -162,6 +178,8 @@ open class ESTabBarItemContentView: UIView {
             }
         }
     }
+    
+    /// Badge view, default is `ESTabBarItemBadgeView()`.
     open var badgeView: ESTabBarItemBadgeView = ESTabBarItemBadgeView() {
         willSet {
             if let _ = badgeView.superview {
@@ -174,7 +192,9 @@ open class ESTabBarItemContentView: UIView {
             }
         }
     }
-    open var badgeOffset: UIOffset = UIOffset.init(horizontal: 6.0, vertical: -22.0) {
+    
+    /// Badge offset, default is `UIOffset(horizontal: 6.0, vertical: -22.0)`.
+    open var badgeOffset: UIOffset = UIOffset(horizontal: 6.0, vertical: -22.0) {
         didSet {
             if badgeOffset != oldValue {
                 self.updateLayout()
@@ -196,7 +216,7 @@ open class ESTabBarItemContentView: UIView {
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
 
     open func updateDisplay() {
@@ -233,8 +253,8 @@ open class ESTabBarItemContentView: UIView {
                 titleLabel.font = UIFont.systemFont(ofSize: f)
                 titleLabel.sizeToFit()
                 if #available(iOS 11.0, *), isWide {
-                    titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0 + (UIScreen.main.scale == 3.0 ? 14.25 : 12.25),
-                                                   y: (h - titleLabel.bounds.size.height) / 2.0,
+                    titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0 + (UIScreen.main.scale == 3.0 ? 14.25 : 12.25) + titlePositionAdjustment.horizontal,
+                                                   y: (h - titleLabel.bounds.size.height) / 2.0 + titlePositionAdjustment.vertical,
                                                    width: titleLabel.bounds.size.width,
                                                    height: titleLabel.bounds.size.height)
                     imageView.frame = CGRect.init(x: titleLabel.frame.origin.x - s - (UIScreen.main.scale == 3.0 ? 6.0 : 5.0),
@@ -242,8 +262,8 @@ open class ESTabBarItemContentView: UIView {
                                                   width: s,
                                                   height: s)
                 } else {
-                    titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0,
-                                                   y: h - titleLabel.bounds.size.height - 1.0,
+                    titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0 + titlePositionAdjustment.horizontal,
+                                                   y: h - titleLabel.bounds.size.height - 1.0 + titlePositionAdjustment.vertical,
                                                    width: titleLabel.bounds.size.width,
                                                    height: titleLabel.bounds.size.height)
                     imageView.frame = CGRect.init(x: (w - s) / 2.0,
@@ -259,8 +279,8 @@ open class ESTabBarItemContentView: UIView {
             } else if !titleLabel.isHidden {
                 titleLabel.font = UIFont.systemFont(ofSize: f)
                 titleLabel.sizeToFit()
-                titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0,
-                                               y: (h - titleLabel.bounds.size.height) / 2.0,
+                titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0 + titlePositionAdjustment.horizontal,
+                                               y: (h - titleLabel.bounds.size.height) / 2.0 + titlePositionAdjustment.vertical,
                                                width: titleLabel.bounds.size.width,
                                                height: titleLabel.bounds.size.height)
             }
@@ -278,8 +298,8 @@ open class ESTabBarItemContentView: UIView {
             if !imageView.isHidden && !titleLabel.isHidden {
                 titleLabel.sizeToFit()
                 imageView.sizeToFit()
-                titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0,
-                                               y: h - titleLabel.bounds.size.height - 1.0,
+                titleLabel.frame = CGRect.init(x: (w - titleLabel.bounds.size.width) / 2.0 + titlePositionAdjustment.horizontal,
+                                               y: h - titleLabel.bounds.size.height - 1.0 + titlePositionAdjustment.vertical,
                                                width: titleLabel.bounds.size.width,
                                                height: titleLabel.bounds.size.height)
                 imageView.frame = CGRect.init(x: (w - imageView.bounds.size.width) / 2.0,
@@ -305,7 +325,7 @@ open class ESTabBarItemContentView: UIView {
     // MARK: - INTERNAL METHODS
     internal final func select(animated: Bool, completion: (() -> ())?) {
         selected = true
-        if highlightEnabled && highlighted {
+        if enabled && highlighted {
             highlighted = false
             dehighlightAnimation(animated: animated, completion: { [weak self] in
                 self?.updateDisplay()
@@ -327,7 +347,7 @@ open class ESTabBarItemContentView: UIView {
         if selected == false {
             select(animated: animated, completion: completion)
         } else {
-            if highlightEnabled && highlighted {
+            if enabled && highlighted {
                 highlighted = false
                 dehighlightAnimation(animated: animated, completion: { [weak self] in
                     self?.reselectAnimation(animated: animated, completion: completion)
@@ -339,7 +359,7 @@ open class ESTabBarItemContentView: UIView {
     }
     
     internal final func highlight(animated: Bool, completion: (() -> ())?) {
-        if !highlightEnabled {
+        if !enabled {
             return
         }
         if highlighted == true {
@@ -350,7 +370,7 @@ open class ESTabBarItemContentView: UIView {
     }
     
     internal final func dehighlight(animated: Bool, completion: (() -> ())?) {
-        if !highlightEnabled {
+        if !enabled {
             return
         }
         if !highlighted {
