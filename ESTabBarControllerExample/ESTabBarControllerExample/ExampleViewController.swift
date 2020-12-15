@@ -28,7 +28,7 @@ public class ExampleViewController: UIViewController {
         "Success grows out of struggles to overcome difficulties.",
         "The dictionary is the only place where success comes before work.",
         "There are no shortcuts to any place worth going.",
-        "You're uinique, nothing can replace you.",
+        "You're unique, nothing can replace you.",
         "Great works are performed not by strengh, but by perseverance.",
         "Until you make peace with who you are, you’ll never be content with what you have.",
         "Keep trying no matter how hard it seems. it will get easier."
