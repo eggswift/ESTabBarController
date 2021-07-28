@@ -32,7 +32,7 @@ public enum ESTabBarItemContentMode : Int {
     case alwaysTemplate // Always set the image as a template image size
 }
 
-
+@available(iOSApplicationExtension, unavailable)
 open class ESTabBarItemContentView: UIView {
     
     // MARK: - PROPERTY SETTING
@@ -225,7 +225,7 @@ open class ESTabBarItemContentView: UIView {
         titleLabel.textColor = selected ? highlightTextColor : textColor
         backgroundColor = selected ? highlightBackdropColor : backdropColor
     }
-    
+
     open func updateLayout() {
         let w = self.bounds.size.width
         let h = self.bounds.size.height

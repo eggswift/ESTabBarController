@@ -40,6 +40,7 @@ import UIKit
 ///     2. func badgeTextAttributes(for state: UIControlState) -> [String : Any]?
 ///
 @available(iOS 8.0, *)
+@available(iOSApplicationExtension, unavailable)
 open class ESTabBarItem: UITabBarItem {
     
     // MARK: UIView properties

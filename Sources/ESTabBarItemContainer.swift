@@ -25,6 +25,7 @@
 
 import UIKit
 
+@available(iOSApplicationExtension, unavailable)
 internal class ESTabBarItemContainer: UIControl {
     
     internal init(_ target: AnyObject?, tag: Int) {

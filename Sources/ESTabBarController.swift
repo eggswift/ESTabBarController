@@ -30,6 +30,7 @@ public typealias ESTabBarControllerShouldHijackHandler = ((_ tabBarController: U
 /// 自定义点击事件回调类型
 public typealias ESTabBarControllerDidHijackHandler = ((_ tabBarController: UITabBarController, _ viewController: UIViewController, _ index: Int) -> (Void))
 
+@available(iOSApplicationExtension, unavailable)
 open class ESTabBarController: UITabBarController, ESTabBarDelegate {
     
     /// 打印异常

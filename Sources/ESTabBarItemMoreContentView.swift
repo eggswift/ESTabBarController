@@ -25,6 +25,7 @@
 
 import UIKit
 
+@available(iOSApplicationExtension, unavailable)
 open class ESTabBarItemMoreContentView: ESTabBarItemContentView {
     
     public override init(frame: CGRect) {
