@@ -620,6 +620,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.eggswift.ESTabBarControllerExample1;
 				PRODUCT_NAME = Example;
 				SWIFT_VERSION = 5.0;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -643,6 +644,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.eggswift.ESTabBarControllerExample1;
 				PRODUCT_NAME = Example;
 				SWIFT_VERSION = 5.0;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
