@@ -44,6 +44,16 @@ You can download and build ESTabBarControllerExample project, and you will find 
 
 ## Usage
 
+### Swift Package Manager
+
+```
+...
+dependencies: [
+    .package(name: "ESTabBarController", url: "https://github.com/eggswift/ESTabBarController.git", from: "2.9.0-spm")
+]
+...
+```
+
 ### CocoaPods
 
 ``` ruby
