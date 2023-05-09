@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "estabbarcontroller",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/eggswift/ESTabBarController.git",
+      "state" : {
+        "revision" : "93a30b833a05fd916c6d4c5d6e94a270cf3b6636",
+        "version" : "2.9.0"
+      }
+    },
+    {
+      "identity" : "lottie-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-ios.git",
+      "state" : {
+        "revision" : "d6feea26a370019b4d3a85f5984cb95a2734776f",
+        "version" : "4.2.0"
+      }
+    },
+    {
+      "identity" : "pop",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/navartis/pop.git",
+      "state" : {
+        "branch" : "1.0.11-vs-spm",
+        "revision" : "48da630fcac333cb831090e5b17998e84cf9d0b7"
+      }
+    }
+  ],
+  "version" : 2
+}

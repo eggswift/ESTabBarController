@@ -29,11 +29,11 @@ class ExampleLottieAnimateBasicContentView: ESTabBarItemContentView {
 
 class ExampleLottieAnimateContentView: ExampleLottieAnimateBasicContentView {
 
-    let lottieView: LAAnimationView! = {
-        let lottieView = LAAnimationView.animationNamed("IconTransitions")
-        lottieView?.loopAnimation = true
-        lottieView?.contentMode = .scaleAspectFit
-        lottieView?.play()
+    let lottieView: LottieAnimationView! = {
+        let lottieView = LottieAnimationView(name: "IconTransitions")
+        lottieView.loopMode = .loop
+        lottieView.contentMode = .scaleAspectFit
+        lottieView.play()
         return lottieView
     }()
     
