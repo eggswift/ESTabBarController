@@ -83,6 +83,17 @@ open class ESTabBar: UITabBar {
 
     internal weak var customDelegate: ESTabBarDelegate?
     
+    /// set value > 0 to change tabbar height
+    /// 设置 > 0 的值了来修改TabBar的高度
+    public var tabBarHeight: CGFloat?{
+        didSet{
+            guard tabBarHeight ?? 0 > 0 else{
+                return
+            }
+            setNeedsLayout()
+        }
+    }
+    
     /// tabBar中items布局偏移量
     public var itemEdgeInsets = UIEdgeInsets.zero
     /// 是否设置为自定义布局方式，默认为空。如果为空，则通过itemPositioning属性来设置。如果不为空则忽略itemPositioning,所以当tabBar的itemCustomPositioning属性不为空时，如果想改变布局规则，请设置此属性而非itemPositioning。
@@ -144,6 +155,14 @@ open class ESTabBar: UITabBar {
     open override func layoutSubviews() {
         super.layoutSubviews()
         self.updateLayout()
+    }
+    
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        let defaultSize = super.sizeThatFits(size)
+        if let tabBarHeight, tabBarHeight > 0{
+            return CGSize(width: defaultSize.width, height: tabBarHeight)
+        }
+        return defaultSize
     }
     
     open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
